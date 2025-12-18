@@ -148,9 +148,9 @@ export default function AboutMe() {
                   className="border-l-4 border-neonGreen pl-4"
                 >
                   <h3 className={`text-xl font-semibold mb-1 text-neonGreen ${playfair.className}`}>Junior Programmer</h3>
-                  <p className={`text-lightGreen/80 mb-3 text-sm ${poppins.className}`}>Komisi Pemberantasan Korupsi | Dec 2024 - Present</p>
+                  <p className={`text-lightGreen/80 mb-3 text-sm ${poppins.className}`}>Komisi Pemberantasan Korupsi | Dec 2025 - Present</p>
                   <ul className={`list-disc list-inside text-lightGreen space-y-1 ${poppins.className}`}>
-                    <li>Developing and maintaining web applications using React and Node.js</li>
+                    <li>Developing and maintaining web applications using React, Vite.js and Laravel</li>
                     <li>Working with modern tech stack including TypeScript, Vite.js, and PostgreSQL</li>
                     <li>Implementing responsive UI/UX with Tailwind CSS</li>
                   </ul>
