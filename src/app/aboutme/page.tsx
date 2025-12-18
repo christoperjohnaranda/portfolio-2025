@@ -44,7 +44,7 @@ export default function AboutMe() {
   }
 
   return (
-    <div className="min-h-screen bg-darkBg text-white py-16 px-4 sm:px-6 lg:px-8 relative z-0">
+    <div className="min-h-screen text-white py-16 px-4 sm:px-6 lg:px-8 relative z-0">
       <div className="max-w-4xl mx-auto pt-10">
         <motion.div
           initial={{ y: -20, opacity: 0 }}

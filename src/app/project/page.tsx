@@ -139,7 +139,7 @@ export default function Projects() {
   }
 
   return (
-    <div className="min-h-screen bg-darkBg text-lightGreen py-16 px-4 sm:px-6 lg:px-8 font-montserrat pt-24 pb-12">
+    <div className="min-h-screen text-lightGreen py-16 px-4 sm:px-6 lg:px-8 font-montserrat pt-24 pb-12">
       <div className="max-w-7xl mx-auto">
         <motion.h1 
           initial={{ opacity: 0, y: -50 }}

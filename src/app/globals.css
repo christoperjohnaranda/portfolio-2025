@@ -35,4 +35,28 @@ body {
   box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14;
 }
 
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent background scrolling issues */
+body {
+  overflow-x: hidden;
+}
+
+/* Enhanced background for better depth */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+.pulse-animation {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
 

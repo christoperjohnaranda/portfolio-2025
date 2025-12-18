@@ -21,7 +21,7 @@ const montserrat = Montserrat({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <div className="portfolio min-h-screen bg-darkBg flex flex-col justify-between items-center py-20 relative">
+    <div className="portfolio min-h-screen flex flex-col justify-between items-center py-20 relative">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -58,7 +58,7 @@ export default function Home() {
           transition={{ duration: 0.5, delay: 0.8 }}
           className={`text-sm md:text-md font-medium text-lightGreen text-center mt-2 ${poppins.className}`}
         >
-          I specialize in building seamless web applications using technologies like JavaScript, React, Next.js, Expo, and Node.js, PostgreSQL, and Vite.js.<br/>
+          I specialize in building seamless web applications using technologies like JavaScript, React, Next.js, Expo, and Node.js, MySQL, PostgreSQL, and Vite.js.<br/>
           Committed to continuous learning, I'm always eager to tackle new challenges. Let's connect and create something amazing together!
         </motion.p>
       </motion.div>

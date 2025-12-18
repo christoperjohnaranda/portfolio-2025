@@ -1,4 +1,6 @@
-import React from "react";
+'use client'
+
+import React, { useState } from "react";
 import Image from "next/image";
 import "../globals.css";
 import Link from "next/link";
@@ -13,30 +15,34 @@ const poppins = Poppins({
 const montserrat = Montserrat({ subsets: ['latin'] })
 
 export default function Navbar(){
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
     return(
         <nav className="fixed top-0 left-0 right-0 bg-darkCard border-b border-neonGreen/20 z-50">
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                 <div className="relative flex h-16 items-center justify-center">
                     <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                         {/* <!-- Mobile menu button--> */}
-                        <button type="button" className="relative inline-flex items-center justify-center rounded-md p-2 text-neonGreen hover:bg-neonGreenDark hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-neonGreen" aria-controls="mobile-menu" aria-expanded="false">
+                        <button 
+                            type="button" 
+                            onClick={toggleMenu}
+                            className="relative inline-flex items-center justify-center rounded-md p-2 text-neonGreen hover:bg-neonGreenDark hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-neonGreen transition-all" 
+                            aria-controls="mobile-menu" 
+                            aria-expanded={isMenuOpen}
+                        >
                             <span className="absolute -inset-0.5"></span>
-                            <span className="sr-only">Open main menu</span>
-                            {/* <!--
-                                Icon when menu is closed.
-
-                                Menu open: "hidden", Menu closed: "block"
-                            --> */}
-                            <svg className="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                            <span className="sr-only">{isMenuOpen ? 'Close main menu' : 'Open main menu'}</span>
+                            {/* Icon when menu is closed - Hamburger */}
+                            <svg className={`${isMenuOpen ? 'hidden' : 'block'} h-6 w-6`} fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                             </svg>
-                            {/* <!--
-                                Icon when menu is open.
-
-                                Menu open: "block", Menu closed: "hidden"
-                            --> */}
-                            <svg className="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                            {/* Icon when menu is open - X */}
+                            <svg className={`${isMenuOpen ? 'block' : 'hidden'} h-6 w-6`} fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
                             </svg>
                         </button>
                     </div>
@@ -52,14 +58,41 @@ export default function Navbar(){
                     </div>
                 </div>
             </div>
-            <div className="sm:hidden" id="mobile-menu">
-                <div className="space-y-1 px-2 pb-3 pt-2">
-                    <a href="/" className={`block rounded-md px-3 py-2 text-base font-medium text-lightGreen hover:bg-neonGreen hover:text-darkBg transition-all ${montserrat.className}`}>Dashboard</a>
-                    <a href="/aboutme" className={`block rounded-md px-3 py-2 text-base font-medium text-lightGreen hover:bg-neonGreen hover:text-darkBg transition-all ${montserrat.className}`}>About Me</a>
-                    <a href="/workexperience" className={`block rounded-md px-3 py-2 text-base font-medium text-lightGreen hover:bg-neonGreen hover:text-darkBg transition-all ${montserrat.className}`}>Work Experience</a>
-                    <a href="/project" className={`block rounded-md px-3 py-2 text-base font-medium text-lightGreen hover:bg-neonGreen hover:text-darkBg transition-all ${montserrat.className}`}>Projects</a>
+            {/* Mobile menu - Only show when isMenuOpen is true */}
+            {isMenuOpen && (
+                <div className="sm:hidden" id="mobile-menu">
+                    <div className="space-y-1 px-2 pb-3 pt-2 border-t border-neonGreen/20">
+                        <a 
+                            href="/" 
+                            onClick={toggleMenu}
+                            className={`block rounded-md px-3 py-2 text-base font-medium text-lightGreen hover:bg-neonGreen hover:text-darkBg transition-all ${montserrat.className}`}
+                        >
+                            Dashboard
+                        </a>
+                        <a 
+                            href="/aboutme" 
+                            onClick={toggleMenu}
+                            className={`block rounded-md px-3 py-2 text-base font-medium text-lightGreen hover:bg-neonGreen hover:text-darkBg transition-all ${montserrat.className}`}
+                        >
+                            About Me
+                        </a>
+                        <a 
+                            href="/workexperience" 
+                            onClick={toggleMenu}
+                            className={`block rounded-md px-3 py-2 text-base font-medium text-lightGreen hover:bg-neonGreen hover:text-darkBg transition-all ${montserrat.className}`}
+                        >
+                            Work Experience
+                        </a>
+                        <a 
+                            href="/project" 
+                            onClick={toggleMenu}
+                            className={`block rounded-md px-3 py-2 text-base font-medium text-lightGreen hover:bg-neonGreen hover:text-darkBg transition-all ${montserrat.className}`}
+                        >
+                            Projects
+                        </a>
+                    </div>
                 </div>
-            </div>
+            )}
         </nav>
     );
 }

@@ -56,7 +56,7 @@ export default function EnhancedWorkExperienceJourney() {
   const [activeExperience, setActiveExperience] = useState(workExperiences[0].id)
 
   return (
-    <div className="min-h-screen bg-darkBg pt-24 pb-12 px-4 sm:px-6 lg:px-8 relative z-0">
+    <div className="min-h-screen pt-24 pb-12 px-4 sm:px-6 lg:px-8 relative z-0">
       <div className="max-w-7xl mx-auto">
         <motion.h1 
           initial={{ opacity: 0, y: -20 }}
