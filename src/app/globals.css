@@ -9,8 +9,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0A0E0D;
+    --foreground: #CCFFCC;
   }
 }
 
@@ -24,6 +24,15 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+/* Neon glow effect */
+.neon-glow {
+  text-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14, 0 0 30px #39FF14;
+}
+
+.neon-border {
+  box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14;
 }
 
 

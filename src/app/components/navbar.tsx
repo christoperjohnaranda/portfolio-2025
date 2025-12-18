@@ -14,12 +14,12 @@ const montserrat = Montserrat({ subsets: ['latin'] })
 
 export default function Navbar(){
     return(
-        <nav className="fixed top-0 left-0 right-0 bg-[#1B1A55] z-50">
+        <nav className="fixed top-0 left-0 right-0 bg-darkCard border-b border-neonGreen/20 z-50">
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                 <div className="relative flex h-16 items-center justify-center">
                     <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                         {/* <!-- Mobile menu button--> */}
-                        <button type="button" className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-[#9290C3] hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                        <button type="button" className="relative inline-flex items-center justify-center rounded-md p-2 text-neonGreen hover:bg-neonGreenDark hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-neonGreen" aria-controls="mobile-menu" aria-expanded="false">
                             <span className="absolute -inset-0.5"></span>
                             <span className="sr-only">Open main menu</span>
                             {/* <!--
@@ -43,10 +43,10 @@ export default function Navbar(){
                     <div className="flex items-center justify-center">
                         <div className="flex justify-center items-center hidden sm:ml-6 sm:block">
                             <div className="flex justify-center items-center">
-                                <a href="/" className={`rounded-md px-3 py-2 text-sm font-medium text-[#9290C3] hover:bg-[#535C91] hover:text-white ${montserrat.className}`}>Dashboard</a>
-                                <a href="/aboutme" className={`rounded-md px-3 py-2 text-sm font-medium text-[#9290C3] hover:bg-[#535C91] hover:text-white ${montserrat.className}`}>About Me</a>
-                                <a href="/workexperience" className={`rounded-md px-3 py-2 text-sm font-medium text-[#9290C3] hover:bg-[#535C91] hover:text-white ${montserrat.className}`}>Work Experience</a>
-                                <a href="/project" className={`rounded-md px-3 py-2 text-sm font-medium text-[#9290C3] hover:bg-[#535C91] hover:text-white ${montserrat.className}`}>Projects</a>
+                                <a href="/" className={`rounded-md px-3 py-2 text-sm font-medium text-lightGreen hover:bg-neonGreen hover:text-darkBg transition-all ${montserrat.className}`}>Dashboard</a>
+                                <a href="/aboutme" className={`rounded-md px-3 py-2 text-sm font-medium text-lightGreen hover:bg-neonGreen hover:text-darkBg transition-all ${montserrat.className}`}>About Me</a>
+                                <a href="/workexperience" className={`rounded-md px-3 py-2 text-sm font-medium text-lightGreen hover:bg-neonGreen hover:text-darkBg transition-all ${montserrat.className}`}>Work Experience</a>
+                                <a href="/project" className={`rounded-md px-3 py-2 text-sm font-medium text-lightGreen hover:bg-neonGreen hover:text-darkBg transition-all ${montserrat.className}`}>Projects</a>
                             </div>
                         </div>
                     </div>
@@ -54,10 +54,10 @@ export default function Navbar(){
             </div>
             <div className="sm:hidden" id="mobile-menu">
                 <div className="space-y-1 px-2 pb-3 pt-2">
-                    <a href="/" className={`block rounded-md px-3 py-2 text-base font-medium text-[#9290C3] hover:bg-[#535C91] hover:text-white ${montserrat.className}`}>Dashboard</a>
-                    <a href="/aboutme" className={`block rounded-md px-3 py-2 text-base font-medium text-[#9290C3] hover:bg-[#535C91] hover:text-white ${montserrat.className}`}>About Me</a>
-                    <a href="/workexperience" className={`block rounded-md px-3 py-2 text-base font-medium text-[#9290C3] hover:bg-[#535C91] hover:text-white ${montserrat.className}`}>Work Experience</a>
-                    <a href="/project" className={`block rounded-md px-3 py-2 text-base font-medium text-[#9290C3] hover:bg-[#535C91] hover:text-white ${montserrat.className}`}>Projects</a>
+                    <a href="/" className={`block rounded-md px-3 py-2 text-base font-medium text-lightGreen hover:bg-neonGreen hover:text-darkBg transition-all ${montserrat.className}`}>Dashboard</a>
+                    <a href="/aboutme" className={`block rounded-md px-3 py-2 text-base font-medium text-lightGreen hover:bg-neonGreen hover:text-darkBg transition-all ${montserrat.className}`}>About Me</a>
+                    <a href="/workexperience" className={`block rounded-md px-3 py-2 text-base font-medium text-lightGreen hover:bg-neonGreen hover:text-darkBg transition-all ${montserrat.className}`}>Work Experience</a>
+                    <a href="/project" className={`block rounded-md px-3 py-2 text-base font-medium text-lightGreen hover:bg-neonGreen hover:text-darkBg transition-all ${montserrat.className}`}>Projects</a>
                 </div>
             </div>
         </nav>

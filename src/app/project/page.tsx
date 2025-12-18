@@ -82,7 +82,7 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
       transition={{ duration: 0.5 }}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
-      className="bg-[#535C91] rounded-lg overflow-hidden shadow-lg cursor-pointer"
+      className="bg-darkCard border border-neonGreen/20 rounded-lg overflow-hidden shadow-lg cursor-pointer hover:border-neonGreen hover:shadow-[0_0_20px_rgba(57,255,20,0.3)] transition-all"
       onClick={() => onClick(project)}
     >
       <Image
@@ -93,8 +93,8 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
         className="w-full h-48 object-cover"
       />
       <div className="p-6">
-        <h3 className="text-xl font-semibold mb-2 text-white">{project.title}</h3>
-        <p className="text-white/80 mb-4 line-clamp-2">{project.description}</p>
+        <h3 className="text-xl font-semibold mb-2 text-neonGreen">{project.title}</h3>
+        <p className="text-lightGreen mb-4 line-clamp-2">{project.description}</p>
         <div className="flex flex-wrap gap-2">
           {project.technologies.map((tech, index) => (
             <motion.span
@@ -102,7 +102,7 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: index * 0.1 }}
-              className="px-2 py-1 bg-[#070F2B] text-[#9290C3] rounded-full text-xs"
+              className="px-2 py-1 bg-darkAccent text-neonGreen border border-neonGreen/30 rounded-full text-xs"
             >
               {tech}
             </motion.span>
@@ -139,13 +139,13 @@ export default function Projects() {
   }
 
   return (
-    <div className="min-h-screen bg-[#070F2B] text-[#9290C3] py-16 px-4 sm:px-6 lg:px-8 font-montserrat pt-24 pb-12">
+    <div className="min-h-screen bg-darkBg text-lightGreen py-16 px-4 sm:px-6 lg:px-8 font-montserrat pt-24 pb-12">
       <div className="max-w-7xl mx-auto">
         <motion.h1 
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className={`text-5xl font-bold text-center mb-12 text-[#9290C3] ${playfair.className}`}
+          className={`text-5xl font-bold text-center mb-12 text-neonGreen neon-glow ${playfair.className}`}
         >
           My Projects
         </motion.h1>
@@ -184,19 +184,19 @@ export default function Projects() {
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: direction * -50, opacity: 0 }}
                 transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                className="bg-[#535C91] rounded-lg p-8 max-w-3xl w-full max-h-[90vh] overflow-y-auto relative"
+                className="bg-darkCard border-2 border-neonGreen rounded-lg p-8 max-w-3xl w-full max-h-[90vh] overflow-y-auto relative"
                 onClick={(e) => e.stopPropagation()}
               >
                 <button
                   onClick={() => setSelectedProject(null)}
-                  className="absolute top-4 right-4 text-white/60 hover:text-white transition-colors"
+                  className="absolute top-4 right-4 text-neonGreen hover:text-mediumGreen transition-colors"
                 >
                   <X size={24} />
                 </button>
                 <motion.h2 
                   initial={{ y: -20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
-                  className="text-3xl font-bold mb-6 text-white"
+                  className="text-3xl font-bold mb-6 text-neonGreen"
                 >
                   {selectedProject.title}
                 </motion.h2>
@@ -217,7 +217,7 @@ export default function Projects() {
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.3 }}
-                  className="text-white/80 mb-6"
+                  className="text-lightGreen mb-6"
                 >
                   {selectedProject.description}
                 </motion.p>
@@ -227,7 +227,7 @@ export default function Projects() {
                   transition={{ delay: 0.4 }}
                   className="mb-6"
                 >
-                  <h3 className="text-xl font-semibold mb-2 text-white">Technologies Used</h3>
+                  <h3 className="text-xl font-semibold mb-2 text-neonGreen">Technologies Used</h3>
                   <div className="flex flex-wrap gap-2">
                     {selectedProject.technologies.map((tech, index) => (
                       <motion.span
@@ -235,7 +235,7 @@ export default function Projects() {
                         initial={{ opacity: 0, scale: 0 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 0.5 + index * 0.1 }}
-                        className="px-3 py-1 bg-[#070F2B] text-[#9290C3] rounded-full text-sm"
+                        className="px-3 py-1 bg-darkAccent text-neonGreen border border-neonGreen/30 rounded-full text-sm"
                       >
                         {tech}
                       </motion.span>
@@ -252,7 +252,7 @@ export default function Projects() {
                     href={selectedProject.githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center px-4 py-2 bg-[#070F2B] hover:bg-[#1a2344] text-[#9290C3] rounded-lg transition-colors"
+                    className="flex items-center justify-center px-4 py-2 bg-darkAccent hover:bg-neonGreen hover:text-darkBg text-neonGreen border border-neonGreen/30 rounded-lg transition-all"
                   >
                     <Github className="mr-2" size={20} />
                     View on GitHub
@@ -261,7 +261,7 @@ export default function Projects() {
                     href={selectedProject.liveLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center px-4 py-2 bg-[#070F2B] hover:bg-[#1a2344] text-[#9290C3] rounded-lg transition-colors"
+                    className="flex items-center justify-center px-4 py-2 bg-darkAccent hover:bg-neonGreen hover:text-darkBg text-neonGreen border border-neonGreen/30 rounded-lg transition-all"
                   >
                     <ExternalLink className="mr-2" size={20} />
                     Live Demo
@@ -270,7 +270,7 @@ export default function Projects() {
                 <div className="absolute top-1/2 left-4 transform -translate-y-1/2">
                   <button
                     onClick={handlePrevProject}
-                    className="p-2 bg-[#070F2B] rounded-full text-[#9290C3] hover:bg-[#1a2344] transition-colors"
+                    className="p-2 bg-darkAccent border border-neonGreen/30 rounded-full text-neonGreen hover:bg-neonGreen hover:text-darkBg transition-all"
                   >
                     <ChevronLeft size={24} />
                   </button>
@@ -278,7 +278,7 @@ export default function Projects() {
                 <div className="absolute top-1/2 right-4 transform -translate-y-1/2">
                   <button
                     onClick={handleNextProject}
-                    className="p-2 bg-[#070F2B] rounded-full text-[#9290C3] hover:bg-[#1a2344] transition-colors"
+                    className="p-2 bg-darkAccent border border-neonGreen/30 rounded-full text-neonGreen hover:bg-neonGreen hover:text-darkBg transition-all"
                   >
                     <ChevronRight size={24} />
                   </button>

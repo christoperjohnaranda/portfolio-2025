@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { useState } from 'react'
 import { Playfair_Display, Poppins, Montserrat } from 'next/font/google'
+import CJ from "../../../public/assets/CJ.jpeg";
 
 
 const playfair = Playfair_Display({ subsets: ['latin'] })
@@ -23,6 +24,10 @@ const skills = [
   { name: 'Next.js', logo: '/assets/next.png' },
   { name: 'MySQL', logo: '/assets/mysql.png' },
   { name: 'Expo', logo: '/assets/expo.png' },
+  { name: 'PostgreSQL', logo: '/assets/pgsql.png' },
+  { name: 'Vite.js', logo: '/assets/vite.png' },
+  { name: 'TypeScript', logo: '/assets/typescript.png' },
+  { name: 'Bootstrap', logo: '/assets/bootstrap.png' },
 ]
 
 export default function AboutMe() {
@@ -39,33 +44,40 @@ export default function AboutMe() {
   }
 
   return (
-    <div className="min-h-screen bg-[#070F2B] text-white py-16 px-4 sm:px-6 lg:px-8 relative z-0">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen bg-darkBg text-white py-16 px-4 sm:px-6 lg:px-8 relative z-0">
+      <div className="max-w-4xl mx-auto pt-10">
         <motion.div
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
           className="text-center mb-12"
         >
-          <Image
-            src="/placeholder.svg?height=150&width=150"
-            alt="Your Name"
-            width={150}
-            height={150}
-            className="rounded-full mx-auto mb-4"
-          />
-          <h1 className={`text-4xl font-bold text-[#9290C3] mb-2 ${playfair.className}`}>CHRISTOPER JOHN ARANDA</h1>
-          <p className={`text-xl text-[#535C91] ${montserrat.className}`}>Full Stack Developer</p>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            transition={{ duration: 0.3 }}
+            className="inline-block"
+          >
+            <Image
+              src={CJ}
+              alt="Christoper John Aranda"
+              width={150}
+              height={150}
+              className="rounded-full mx-auto mb-4 border-4 border-neonGreen neon-border grayscale hover:grayscale-0 transition-all duration-500 object-cover cursor-pointer"
+              style={{ width: '150px', height: '150px' }}
+            />
+          </motion.div>
+          <h1 className={`text-4xl font-bold text-neonGreen neon-glow mb-2 ${playfair.className}`}>CHRISTOPER JOHN ARANDA</h1>
+          <p className={`text-xl text-lightGreen ${montserrat.className}`}>Full Stack Developer</p>
         </motion.div>
 
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="bg-[#1B1A55] rounded-lg shadow-xl p-6 mb-8"
+          className="bg-darkCard rounded-lg shadow-xl border border-neonGreen/20 p-6 mb-8"
         >
-          <h2 className={`text-2xl font-semibold mb-4 ${playfair.className}`}>About Me</h2>
-          <p className={`text-gray-300 ${poppins.className}`}>
+          <h2 className={`text-2xl font-semibold mb-4 text-neonGreen ${playfair.className}`}>About Me</h2>
+          <p className={`text-lightGreen ${poppins.className}`}>
             As a Full Stack Developer, I specialize in building end-to-end web solutions with a passion for clean code and innovative solutions. My expertise spans both frontend and backend development, allowing me to create seamless, scalable applications. I enjoy tackling complex problems and continuously learning new technologies to stay at the forefront of web development. With a strong foundation in modern web frameworks and best practices, I strive to deliver high-quality solutions that make a real impact.
           </p>
         </motion.div>
@@ -79,8 +91,8 @@ export default function AboutMe() {
                 initial="hidden"
                 animate="visible"
                 className={`px-4 py-2 rounded-full ${
-                  activeTab === tab ? 'bg-primary text-white' : 'bg-[#535C91] text-gray-300'
-                } ${montserrat.className}`}
+                  activeTab === tab ? 'bg-neonGreen text-darkBg' : 'bg-darkAccent text-lightGreen border border-neonGreen/30'
+                } ${montserrat.className} transition-all`}
                 onClick={() => setActiveTab(tab)}
               >
                 {tab.charAt(0).toUpperCase() + tab.slice(1)}
@@ -93,7 +105,7 @@ export default function AboutMe() {
             variants={contentVariants}
             initial="hidden"
             animate="visible"
-            className="bg-[#1B1A55] rounded-lg shadow-xl p-6"
+            className="bg-darkCard rounded-lg shadow-xl border border-neonGreen/20 p-6"
           >
             {activeTab === 'skills' && (
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
@@ -106,7 +118,7 @@ export default function AboutMe() {
                     whileHover={{ scale: 1.1, transition: { duration: 0.2 } }}
                     className="flex flex-col items-center group"
                   >
-                    <div className="w-20 h-20 bg-white rounded-xl shadow-lg flex items-center justify-center mb-3 transform transition-all duration-300 hover:shadow-2xl hover:rotate-6">
+                    <div className="w-20 h-20 bg-darkAccent rounded-xl shadow-lg flex items-center justify-center mb-3 transform transition-all duration-300 hover:shadow-[0_0_20px_rgba(57,255,20,0.5)] hover:rotate-6 border border-neonGreen/20 hover:border-neonGreen">
                       <Image
                         src={skill.logo}
                         alt={`${skill.name} logo`}
@@ -115,7 +127,7 @@ export default function AboutMe() {
                         className="w-10 h-10 object-contain transition-transform duration-300 group-hover:scale-110"
                       />
                     </div>
-                    <span className={`text-sm font-medium text-gray-300 tracking-wide ${poppins.className} group-hover:text-white transition-colors duration-300`}>
+                    <span className={`text-sm font-medium text-lightGreen tracking-wide ${poppins.className} group-hover:text-neonGreen transition-colors duration-300`}>
                       {skill.name}
                     </span>
                   </motion.div>
@@ -123,22 +135,92 @@ export default function AboutMe() {
               </div>
             )}
             {activeTab === 'experience' && (
-              <div>
-                <h3 className={`text-xl font-semibold mb-2 ${playfair.className}`}>Full Stack Developer</h3>
-                <p className={`text-gray-300 mb-4 ${poppins.className}`}>PT Maro Anugrah Jaya | 2024 - Present</p>
-                <ul className={`list-disc list-inside text-gray-300 ${poppins.className}`}>
-                  <li>Developing and maintaining web applications using React and Node.js</li>
-                  <li>Collaborating with team members on new feature implementations</li>
-                  <li>Optimizing application performance and user experience</li>
-                </ul>
+              <div className="space-y-6">
+                {/* KPK Experience */}
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="border-l-4 border-neonGreen pl-4"
+                >
+                  <h3 className={`text-xl font-semibold mb-1 text-neonGreen ${playfair.className}`}>Junior Programmer</h3>
+                  <p className={`text-lightGreen/80 mb-3 text-sm ${poppins.className}`}>Komisi Pemberantasan Korupsi | Dec 2024 - Present</p>
+                  <ul className={`list-disc list-inside text-lightGreen space-y-1 ${poppins.className}`}>
+                    <li>Developing and maintaining web applications using React and Node.js</li>
+                    <li>Working with modern tech stack including TypeScript, Vite.js, and PostgreSQL</li>
+                    <li>Implementing responsive UI/UX with Tailwind CSS</li>
+                  </ul>
+                </motion.div>
+
+                {/* Maro Experience */}
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  className="border-l-4 border-neonGreen/60 pl-4"
+                >
+                  <h3 className={`text-xl font-semibold mb-1 text-neonGreen ${playfair.className}`}>Full Stack Developer</h3>
+                  <p className={`text-lightGreen/80 mb-3 text-sm ${poppins.className}`}>PT Maro Anugrah Jaya | Sep 2024 - May 2025</p>
+                  <ul className={`list-disc list-inside text-lightGreen space-y-1 ${poppins.className}`}>
+                    <li>Developing full-stack web applications using React, Next.js, and Node.js</li>
+                    <li>Optimized application performance by 40% through best practices implementation</li>
+                    <li>Developed RESTful APIs using Express and MySQL</li>
+                  </ul>
+                </motion.div>
+
+                {/* SUB Experience */}
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  className="border-l-4 border-neonGreen/40 pl-4"
+                >
+                  <h3 className={`text-xl font-semibold mb-1 text-neonGreen ${playfair.className}`}>Website Developer</h3>
+                  <p className={`text-lightGreen/80 mb-3 text-sm ${poppins.className}`}>PT Solusi Usaha Berdikari | Feb 2024 - Jul 2024</p>
+                  <ul className={`list-disc list-inside text-lightGreen space-y-1 ${poppins.className}`}>
+                    <li>Developed and maintained web applications focusing on frontend development</li>
+                    <li>Implemented responsive design patterns reducing load time by 40%</li>
+                    <li>Enhanced user engagement by 15% through React.js feature implementations</li>
+                  </ul>
+                </motion.div>
               </div>
             )}
             {activeTab === 'education' && (
-              <div>
-                <h3 className={`text-xl font-semibold mb-2 ${playfair.className}`}>Bachelor of Engineering in Computer Engineering</h3>
-                <p className={`text-gray-300 mb-4 ${poppins.className}`}>Multimedia Nusantara University | 2021 - 2025</p>
-                <p className="text-gray-300 font-serif">Graduated with honors, specializing in full stack developer</p>
-              </div>
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+                className="border-l-4 border-neonGreen pl-4"
+              >
+                <motion.h3 
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  className={`text-xl font-semibold mb-1 text-neonGreen ${playfair.className}`}
+                >
+                  Bachelor of Engineering in Computer Engineering
+                </motion.h3>
+                <motion.p 
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  className={`text-lightGreen/80 mb-3 text-sm ${poppins.className}`}
+                >
+                  Multimedia Nusantara University | 2021 - 2025
+                </motion.p>
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                >
+                  <p className={`text-lightGreen mb-2 ${poppins.className}`}>
+                    <span className="font-semibold text-neonGreen">Status:</span> Graduated with honors
+                  </p>
+                  <p className={`text-lightGreen ${poppins.className}`}>
+                    <span className="font-semibold text-neonGreen">Specialization:</span> Full Stack Developer
+                  </p>
+                </motion.div>
+              </motion.div>
             )}
           </motion.div>
         </div>
@@ -151,7 +233,7 @@ export default function AboutMe() {
         >
           <a
             href="https://wa.me/6285648806508"
-            className={`border-double border-4 border-[#535C91] py-2 px-4 hover:bg-[#535C91] hover:text-white hover:border-white inline-block text-[#535C91] px-6 py-3 rounded-full font-semibold hover:bg-primary-dark transition-colors duration-300 ${montserrat.className}`}
+            className={`border-double border-4 border-neonGreen neon-border py-2 px-4 hover:bg-neonGreen hover:text-darkBg hover:border-white inline-block text-neonGreen px-6 py-3 rounded-full font-semibold transition-all duration-300 ${montserrat.className}`}
           >
             Get in Touch
           </a>

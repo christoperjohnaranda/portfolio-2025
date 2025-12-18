@@ -11,6 +11,14 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        // Neon Green Theme
+        neonGreen: "#39FF14",
+        neonGreenDark: "#2ECC40",
+        darkBg: "#0A0E0D",
+        darkCard: "#0F1C14",
+        darkAccent: "#1A2B1D",
+        lightGreen: "#CCFFCC",
+        mediumGreen: "#1FFF1F",
       },
     },
   },

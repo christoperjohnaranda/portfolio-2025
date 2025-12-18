@@ -15,9 +15,18 @@ const montserrat = Montserrat({ subsets: ['latin'] })
 const workExperiences = [
   {
     id: 1,
+    company: 'Komisi Pemberantasan Korupsi',
+    position: 'Junior Programmer',
+    period: 'Dec 2025 - Present',
+    description: 'Developing and maintaining web applications using React and Node.js',
+    achievements: [],
+    skills: ['React', 'HTML', 'CSS', 'Tailwind CSS', 'JavaScript', 'TypeScript', 'Node.js', 'PostgreSQL', 'Vite.js'],
+  },
+  {
+    id: 2,
     company: 'PT Maro Anugrah Jaya',
     position: 'Full Stack Developer',
-    period: 'Sep 2024 - Present',
+    period: 'Sep 2024 - May 2025',
     description: 'Developing and maintaining full-stack web applications using React, Next.js, Expo, and Node.js with a focus on performance and user experience.',
     achievements: [
       'Optimized web application performance by implementing React and Next.js best practices, resulting in a 40% improvement in loading speed',
@@ -28,7 +37,7 @@ const workExperiences = [
     color: 'bg-blue-500'
   },
   {
-    id: 2,
+    id: 3,
     company: 'PT Solusi Usaha Berdikari',
     position: 'Website Developer',
     period: 'Feb 2024 - Jul 2024',
@@ -47,20 +56,20 @@ export default function EnhancedWorkExperienceJourney() {
   const [activeExperience, setActiveExperience] = useState(workExperiences[0].id)
 
   return (
-    <div className="min-h-screen bg-[#070F2B] pt-24 pb-12 px-4 sm:px-6 lg:px-8 relative z-0">
+    <div className="min-h-screen bg-darkBg pt-24 pb-12 px-4 sm:px-6 lg:px-8 relative z-0">
       <div className="max-w-7xl mx-auto">
         <motion.h1 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className={`text-5xl font-bold text-center text-[#9290C3] mb-12 ${playfair.className}`}
+          className={`text-5xl font-bold text-center text-neonGreen neon-glow mb-12 ${playfair.className}`}
         >
           My Professional Journey
         </motion.h1>
         
         <div className="relative inset-0">
           {/* Journey Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-[#535C91]" />
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-neonGreen/30 shadow-[0_0_10px_rgba(57,255,20,0.5)]" />
           
           {workExperiences.map((experience, index) => (
             <motion.div
@@ -74,15 +83,15 @@ export default function EnhancedWorkExperienceJourney() {
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className={`bg-[#1B1A55] p-6 rounded-lg shadow-lg cursor-pointer transition-all duration-300 ${
-                    activeExperience === experience.id ? 'ring-4 ring-[#535C91]' : ''
+                  className={`bg-darkCard border p-6 rounded-lg shadow-lg cursor-pointer transition-all duration-300 ${
+                    activeExperience === experience.id ? 'ring-4 ring-neonGreen border-neonGreen shadow-[0_0_20px_rgba(57,255,20,0.5)]' : 'border-neonGreen/20'
                   }`}
                   onClick={() => setActiveExperience(experience.id)}
                 >
-                  <h3 className={`text-2xl font-semibold text-[#9290C3] mb-2 ${playfair.className}`}>{experience.company}</h3>
-                  <p className={`text-lg text-[#535C91] mb-2 ${montserrat.className}`}>{experience.position}</p>
-                  <p className={`text-sm text-[#535C91] flex items-center ${montserrat.className}`}>
-                    <Calendar className="w-4 h-4 mr-2" />
+                  <h3 className={`text-2xl font-semibold text-neonGreen mb-2 ${playfair.className}`}>{experience.company}</h3>
+                  <p className={`text-lg text-lightGreen mb-2 ${montserrat.className}`}>{experience.position}</p>
+                  <p className={`text-sm text-lightGreen flex items-center ${montserrat.className}`}>
+                    <Calendar className="w-4 h-4 mr-2 text-neonGreen" />
                     {experience.period}
                   </p>
                 </motion.div>
@@ -90,11 +99,11 @@ export default function EnhancedWorkExperienceJourney() {
               
               <div className="w-1/2 flex justify-center items-center">
                 <motion.div 
-                  className={`w-12 h-12 ${experience.color} rounded-full flex items-center justify-center shadow-lg`}
+                  className={`w-12 h-12 bg-neonGreen rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(57,255,20,0.7)] border-2 border-neonGreen`}
                   whileHover={{ scale: 1.2, rotate: 360 }}
                   transition={{ duration: 0.5 }}
                 >
-                  <Briefcase className="text-white w-6 h-6" />
+                  <Briefcase className="text-darkBg w-6 h-6" />
                 </motion.div>
               </div>
             </motion.div>
@@ -109,18 +118,18 @@ export default function EnhancedWorkExperienceJourney() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.5 }}
-            className="mt-12 bg-[#1B1A55] p-8 rounded-lg shadow-xl"
+            className="mt-12 bg-darkCard border border-neonGreen/20 p-8 rounded-lg shadow-xl"
           >
             {workExperiences.find(exp => exp.id === activeExperience) && (
               <>
-                <h2 className={`text-3xl font-bold text-[#9290C3] mb-4 ${playfair.className}`}>
+                <h2 className={`text-3xl font-bold text-neonGreen mb-4 ${playfair.className}`}>
                   {workExperiences.find(exp => exp.id === activeExperience)?.company}
                 </h2>
-                <p className={`text-xl text-[#535C91] mb-6 ${poppins.className}`}>
+                <p className={`text-xl text-lightGreen mb-6 ${poppins.className}`}>
                   {workExperiences.find(exp => exp.id === activeExperience)?.description}
                 </p>
-                <h3 className={`text-2xl font-semibold text-[#9290C3] mb-4 flex items-center ${playfair.className}`}>
-                  <Award className="w-6 h-6 mr-2 text-[#535C91]" />
+                <h3 className={`text-2xl font-semibold text-neonGreen mb-4 flex items-center ${playfair.className}`}>
+                  <Award className="w-6 h-6 mr-2 text-neonGreen" />
                   Key Achievements
                 </h3>
                 <ul className="list-none space-y-4 mb-6">
@@ -132,12 +141,12 @@ export default function EnhancedWorkExperienceJourney() {
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                       className="flex items-start"
                     >
-                      <MapPin className="w-5 h-5 mr-2 text-green-500 mt-1 flex-shrink-0" />
-                      <span className={`text-[#535C91] ${montserrat.className}`}>{achievement}</span>
+                      <MapPin className="w-5 h-5 mr-2 text-neonGreen mt-1 flex-shrink-0" />
+                      <span className={`text-lightGreen ${montserrat.className}`}>{achievement}</span>
                     </motion.li>
                   ))}
                 </ul>
-                <h3 className={`text-2xl font-semibold text-[#9290C3] mb-4 ${playfair.className}`}>Skills Used</h3>
+                <h3 className={`text-2xl font-semibold text-neonGreen mb-4 ${playfair.className}`}>Skills Used</h3>
                 <div className="flex flex-wrap gap-2">
                   {workExperiences.find(exp => exp.id === activeExperience)?.skills.map((skill, index) => (
                     <motion.span
@@ -145,7 +154,7 @@ export default function EnhancedWorkExperienceJourney() {
                       initial={{ opacity: 0, scale: 0 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.3, delay: index * 0.1 }}
-                      className={`px-3 py-1 bg-[#535C91] text-white rounded-full text-sm font-medium ${montserrat.className}`}
+                      className={`px-3 py-1 bg-darkAccent text-neonGreen border border-neonGreen/30 rounded-full text-sm font-medium ${montserrat.className}`}
                     >
                       {skill}
                     </motion.span>
