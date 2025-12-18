@@ -28,6 +28,10 @@ const skills = [
   { name: 'Vite.js', logo: '/assets/vite.png' },
   { name: 'TypeScript', logo: '/assets/typescript.png' },
   { name: 'Bootstrap', logo: '/assets/bootstrap.png' },
+  { name: 'Framer Motion', logo: '/assets/framermotion.png' },
+  { name: 'Python', logo: '/assets/python.png' },
+  { name: 'C', logo: '/assets/c.png' },
+  { name: 'Java', logo: '/assets/java.png' },
 ]
 
 export default function AboutMe() {
