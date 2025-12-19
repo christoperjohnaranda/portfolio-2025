@@ -3,14 +3,16 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import { MapPin, Briefcase, Calendar, Award } from 'lucide-react'
-import { Playfair_Display, Poppins, Montserrat } from 'next/font/google'
+import { Space_Grotesk, Orbitron } from 'next/font/google'
 
-const playfair = Playfair_Display({ subsets: ['latin'] })
-const poppins = Poppins({ 
-  weight: ['400', '500', '600', '700'],
-  subsets: ['latin']
+const spaceGrotesk = Space_Grotesk({ 
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700']
 })
-const montserrat = Montserrat({ subsets: ['latin'] })
+const orbitron = Orbitron({ 
+  subsets: ['latin'],
+  weight: ['400', '500', '700', '900']
+})
 
 const workExperiences = [
   {
@@ -62,7 +64,7 @@ export default function EnhancedWorkExperienceJourney() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className={`text-5xl font-bold text-center text-neonGreen neon-glow mb-12 ${playfair.className}`}
+          className={`text-5xl font-bold text-center text-neonGreen neon-glow mb-12 ${orbitron.className}`}
         >
           My Professional Journey
         </motion.h1>
@@ -88,9 +90,9 @@ export default function EnhancedWorkExperienceJourney() {
                   }`}
                   onClick={() => setActiveExperience(experience.id)}
                 >
-                  <h3 className={`text-2xl font-semibold text-neonGreen mb-2 ${playfair.className}`}>{experience.company}</h3>
-                  <p className={`text-lg text-lightGreen mb-2 ${montserrat.className}`}>{experience.position}</p>
-                  <p className={`text-sm text-lightGreen flex items-center ${montserrat.className}`}>
+                  <h3 className={`text-2xl font-semibold text-neonGreen mb-2 ${orbitron.className}`}>{experience.company}</h3>
+                  <p className={`text-lg text-lightGreen mb-2 ${spaceGrotesk.className}`}>{experience.position}</p>
+                  <p className={`text-sm text-lightGreen flex items-center ${spaceGrotesk.className}`}>
                     <Calendar className="w-4 h-4 mr-2 text-neonGreen" />
                     {experience.period}
                   </p>
@@ -122,13 +124,13 @@ export default function EnhancedWorkExperienceJourney() {
           >
             {workExperiences.find(exp => exp.id === activeExperience) && (
               <>
-                <h2 className={`text-3xl font-bold text-neonGreen mb-4 ${playfair.className}`}>
+                <h2 className={`text-3xl font-bold text-neonGreen mb-4 ${orbitron.className}`}>
                   {workExperiences.find(exp => exp.id === activeExperience)?.company}
                 </h2>
-                <p className={`text-xl text-lightGreen mb-6 ${poppins.className}`}>
+                <p className={`text-xl text-lightGreen mb-6 ${spaceGrotesk.className}`}>
                   {workExperiences.find(exp => exp.id === activeExperience)?.description}
                 </p>
-                <h3 className={`text-2xl font-semibold text-neonGreen mb-4 flex items-center ${playfair.className}`}>
+                <h3 className={`text-2xl font-semibold text-neonGreen mb-4 flex items-center ${orbitron.className}`}>
                   <Award className="w-6 h-6 mr-2 text-neonGreen" />
                   Key Achievements
                 </h3>
@@ -142,11 +144,11 @@ export default function EnhancedWorkExperienceJourney() {
                       className="flex items-start"
                     >
                       <MapPin className="w-5 h-5 mr-2 text-neonGreen mt-1 flex-shrink-0" />
-                      <span className={`text-lightGreen ${montserrat.className}`}>{achievement}</span>
+                      <span className={`text-lightGreen ${spaceGrotesk.className}`}>{achievement}</span>
                     </motion.li>
                   ))}
                 </ul>
-                <h3 className={`text-2xl font-semibold text-neonGreen mb-4 ${playfair.className}`}>Skills Used</h3>
+                <h3 className={`text-2xl font-semibold text-neonGreen mb-4 ${orbitron.className}`}>Skills Used</h3>
                 <div className="flex flex-wrap gap-2">
                   {workExperiences.find(exp => exp.id === activeExperience)?.skills.map((skill, index) => (
                     <motion.span
@@ -154,7 +156,7 @@ export default function EnhancedWorkExperienceJourney() {
                       initial={{ opacity: 0, scale: 0 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.3, delay: index * 0.1 }}
-                      className={`px-3 py-1 bg-darkAccent text-neonGreen border border-neonGreen/30 rounded-full text-sm font-medium ${montserrat.className}`}
+                      className={`px-3 py-1 bg-darkAccent text-neonGreen border border-neonGreen/30 rounded-full text-sm font-medium ${spaceGrotesk.className}`}
                     >
                       {skill}
                     </motion.span>

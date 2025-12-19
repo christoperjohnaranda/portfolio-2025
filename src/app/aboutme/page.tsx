@@ -2,16 +2,18 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { useState } from 'react'
-import { Playfair_Display, Poppins, Montserrat } from 'next/font/google'
+import { Space_Grotesk, Orbitron } from 'next/font/google'
 import CJ from "../../../public/assets/CJ.jpeg";
 
 
-const playfair = Playfair_Display({ subsets: ['latin'] })
-const poppins = Poppins({ 
-  weight: ['400', '500', '600', '700'],
-  subsets: ['latin']
+const spaceGrotesk = Space_Grotesk({ 
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700']
 })
-const montserrat = Montserrat({ subsets: ['latin'] })
+const orbitron = Orbitron({ 
+  subsets: ['latin'],
+  weight: ['400', '500', '700', '900']
+})
 
 const skills = [
   { name: 'HTML', logo: '/assets/html.png' },
@@ -70,8 +72,8 @@ export default function AboutMe() {
               style={{ width: '150px', height: '150px' }}
             />
           </motion.div>
-          <h1 className={`text-4xl font-bold text-neonGreen neon-glow mb-2 ${playfair.className}`}>CHRISTOPER JOHN ARANDA</h1>
-          <p className={`text-xl text-lightGreen ${montserrat.className}`}>Full Stack Developer</p>
+          <h1 className={`text-4xl font-bold text-neonGreen neon-glow mb-2 ${orbitron.className}`}>CHRISTOPER JOHN ARANDA</h1>
+          <p className={`text-xl text-lightGreen ${spaceGrotesk.className}`}>Full Stack Developer</p>
         </motion.div>
 
         <motion.div
@@ -80,8 +82,8 @@ export default function AboutMe() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="bg-darkCard rounded-lg shadow-xl border border-neonGreen/20 p-6 mb-8"
         >
-          <h2 className={`text-2xl font-semibold mb-4 text-neonGreen ${playfair.className}`}>About Me</h2>
-          <p className={`text-lightGreen ${poppins.className}`}>
+          <h2 className={`text-2xl font-semibold mb-4 text-neonGreen ${orbitron.className}`}>About Me</h2>
+          <p className={`text-lightGreen ${spaceGrotesk.className}`}>
             As a Full Stack Developer, I specialize in building end-to-end web solutions with a passion for clean code and innovative solutions. My expertise spans both frontend and backend development, allowing me to create seamless, scalable applications. I enjoy tackling complex problems and continuously learning new technologies to stay at the forefront of web development. With a strong foundation in modern web frameworks and best practices, I strive to deliver high-quality solutions that make a real impact.
           </p>
         </motion.div>
@@ -96,7 +98,7 @@ export default function AboutMe() {
                 animate="visible"
                 className={`px-4 py-2 rounded-full ${
                   activeTab === tab ? 'bg-neonGreen text-darkBg' : 'bg-darkAccent text-lightGreen border border-neonGreen/30'
-                } ${montserrat.className} transition-all`}
+                } ${spaceGrotesk.className} transition-all`}
                 onClick={() => setActiveTab(tab)}
               >
                 {tab.charAt(0).toUpperCase() + tab.slice(1)}
@@ -131,7 +133,7 @@ export default function AboutMe() {
                         className="w-10 h-10 object-contain transition-transform duration-300 group-hover:scale-110"
                       />
                     </div>
-                    <span className={`text-sm font-medium text-lightGreen tracking-wide ${poppins.className} group-hover:text-neonGreen transition-colors duration-300`}>
+                    <span className={`text-sm font-medium text-lightGreen tracking-wide ${spaceGrotesk.className} group-hover:text-neonGreen transition-colors duration-300`}>
                       {skill.name}
                     </span>
                   </motion.div>
@@ -147,9 +149,9 @@ export default function AboutMe() {
                   transition={{ duration: 0.5 }}
                   className="border-l-4 border-neonGreen pl-4"
                 >
-                  <h3 className={`text-xl font-semibold mb-1 text-neonGreen ${playfair.className}`}>Junior Programmer</h3>
-                  <p className={`text-lightGreen/80 mb-3 text-sm ${poppins.className}`}>Komisi Pemberantasan Korupsi | Dec 2025 - Present</p>
-                  <ul className={`list-disc list-inside text-lightGreen space-y-1 ${poppins.className}`}>
+                  <h3 className={`text-xl font-semibold mb-1 text-neonGreen ${orbitron.className}`}>Junior Programmer</h3>
+                  <p className={`text-lightGreen/80 mb-3 text-sm ${spaceGrotesk.className}`}>Komisi Pemberantasan Korupsi | Dec 2025 - Present</p>
+                  <ul className={`list-disc list-inside text-lightGreen space-y-1 ${spaceGrotesk.className}`}>
                     <li>Developing and maintaining web applications using React, Vite.js and Laravel</li>
                     <li>Working with modern tech stack including TypeScript, Vite.js, and PostgreSQL</li>
                     <li>Implementing responsive UI/UX with Tailwind CSS</li>
@@ -163,9 +165,9 @@ export default function AboutMe() {
                   transition={{ duration: 0.5, delay: 0.1 }}
                   className="border-l-4 border-neonGreen/60 pl-4"
                 >
-                  <h3 className={`text-xl font-semibold mb-1 text-neonGreen ${playfair.className}`}>Full Stack Developer</h3>
-                  <p className={`text-lightGreen/80 mb-3 text-sm ${poppins.className}`}>PT Maro Anugrah Jaya | Sep 2024 - May 2025</p>
-                  <ul className={`list-disc list-inside text-lightGreen space-y-1 ${poppins.className}`}>
+                  <h3 className={`text-xl font-semibold mb-1 text-neonGreen ${orbitron.className}`}>Full Stack Developer</h3>
+                  <p className={`text-lightGreen/80 mb-3 text-sm ${spaceGrotesk.className}`}>PT Maro Anugrah Jaya | Sep 2024 - May 2025</p>
+                  <ul className={`list-disc list-inside text-lightGreen space-y-1 ${spaceGrotesk.className}`}>
                     <li>Developing full-stack web applications using React, Next.js, and Node.js</li>
                     <li>Optimized application performance by 40% through best practices implementation</li>
                     <li>Developed RESTful APIs using Express and MySQL</li>
@@ -179,9 +181,9 @@ export default function AboutMe() {
                   transition={{ duration: 0.5, delay: 0.2 }}
                   className="border-l-4 border-neonGreen/40 pl-4"
                 >
-                  <h3 className={`text-xl font-semibold mb-1 text-neonGreen ${playfair.className}`}>Website Developer</h3>
-                  <p className={`text-lightGreen/80 mb-3 text-sm ${poppins.className}`}>PT Solusi Usaha Berdikari | Feb 2024 - Jul 2024</p>
-                  <ul className={`list-disc list-inside text-lightGreen space-y-1 ${poppins.className}`}>
+                  <h3 className={`text-xl font-semibold mb-1 text-neonGreen ${orbitron.className}`}>Website Developer</h3>
+                  <p className={`text-lightGreen/80 mb-3 text-sm ${spaceGrotesk.className}`}>PT Solusi Usaha Berdikari | Feb 2024 - Jul 2024</p>
+                  <ul className={`list-disc list-inside text-lightGreen space-y-1 ${spaceGrotesk.className}`}>
                     <li>Developed and maintained web applications focusing on frontend development</li>
                     <li>Implemented responsive design patterns reducing load time by 40%</li>
                     <li>Enhanced user engagement by 15% through React.js feature implementations</li>
@@ -200,7 +202,7 @@ export default function AboutMe() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.1 }}
-                  className={`text-xl font-semibold mb-1 text-neonGreen ${playfair.className}`}
+                  className={`text-xl font-semibold mb-1 text-neonGreen ${orbitron.className}`}
                 >
                   Bachelor of Engineering in Computer Engineering
                 </motion.h3>
@@ -208,7 +210,7 @@ export default function AboutMe() {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
-                  className={`text-lightGreen/80 mb-3 text-sm ${poppins.className}`}
+                  className={`text-lightGreen/80 mb-3 text-sm ${spaceGrotesk.className}`}
                 >
                   Multimedia Nusantara University | 2021 - 2025
                 </motion.p>
@@ -217,10 +219,10 @@ export default function AboutMe() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.3 }}
                 >
-                  <p className={`text-lightGreen mb-2 ${poppins.className}`}>
+                  <p className={`text-lightGreen mb-2 ${spaceGrotesk.className}`}>
                     <span className="font-semibold text-neonGreen">Status:</span> Graduated with honors
                   </p>
-                  <p className={`text-lightGreen ${poppins.className}`}>
+                  <p className={`text-lightGreen ${spaceGrotesk.className}`}>
                     <span className="font-semibold text-neonGreen">Specialization:</span> Full Stack Developer
                   </p>
                 </motion.div>
@@ -237,7 +239,7 @@ export default function AboutMe() {
         >
           <a
             href="https://wa.me/6285648806508"
-            className={`border-double border-4 border-neonGreen neon-border py-2 px-4 hover:bg-neonGreen hover:text-darkBg hover:border-white inline-block text-neonGreen px-6 py-3 rounded-full font-semibold transition-all duration-300 ${montserrat.className}`}
+            className={`border-double border-4 border-neonGreen neon-border py-2 px-4 hover:bg-neonGreen hover:text-darkBg hover:border-white inline-block text-neonGreen px-6 py-3 rounded-full font-semibold transition-all duration-300 ${spaceGrotesk.className}`}
           >
             Get in Touch
           </a>

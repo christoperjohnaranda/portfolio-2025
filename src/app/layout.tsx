@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbar from "./components/navbar";
 import Footer from "./components/footer";
 import AnimatedBackground from "./components/AnimatedBackground";
+import LaserCursor from "./components/LaserCursor";
+import LoadingScreen from "./components/LoadingScreen";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,6 +31,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <LoadingScreen />
+        <LaserCursor />
         <AnimatedBackground />
         <div className="relative z-10">
           <Navbar/>

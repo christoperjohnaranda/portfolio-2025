@@ -4,14 +4,16 @@ import { useState, useRef } from 'react'
 import { motion, AnimatePresence, useInView } from 'framer-motion'
 import Image from 'next/image'
 import { Github, ExternalLink, X, ChevronLeft, ChevronRight } from 'lucide-react'
-import { Playfair_Display, Poppins, Montserrat } from 'next/font/google'
+import { Space_Grotesk, Orbitron } from 'next/font/google'
 
-const playfair = Playfair_Display({ subsets: ['latin'] })
-const poppins = Poppins({ 
-  weight: ['400', '500', '600', '700'],
-  subsets: ['latin']
+const spaceGrotesk = Space_Grotesk({ 
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700']
 })
-const montserrat = Montserrat({ subsets: ['latin'] })
+const orbitron = Orbitron({ 
+  subsets: ['latin'],
+  weight: ['400', '500', '700', '900']
+})
 
 // Add interface for Project type
 interface Project {
@@ -71,8 +73,35 @@ const projects = [
 ]
 
 const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
-  const ref = useRef(null)
+  const ref = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { once: true })
+  const [rotateX, setRotateX] = useState(0)
+  const [rotateY, setRotateY] = useState(0)
+  const [isHovered, setIsHovered] = useState(false)
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!ref.current) return
+    
+    const card = ref.current
+    const rect = card.getBoundingClientRect()
+    const x = e.clientX - rect.left
+    const y = e.clientY - rect.top
+    
+    const centerX = rect.width / 2
+    const centerY = rect.height / 2
+    
+    const rotateXValue = ((y - centerY) / centerY) * -10
+    const rotateYValue = ((x - centerX) / centerX) * 10
+    
+    setRotateX(rotateXValue)
+    setRotateY(rotateYValue)
+  }
+
+  const handleMouseLeave = () => {
+    setRotateX(0)
+    setRotateY(0)
+    setIsHovered(false)
+  }
 
   return (
     <motion.div
@@ -80,35 +109,130 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.5 }}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-      className="bg-darkCard border border-neonGreen/20 rounded-lg overflow-hidden shadow-lg cursor-pointer hover:border-neonGreen hover:shadow-[0_0_20px_rgba(57,255,20,0.3)] transition-all"
+      whileTap={{ scale: 0.98 }}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={handleMouseLeave}
       onClick={() => onClick(project)}
+      className="relative cursor-pointer"
+      style={{
+        perspective: '1000px',
+      }}
     >
-      <Image
-        src={project.image}
-        alt={project.title}
-        width={600}
-        height={400}
-        className="w-full h-48 object-cover"
-      />
-      <div className="p-6">
-        <h3 className="text-xl font-semibold mb-2 text-neonGreen">{project.title}</h3>
-        <p className="text-lightGreen mb-4 line-clamp-2">{project.description}</p>
-        <div className="flex flex-wrap gap-2">
-          {project.technologies.map((tech, index) => (
-            <motion.span
-              key={index}
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: index * 0.1 }}
-              className="px-2 py-1 bg-darkAccent text-neonGreen border border-neonGreen/30 rounded-full text-xs"
-            >
-              {tech}
-            </motion.span>
-          ))}
+      <motion.div
+        className="relative bg-darkCard border border-neonGreen/20 rounded-lg overflow-hidden shadow-lg"
+        animate={{
+          rotateX: rotateX,
+          rotateY: rotateY,
+          scale: isHovered ? 1.05 : 1,
+        }}
+        transition={{
+          type: 'spring',
+          stiffness: 300,
+          damping: 20,
+        }}
+        style={{
+          transformStyle: 'preserve-3d',
+          boxShadow: isHovered 
+            ? '0 20px 40px rgba(57, 255, 20, 0.3), 0 0 30px rgba(57, 255, 20, 0.2)' 
+            : '0 10px 20px rgba(0, 0, 0, 0.3)',
+        }}
+      >
+        {/* Shimmer overlay */}
+        <motion.div
+          className="absolute inset-0 z-10 pointer-events-none"
+          style={{
+            background: 'linear-gradient(135deg, transparent 0%, rgba(57, 255, 20, 0.1) 50%, transparent 100%)',
+            backgroundSize: '200% 200%',
+          }}
+          animate={{
+            backgroundPosition: isHovered ? ['0% 0%', '100% 100%'] : '0% 0%',
+          }}
+          transition={{
+            duration: 1.5,
+            repeat: isHovered ? Infinity : 0,
+            ease: 'linear',
+          }}
+        />
+
+        {/* Neon border glow */}
+        <motion.div
+          className="absolute inset-0 rounded-lg pointer-events-none"
+          animate={{
+            borderColor: isHovered ? 'rgba(57, 255, 20, 0.8)' : 'rgba(57, 255, 20, 0.2)',
+          }}
+          style={{
+            border: '2px solid',
+            boxShadow: isHovered 
+              ? '0 0 20px rgba(57, 255, 20, 0.5), inset 0 0 20px rgba(57, 255, 20, 0.1)' 
+              : 'none',
+          }}
+          transition={{ duration: 0.3 }}
+        />
+
+        {/* Image with overlay */}
+        <div className="relative overflow-hidden">
+          <motion.div
+            animate={{
+              scale: isHovered ? 1.1 : 1,
+            }}
+            transition={{ duration: 0.4 }}
+          >
+            <Image
+              src={project.image}
+              alt={project.title}
+              width={600}
+              height={400}
+              className="w-full h-48 object-cover"
+            />
+          </motion.div>
+          
+          {/* Overlay gradient on hover */}
+          <motion.div
+            className="absolute inset-0 bg-gradient-to-t from-darkBg/80 via-transparent to-transparent"
+            animate={{
+              opacity: isHovered ? 1 : 0,
+            }}
+            transition={{ duration: 0.3 }}
+          />
         </div>
-      </div>
+
+        {/* Content */}
+        <div className="p-6 relative z-10">
+          <motion.h3 
+            className="text-xl font-semibold mb-2 text-neonGreen"
+            animate={{
+              textShadow: isHovered 
+                ? '0 0 10px rgba(57, 255, 20, 0.8), 0 0 20px rgba(57, 255, 20, 0.4)' 
+                : '0 0 0px rgba(57, 255, 20, 0)',
+            }}
+            transition={{ duration: 0.3 }}
+          >
+            {project.title}
+          </motion.h3>
+          <p className="text-lightGreen mb-4 line-clamp-2">{project.description}</p>
+          
+          {/* Tech stack */}
+          <div className="flex flex-wrap gap-2">
+            {project.technologies.map((tech, index) => (
+              <motion.span
+                key={index}
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                whileHover={{ scale: 1.1, y: -2 }}
+                transition={{ delay: index * 0.1 }}
+                className="px-2 py-1 bg-darkAccent text-neonGreen border border-neonGreen/30 rounded-full text-xs hover:border-neonGreen hover:shadow-[0_0_10px_rgba(57,255,20,0.3)]"
+              >
+                {tech}
+              </motion.span>
+            ))}
+          </div>
+        </div>
+
+        {/* Corner accents */}
+        <div className="absolute top-2 right-2 w-8 h-8 border-t-2 border-r-2 border-neonGreen/30 rounded-tr-lg" />
+        <div className="absolute bottom-2 left-2 w-8 h-8 border-b-2 border-l-2 border-neonGreen/30 rounded-bl-lg" />
+      </motion.div>
     </motion.div>
   )
 }
@@ -145,7 +269,7 @@ export default function Projects() {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className={`text-5xl font-bold text-center mb-12 text-neonGreen neon-glow ${playfair.className}`}
+          className={`text-5xl font-bold text-center mb-12 text-neonGreen neon-glow ${orbitron.className}`}
         >
           My Projects
         </motion.h1>

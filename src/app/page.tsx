@@ -10,14 +10,20 @@ import WBNJ from "../../public/assets/logowbnj.png";
 import BOWBO from "../../public/assets/logobowbo.png";
 import KMP from "../../public/assets/logokmp.png";
 import KPK from "../../public/assets/KPK.png";
-import { Playfair_Display, Poppins, Montserrat } from 'next/font/google'
+import { Space_Grotesk, Orbitron, Fira_Code } from 'next/font/google'
 
-const playfair = Playfair_Display({ subsets: ['latin'] })
-const poppins = Poppins({ 
-  weight: ['400', '500', '600', '700'],
-  subsets: ['latin']
+const spaceGrotesk = Space_Grotesk({ 
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700']
 })
-const montserrat = Montserrat({ subsets: ['latin'] })
+const orbitron = Orbitron({ 
+  subsets: ['latin'],
+  weight: ['400', '500', '700', '900']
+})
+const firaCode = Fira_Code({ 
+  subsets: ['latin'],
+  weight: ['400', '500', '600']
+})
 
 export default function Home() {
   return (
@@ -32,7 +38,7 @@ export default function Home() {
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className={`text-md md:text-xl font-bold text-neonGreenDark ${montserrat.className}`}
+          className={`text-md md:text-xl font-bold text-neonGreenDark ${spaceGrotesk.className}`}
         >
           Hello, I'm
         </motion.p>
@@ -40,7 +46,7 @@ export default function Home() {
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className={`text-2xl md:text-6xl font-bold text-neonGreen neon-glow mt-2 ${playfair.className}`}
+          className={`text-2xl md:text-6xl font-bold text-neonGreen neon-glow mt-2 ${orbitron.className} tracking-wider`}
         >
           Christoper John Aranda
         </motion.p>
@@ -48,7 +54,7 @@ export default function Home() {
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
-          className={`text-xl md:text-3xl font-bold text-mediumGreen mt-2 ${montserrat.className}`}
+          className={`text-xl md:text-3xl font-bold text-mediumGreen mt-2 ${orbitron.className}`}
         >
           A Passionate Full Stack Developer
         </motion.p>
@@ -56,7 +62,7 @@ export default function Home() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.8 }}
-          className={`text-sm md:text-md font-medium text-lightGreen text-center mt-2 ${poppins.className}`}
+          className={`text-sm md:text-md font-medium text-lightGreen text-center mt-2 ${spaceGrotesk.className}`}
         >
           I specialize in building seamless web applications using technologies like JavaScript, React, Next.js, Expo, and Node.js, MySQL, PostgreSQL, and Vite.js.<br/>
           Committed to continuous learning, I'm always eager to tackle new challenges. Let's connect and create something amazing together!
@@ -73,7 +79,7 @@ export default function Home() {
           <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className={`rounded-md border-double border-4 border-neonGreen neon-border py-2 px-4 text-center text-neonGreen hover:bg-neonGreen hover:text-darkBg hover:border-white transition-all ${montserrat.className}`}
+            className={`rounded-md border-double border-4 border-neonGreen neon-border py-2 px-4 text-center text-neonGreen hover:bg-neonGreen hover:text-darkBg hover:border-white transition-all ${orbitron.className}`}
           >
             Let's Talk
           </motion.button>
@@ -87,7 +93,7 @@ export default function Home() {
         className="flex flex-col w-full pb-4"
       >
         <motion.p 
-          className={`text-sm md:text-md text-lightGreen text-center mb-6 mt-10 ${montserrat.className}`}
+          className={`text-sm md:text-md text-lightGreen text-center mb-6 mt-10 ${spaceGrotesk.className}`}
         >
           Worked With
         </motion.p>

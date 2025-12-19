@@ -5,14 +5,16 @@ import Image from "next/image";
 import "../globals.css";
 import Link from "next/link";
 import CJ from "../../../public/assets/CJ.png"
-import { Playfair_Display, Poppins, Montserrat } from 'next/font/google'
+import { Space_Grotesk, Orbitron } from 'next/font/google'
 
-const playfair = Playfair_Display({ subsets: ['latin'] })
-const poppins = Poppins({ 
-  weight: ['400', '500', '600', '700'],
-  subsets: ['latin']
+const spaceGrotesk = Space_Grotesk({ 
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700']
 })
-const montserrat = Montserrat({ subsets: ['latin'] })
+const orbitron = Orbitron({ 
+  subsets: ['latin'],
+  weight: ['400', '500', '700', '900']
+})
 
 export default function Navbar(){
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -49,10 +51,10 @@ export default function Navbar(){
                     <div className="flex items-center justify-center">
                         <div className="flex justify-center items-center hidden sm:ml-6 sm:block">
                             <div className="flex justify-center items-center">
-                                <a href="/" className={`rounded-md px-3 py-2 text-sm font-medium text-lightGreen hover:bg-neonGreen hover:text-darkBg transition-all ${montserrat.className}`}>Dashboard</a>
-                                <a href="/aboutme" className={`rounded-md px-3 py-2 text-sm font-medium text-lightGreen hover:bg-neonGreen hover:text-darkBg transition-all ${montserrat.className}`}>About Me</a>
-                                <a href="/workexperience" className={`rounded-md px-3 py-2 text-sm font-medium text-lightGreen hover:bg-neonGreen hover:text-darkBg transition-all ${montserrat.className}`}>Work Experience</a>
-                                <a href="/project" className={`rounded-md px-3 py-2 text-sm font-medium text-lightGreen hover:bg-neonGreen hover:text-darkBg transition-all ${montserrat.className}`}>Projects</a>
+                                <a href="/" className={`navbar-link rounded-md px-3 py-2 text-sm font-medium text-lightGreen transition-all duration-300 ${orbitron.className}`}>Dashboard</a>
+                                <a href="/aboutme" className={`navbar-link rounded-md px-3 py-2 text-sm font-medium text-lightGreen transition-all duration-300 ${orbitron.className}`}>About Me</a>
+                                <a href="/workexperience" className={`navbar-link rounded-md px-3 py-2 text-sm font-medium text-lightGreen transition-all duration-300 ${orbitron.className}`}>Work Experience</a>
+                                <a href="/project" className={`navbar-link rounded-md px-3 py-2 text-sm font-medium text-lightGreen transition-all duration-300 ${orbitron.className}`}>Projects</a>
                             </div>
                         </div>
                     </div>
@@ -65,28 +67,28 @@ export default function Navbar(){
                         <a 
                             href="/" 
                             onClick={toggleMenu}
-                            className={`block rounded-md px-3 py-2 text-base font-medium text-lightGreen hover:bg-neonGreen hover:text-darkBg transition-all ${montserrat.className}`}
+                            className={`navbar-link-mobile block rounded-md px-3 py-2 text-base font-medium text-lightGreen transition-all duration-300 ${orbitron.className}`}
                         >
                             Dashboard
                         </a>
                         <a 
                             href="/aboutme" 
                             onClick={toggleMenu}
-                            className={`block rounded-md px-3 py-2 text-base font-medium text-lightGreen hover:bg-neonGreen hover:text-darkBg transition-all ${montserrat.className}`}
+                            className={`navbar-link-mobile block rounded-md px-3 py-2 text-base font-medium text-lightGreen transition-all duration-300 ${orbitron.className}`}
                         >
                             About Me
                         </a>
                         <a 
                             href="/workexperience" 
                             onClick={toggleMenu}
-                            className={`block rounded-md px-3 py-2 text-base font-medium text-lightGreen hover:bg-neonGreen hover:text-darkBg transition-all ${montserrat.className}`}
+                            className={`navbar-link-mobile block rounded-md px-3 py-2 text-base font-medium text-lightGreen transition-all duration-300 ${orbitron.className}`}
                         >
                             Work Experience
                         </a>
                         <a 
                             href="/project" 
                             onClick={toggleMenu}
-                            className={`block rounded-md px-3 py-2 text-base font-medium text-lightGreen hover:bg-neonGreen hover:text-darkBg transition-all ${montserrat.className}`}
+                            className={`navbar-link-mobile block rounded-md px-3 py-2 text-base font-medium text-lightGreen transition-all duration-300 ${orbitron.className}`}
                         >
                             Projects
                         </a>
