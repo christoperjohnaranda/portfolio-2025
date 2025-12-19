@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Orbitron, Fira_Code } from 'next/font/google'
 
@@ -19,6 +19,18 @@ export default function LoadingScreen() {
   const [progress, setProgress] = useState(0)
   const [displayText, setDisplayText] = useState('')
   const [glitchName, setGlitchName] = useState('CHRISTOPER JOHN ARANDA')
+  const [isMounted, setIsMounted] = useState(false)
+  
+  // Generate binary numbers once to avoid hydration mismatch
+  const binaryNumbers = useMemo(() => 
+    Array.from({ length: 10 }, () => Math.random() > 0.5 ? '1' : '0'),
+    []
+  )
+  
+  const animationDurations = useMemo(() =>
+    Array.from({ length: 10 }, () => 3 + Math.random() * 2),
+    []
+  )
 
   const loadingTexts = [
     'INITIALIZING SYSTEM...',
@@ -32,6 +44,9 @@ export default function LoadingScreen() {
   ]
 
   useEffect(() => {
+    // Set mounted to true on client side
+    setIsMounted(true)
+    
     let currentTextIndex = 0
     let currentCharIndex = 0
     let typingInterval: NodeJS.Timeout
@@ -224,30 +239,32 @@ export default function LoadingScreen() {
               </div>
             </motion.div>
 
-            {/* Binary Rain Effect (subtle) */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-20">
-              {[...Array(10)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  className="absolute text-neonGreen font-mono text-xs"
-                  style={{
-                    left: `${i * 10}%`,
-                    top: '-20px',
-                  }}
-                  animate={{
-                    y: ['0vh', '100vh'],
-                  }}
-                  transition={{
-                    duration: 3 + Math.random() * 2,
-                    repeat: Infinity,
-                    delay: i * 0.2,
-                    ease: 'linear',
-                  }}
-                >
-                  {Math.random() > 0.5 ? '1' : '0'}
-                </motion.div>
-              ))}
-            </div>
+            {/* Binary Rain Effect (subtle) - Only render on client side */}
+            {isMounted && (
+              <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-20">
+                {binaryNumbers.map((number, i) => (
+                  <motion.div
+                    key={i}
+                    className="absolute text-neonGreen font-mono text-xs"
+                    style={{
+                      left: `${i * 10}%`,
+                      top: '-20px',
+                    }}
+                    animate={{
+                      y: ['0vh', '100vh'],
+                    }}
+                    transition={{
+                      duration: animationDurations[i],
+                      repeat: Infinity,
+                      delay: i * 0.2,
+                      ease: 'linear',
+                    }}
+                  >
+                    {number}
+                  </motion.div>
+                ))}
+              </div>
+            )}
           </div>
         </motion.div>
       )}

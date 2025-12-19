@@ -1,8 +1,11 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useState, useEffect, useMemo } from 'react'
 
 export default function AnimatedBackground() {
+  const [isMounted, setIsMounted] = useState(false)
+
   // Floating orbs/shapes
   const orbs = [
     { size: 400, top: '5%', left: '-5%', duration: 15, delay: 0 },
@@ -18,6 +21,21 @@ export default function AnimatedBackground() {
     { width: 1, height: '100%', left: '45%', duration: 10, delay: 2 },
     { width: 2, height: '100%', right: '30%', duration: 9, delay: 1 },
   ]
+
+  // Generate particles data once to avoid hydration mismatch
+  const particlesData = useMemo(() => 
+    Array.from({ length: 8 }, () => ({
+      left: Math.random() * 100,
+      top: Math.random() * 100,
+      xMovement: Math.random() * 50 - 25,
+      duration: 5 + Math.random() * 3
+    })),
+    []
+  )
+
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
 
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none" style={{ zIndex: 0 }}>
@@ -107,22 +125,22 @@ export default function AnimatedBackground() {
         }}
       />
 
-      {/* Floating particles */}
-      {[...Array(8)].map((_, i) => (
+      {/* Floating particles - Only render on client side */}
+      {isMounted && particlesData.map((particle, i) => (
         <motion.div
           key={`particle-${i}`}
           className="absolute w-1 h-1 bg-neonGreen rounded-full"
           style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
+            left: `${particle.left}%`,
+            top: `${particle.top}%`,
           }}
           animate={{
             y: [0, -100, 0],
-            x: [0, Math.random() * 50 - 25, 0],
+            x: [0, particle.xMovement, 0],
             opacity: [0, 1, 0],
           }}
           transition={{
-            duration: 5 + Math.random() * 3,
+            duration: particle.duration,
             delay: i * 0.5,
             repeat: Infinity,
             ease: "easeInOut"
