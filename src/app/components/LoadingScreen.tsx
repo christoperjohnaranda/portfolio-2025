@@ -33,17 +33,6 @@ export default function LoadingScreen() {
     []
   )
 
-  const loadingTexts = [
-    'INITIALIZING SYSTEM...',
-    'LOADING PORTFOLIO.EXE',
-    'CONNECTING TO SERVER...',
-    'LOADING ASSETS...',
-    'COMPILING CODE...',
-    'RENDERING INTERFACE...',
-    'FINALIZING...',
-    'ACCESS GRANTED ✓'
-  ]
-
   useEffect(() => {
     // Set mounted to true on client side
     setIsMounted(true)
@@ -60,6 +49,17 @@ export default function LoadingScreen() {
       setIsLoading(false)
       return
     }
+    
+    const loadingTexts = [
+      'INITIALIZING SYSTEM...',
+      'LOADING PORTFOLIO.EXE',
+      'CONNECTING TO SERVER...',
+      'LOADING ASSETS...',
+      'COMPILING CODE...',
+      'RENDERING INTERFACE...',
+      'FINALIZING...',
+      'ACCESS GRANTED ✓'
+    ]
     
     let currentTextIndex = 0
     let currentCharIndex = 0

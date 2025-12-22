@@ -4,12 +4,8 @@ import { useState, useRef } from 'react'
 import { motion, AnimatePresence, useInView } from 'framer-motion'
 import Link from 'next/link'
 import { Github, X, ChevronLeft, ChevronRight } from 'lucide-react'
-import { Space_Grotesk, Orbitron } from 'next/font/google'
+import { Orbitron } from 'next/font/google'
 
-const spaceGrotesk = Space_Grotesk({ 
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700']
-})
 const orbitron = Orbitron({ 
   subsets: ['latin'],
   weight: ['400', '500', '700', '900']

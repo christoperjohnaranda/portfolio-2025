@@ -1,6 +1,5 @@
 'use client'
 
-import { useTranslation } from 'next-i18next';
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from 'framer-motion';
@@ -10,7 +9,7 @@ import WBNJ from "../../public/assets/logowbnj.png";
 import BOWBO from "../../public/assets/logobowbo.png";
 import KMP from "../../public/assets/logokmp.png";
 import KPK from "../../public/assets/KPK.png";
-import { Space_Grotesk, Orbitron, Fira_Code } from 'next/font/google'
+import { Space_Grotesk, Orbitron } from 'next/font/google'
 
 const spaceGrotesk = Space_Grotesk({ 
   subsets: ['latin'],
@@ -19,10 +18,6 @@ const spaceGrotesk = Space_Grotesk({
 const orbitron = Orbitron({ 
   subsets: ['latin'],
   weight: ['400', '500', '700', '900']
-})
-const firaCode = Fira_Code({ 
-  subsets: ['latin'],
-  weight: ['400', '500', '600']
 })
 
 export default function Home() {
@@ -40,7 +35,7 @@ export default function Home() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className={`text-md md:text-xl font-bold text-neonGreenDark ${spaceGrotesk.className}`}
         >
-          Hello, I'm
+          Hello, I&apos;m
         </motion.p>
         <motion.p 
           initial={{ opacity: 0, scale: 0.5 }}
@@ -65,7 +60,7 @@ export default function Home() {
           className={`text-sm md:text-md font-medium text-lightGreen text-center mt-2 max-w-2xl ${spaceGrotesk.className}`}
         >
           Passionate about crafting elegant solutions through code.<br/>
-          I believe great technology should solve real problems and make people's lives easier.
+          I believe great technology should solve real problems and make people&apos;s lives easier.
         </motion.p>
       </motion.div>
 
@@ -81,7 +76,7 @@ export default function Home() {
             whileTap={{ scale: 0.95 }}
             className={`rounded-md border-double border-4 border-neonGreen neon-border py-2 px-4 text-center text-neonGreen hover:bg-neonGreen hover:text-darkBg hover:border-white transition-all ${orbitron.className}`}
           >
-            Let's Talk
+            Let&apos;s Talk
           </motion.button>
         </Link>
       </motion.div>

@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
-import { MapPin, Briefcase, Calendar, Award } from 'lucide-react'
+import { Briefcase, Calendar, Award } from 'lucide-react'
 import { Space_Grotesk, Orbitron } from 'next/font/google'
 
 const spaceGrotesk = Space_Grotesk({ 

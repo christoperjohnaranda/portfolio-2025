@@ -1,16 +1,9 @@
 'use client'
 
 import React, { useState } from "react";
-import Image from "next/image";
 import "../globals.css";
-import Link from "next/link";
-import CJ from "../../../public/assets/CJ.png"
-import { Space_Grotesk, Orbitron } from 'next/font/google'
+import { Orbitron } from 'next/font/google'
 
-const spaceGrotesk = Space_Grotesk({ 
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '600', '700']
-})
 const orbitron = Orbitron({ 
   subsets: ['latin'],
   weight: ['400', '500', '700', '900']

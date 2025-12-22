@@ -14,13 +14,13 @@ export function usePageAnimation() {
     shouldAnimate: isPageReady,
     
     // Helper to get initial state
-    getInitial: (initialState: any) => initialState,
+    getInitial: (initialState: Record<string, unknown>) => initialState,
     
     // Helper to get animate state - only animate when page is ready
-    getAnimate: (animateState: any) => isPageReady ? animateState : {},
+    getAnimate: (animateState: Record<string, unknown>) => isPageReady ? animateState : {},
     
     // Helper for conditional animation
-    animate: (animateState: any) => isPageReady ? animateState : false,
+    animate: (animateState: Record<string, unknown>) => isPageReady ? animateState : false,
   }
 }
 

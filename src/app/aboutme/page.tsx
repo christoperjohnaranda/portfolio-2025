@@ -86,7 +86,7 @@ export default function AboutMe() {
         >
           <h2 className={`text-2xl font-semibold mb-4 text-neonGreen ${orbitron.className}`}>About Me</h2>
           <p className={`text-lightGreen leading-relaxed ${spaceGrotesk.className}`}>
-            My journey as a Full Stack Developer has been driven by curiosity and a genuine love for problem-solving through code. I'm passionate about creating web applications that not only work well technically, but also make a real difference in people's daily lives. Whether it's building e-commerce platforms, mobile applications, or complex systems, I approach each project with the mindset that great technology should be both powerful and human-centered. I believe in writing clean, maintainable code and continuously learning to stay ahead in this ever-evolving field.
+            My journey as a Full Stack Developer has been driven by curiosity and a genuine love for problem-solving through code. I&apos;m passionate about creating web applications that not only work well technically, but also make a real difference in people&apos;s daily lives. Whether it&apos;s building e-commerce platforms, mobile applications, or complex systems, I approach each project with the mindset that great technology should be both powerful and human-centered. I believe in writing clean, maintainable code and continuously learning to stay ahead in this ever-evolving field.
           </p>
         </motion.div>
 
