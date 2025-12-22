@@ -62,10 +62,10 @@ export default function Home() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.8 }}
-          className={`text-sm md:text-md font-medium text-lightGreen text-center mt-2 ${spaceGrotesk.className}`}
+          className={`text-sm md:text-md font-medium text-lightGreen text-center mt-2 max-w-2xl ${spaceGrotesk.className}`}
         >
-          I specialize in building seamless web applications using technologies like JavaScript, React, Next.js, Expo, and Node.js, MySQL, PostgreSQL, and Vite.js.<br/>
-          Committed to continuous learning, I'm always eager to tackle new challenges. Let's connect and create something amazing together!
+          Passionate about crafting elegant solutions through code.<br/>
+          I believe great technology should solve real problems and make people's lives easier.
         </motion.p>
       </motion.div>
 

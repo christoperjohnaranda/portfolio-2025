@@ -21,8 +21,13 @@ const workExperiences = [
     position: 'Junior Programmer',
     period: 'Dec 2025 - Present',
     description: 'Developing and maintaining web applications using React and Node.js',
-    achievements: [],
-    skills: ['React', 'HTML', 'CSS', 'Tailwind CSS', 'JavaScript', 'TypeScript', 'Node.js', 'PostgreSQL', 'Vite.js'],
+    achievements: [
+      'Developed a nationwide corruption trial recording application used across Indonesia',
+      'Built full-stack application using modern tech stack: React, Vite, TypeScript, and Tailwind CSS for frontend',
+      'Implemented robust backend system with Laravel and PostgreSQL for handling critical legal data',
+      'Collaborated with legal teams to ensure the application meets judicial recording standards and compliance requirements'
+    ],
+    skills: ['React', 'Vite.js', 'TypeScript', 'Tailwind CSS', 'Laravel', 'PostgreSQL', 'HTML', 'CSS', 'JavaScript'],
   },
   {
     id: 2,

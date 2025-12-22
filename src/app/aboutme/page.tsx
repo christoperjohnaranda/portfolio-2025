@@ -83,8 +83,8 @@ export default function AboutMe() {
           className="bg-darkCard rounded-lg shadow-xl border border-neonGreen/20 p-6 mb-8"
         >
           <h2 className={`text-2xl font-semibold mb-4 text-neonGreen ${orbitron.className}`}>About Me</h2>
-          <p className={`text-lightGreen ${spaceGrotesk.className}`}>
-            As a Full Stack Developer, I specialize in building end-to-end web solutions with a passion for clean code and innovative solutions. My expertise spans both frontend and backend development, allowing me to create seamless, scalable applications. I enjoy tackling complex problems and continuously learning new technologies to stay at the forefront of web development. With a strong foundation in modern web frameworks and best practices, I strive to deliver high-quality solutions that make a real impact.
+          <p className={`text-lightGreen leading-relaxed ${spaceGrotesk.className}`}>
+            My journey as a Full Stack Developer has been driven by curiosity and a genuine love for problem-solving through code. I'm passionate about creating web applications that not only work well technically, but also make a real difference in people's daily lives. Whether it's building e-commerce platforms, mobile applications, or complex systems, I approach each project with the mindset that great technology should be both powerful and human-centered. I believe in writing clean, maintainable code and continuously learning to stay ahead in this ever-evolving field.
           </p>
         </motion.div>
 

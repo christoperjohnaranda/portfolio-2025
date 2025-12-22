@@ -2,8 +2,8 @@
 
 import { useState, useRef } from 'react'
 import { motion, AnimatePresence, useInView } from 'framer-motion'
-import Image from 'next/image'
-import { Github, ExternalLink, X, ChevronLeft, ChevronRight } from 'lucide-react'
+import Link from 'next/link'
+import { Github, X, ChevronLeft, ChevronRight } from 'lucide-react'
 import { Space_Grotesk, Orbitron } from 'next/font/google'
 
 const spaceGrotesk = Space_Grotesk({ 
@@ -23,7 +23,7 @@ interface Project {
   image: string
   technologies: string[]
   githubLink: string
-  liveLink: string
+  gradient: string
 }
 
 // Add type for ProjectCard props
@@ -39,35 +39,44 @@ const projects = [
     description: 'A full-stack website for calculating water usage billing and secure payment integration.',
     image: '/placeholder.svg?height=400&width=600',
     technologies: ['PHP', 'MySQL', 'JavaScript', 'HTML', 'CSS', 'Bootstrap'],
-    githubLink: 'https://github.com/yourusername/ecommerce-platform',
-    liveLink: 'https://ecommerce-platform-demo.com'
+    githubLink: '/404',
+    gradient: 'from-blue-500 via-cyan-500 to-teal-500'
   },
   {
     id: 2,
     title: 'Restaurant Landing Page',
     description: 'A landing page for a restaurant with a menu and orders system.',
     image: '/placeholder.svg?height=400&width=600',
-    technologies: ['Next.js', 'Tailwind CSS', 'TypeScript', 'React', 'Node.js', 'Express.js', 'MYSQL'],
-    githubLink: 'https://github.com/yourusername/restaurant-landing-page',
-    liveLink: 'https://restaurant-landing-page-demo.com'
+    technologies: ['Next.js', 'Tailwind CSS', 'TypeScript', 'Framer Motion'],
+    githubLink: '/404',
+    gradient: 'from-orange-500 via-red-500 to-pink-500'
   },
   {
     id: 3,
     title: 'Company Profile Website',
     description: 'A website for a company to showcase their services and products.',
     image: '/placeholder.svg?height=400&width=600',
-    technologies: ['Next.js', 'Bootstrap', 'CSS', 'HTML'],
-    githubLink: 'https://github.com/yourusername/company-profile-website',
-    liveLink: 'https://company-profile-website-demo.com'
+    technologies: ['Next.js', 'TypeScript', 'Bootstrap', 'CSS', 'HTML'],
+    githubLink: '/404',
+    gradient: 'from-purple-500 via-violet-500 to-indigo-500'
   },
   {
     id: 4,
-    title: 'Point of Sale Application',
-    description: 'A cross-platform mobile app for tracking workouts, nutrition, and personal fitness goals.',
+    title: 'Corruption Trial Recording Application',
+    description: 'A nationwide web application for recording and managing corruption trial proceedings across Indonesia, developed for the Corruption Eradication Commission (KPK).',
     image: '/placeholder.svg?height=400&width=600',
-    technologies: ['Expo', 'CSS', 'MySQL'],
-    githubLink: 'https://github.com/yourusername/fitness-tracker-app',
-    liveLink: 'https://fitness-tracker-demo.com'
+    technologies: ['React', 'Vite.js', 'TypeScript', 'Tailwind CSS', 'Laravel', 'PostgreSQL'],
+    githubLink: '/404',
+    gradient: 'from-emerald-500 via-green-500 to-lime-500'
+  },
+  {
+    id: 5,
+    title: 'Franchise POS System',
+    description: 'A comprehensive Point of Sale (POS) mobile application designed for franchise cashiers, featuring inventory management, sales tracking, and real-time reporting capabilities.',
+    image: '/placeholder.svg?height=400&width=600',
+    technologies: ['React Native', 'Expo', 'TypeScript', 'Kotlin', 'Node.js', 'Express', 'Prisma', 'MySQL'],
+    githubLink: '/404',
+    gradient: 'from-yellow-500 via-amber-500 to-orange-500'
   },
   
 ]
@@ -114,13 +123,13 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={handleMouseLeave}
       onClick={() => onClick(project)}
-      className="relative cursor-pointer"
+      className="relative cursor-pointer h-full"
       style={{
         perspective: '1000px',
       }}
     >
       <motion.div
-        className="relative bg-darkCard border border-neonGreen/20 rounded-lg overflow-hidden shadow-lg"
+        className="relative bg-darkCard border border-neonGreen/20 rounded-lg overflow-hidden shadow-lg h-full flex flex-col min-h-[480px]"
         animate={{
           rotateX: rotateX,
           rotateY: rotateY,
@@ -170,37 +179,102 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
           transition={{ duration: 0.3 }}
         />
 
-        {/* Image with overlay */}
-        <div className="relative overflow-hidden">
+        {/* Gradient Visual Header */}
+        <div className="relative overflow-hidden flex-shrink-0 h-48">
+          {/* Animated Gradient Background */}
           <motion.div
+            className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-80`}
             animate={{
               scale: isHovered ? 1.1 : 1,
             }}
             transition={{ duration: 0.4 }}
-          >
-            <Image
-              src={project.image}
-              alt={project.title}
-              width={600}
-              height={400}
-              className="w-full h-48 object-cover"
-            />
-          </motion.div>
+          />
           
-          {/* Overlay gradient on hover */}
+          {/* Animated Grid Pattern */}
           <motion.div
-            className="absolute inset-0 bg-gradient-to-t from-darkBg/80 via-transparent to-transparent"
+            className="absolute inset-0 opacity-20"
+            style={{
+              backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
+              backgroundSize: '40px 40px',
+            }}
             animate={{
-              opacity: isHovered ? 1 : 0,
+              backgroundPosition: isHovered ? ['0px 0px', '40px 40px'] : '0px 0px',
+            }}
+            transition={{
+              duration: 20,
+              repeat: Infinity,
+              ease: 'linear',
+            }}
+          />
+          
+          {/* Large Project Number */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <motion.div
+              className={`text-white font-black ${orbitron.className}`}
+              animate={{
+                scale: isHovered ? 1.2 : 1,
+                y: isHovered ? -5 : 0,
+              }}
+              transition={{ duration: 0.3 }}
+              style={{
+                fontSize: '120px',
+                lineHeight: '1',
+                opacity: 0.3,
+                textShadow: '0 10px 30px rgba(0,0,0,0.5)',
+              }}
+            >
+              {String(project.id).padStart(2, '0')}
+            </motion.div>
+          </div>
+          
+          {/* Floating Geometric Shapes */}
+          <motion.div
+            className="absolute top-4 right-4 w-16 h-16 border-2 border-white/20 rounded-lg"
+            animate={{
+              rotate: isHovered ? 45 : 0,
+              scale: isHovered ? 1.1 : 1,
+            }}
+            transition={{ duration: 0.5 }}
+          />
+          <motion.div
+            className="absolute bottom-4 left-4 w-12 h-12 border-2 border-white/20"
+            animate={{
+              rotate: isHovered ? -45 : 0,
+              scale: isHovered ? 1.1 : 1,
+            }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          />
+          
+          {/* Overlay gradient */}
+          <motion.div
+            className="absolute inset-0 bg-gradient-to-t from-darkBg via-darkBg/50 to-transparent"
+            animate={{
+              opacity: isHovered ? 0.8 : 0.4,
             }}
             transition={{ duration: 0.3 }}
+          />
+          
+          {/* Animated Light Beam */}
+          <motion.div
+            className="absolute inset-0"
+            style={{
+              background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent)',
+            }}
+            animate={{
+              x: isHovered ? ['-100%', '200%'] : '-100%',
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: isHovered ? Infinity : 0,
+              ease: 'linear',
+            }}
           />
         </div>
 
         {/* Content */}
-        <div className="p-6 relative z-10">
+        <div className="p-6 relative z-10 flex flex-col flex-grow">
           <motion.h3 
-            className="text-xl font-semibold mb-2 text-neonGreen"
+            className="text-xl font-semibold mb-2 text-neonGreen min-h-[3.5rem] line-clamp-2"
             animate={{
               textShadow: isHovered 
                 ? '0 0 10px rgba(57, 255, 20, 0.8), 0 0 20px rgba(57, 255, 20, 0.4)' 
@@ -210,10 +284,10 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
           >
             {project.title}
           </motion.h3>
-          <p className="text-lightGreen mb-4 line-clamp-2">{project.description}</p>
+          <p className="text-lightGreen mb-4 line-clamp-3 flex-grow">{project.description}</p>
           
           {/* Tech stack */}
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 mt-auto">
             {project.technologies.map((tech, index) => (
               <motion.span
                 key={index}
@@ -286,7 +360,7 @@ export default function Projects() {
               }
             }
           }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch"
         >
           {projects.map((project) => (
             <ProjectCard key={project.id} project={project} onClick={handleProjectClick} />
@@ -328,14 +402,60 @@ export default function Projects() {
                   initial={{ scale: 0.8, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ delay: 0.2 }}
+                  className="relative w-full h-64 rounded-lg mb-6 overflow-hidden"
                 >
-                  <Image
-                    src={selectedProject.image}
-                    alt={selectedProject.title}
-                    width={600}
-                    height={400}
-                    className="w-full h-64 object-cover rounded-lg mb-6"
+                  {/* Gradient Background */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${selectedProject.gradient}`} />
+                  
+                  {/* Grid Pattern */}
+                  <motion.div
+                    className="absolute inset-0 opacity-20"
+                    style={{
+                      backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 2px, transparent 2px), linear-gradient(90deg, rgba(255,255,255,0.1) 2px, transparent 2px)',
+                      backgroundSize: '50px 50px',
+                    }}
+                    animate={{
+                      backgroundPosition: ['0px 0px', '50px 50px'],
+                    }}
+                    transition={{
+                      duration: 30,
+                      repeat: Infinity,
+                      ease: 'linear',
+                    }}
                   />
+                  
+                  {/* Large Project Number */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <motion.div
+                      className={`text-white font-black ${orbitron.className}`}
+                      initial={{ scale: 0, rotate: -180 }}
+                      animate={{ scale: 1, rotate: 0 }}
+                      transition={{ delay: 0.3, type: 'spring', stiffness: 200 }}
+                      style={{
+                        fontSize: '200px',
+                        lineHeight: '1',
+                        opacity: 0.3,
+                        textShadow: '0 20px 40px rgba(0,0,0,0.5)',
+                      }}
+                    >
+                      {String(selectedProject.id).padStart(2, '0')}
+                    </motion.div>
+                  </div>
+                  
+                  {/* Floating Shapes */}
+                  <motion.div
+                    className="absolute top-8 right-8 w-24 h-24 border-4 border-white/20 rounded-xl"
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+                  />
+                  <motion.div
+                    className="absolute bottom-8 left-8 w-20 h-20 border-4 border-white/20"
+                    animate={{ rotate: -360 }}
+                    transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
+                  />
+                  
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-darkCard/60 via-transparent to-transparent" />
                 </motion.div>
                 <motion.p 
                   initial={{ y: 20, opacity: 0 }}
@@ -370,26 +490,14 @@ export default function Projects() {
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.6 }}
-                  className="flex space-x-4"
                 >
-                  <a
+                  <Link
                     href={selectedProject.githubLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center px-4 py-2 bg-darkAccent hover:bg-neonGreen hover:text-darkBg text-neonGreen border border-neonGreen/30 rounded-lg transition-all"
+                    className="inline-flex items-center justify-center px-6 py-3 bg-darkAccent hover:bg-neonGreen hover:text-darkBg text-neonGreen border border-neonGreen/30 rounded-lg transition-all"
                   >
                     <Github className="mr-2" size={20} />
                     View on GitHub
-                  </a>
-                  <a
-                    href={selectedProject.liveLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center px-4 py-2 bg-darkAccent hover:bg-neonGreen hover:text-darkBg text-neonGreen border border-neonGreen/30 rounded-lg transition-all"
-                  >
-                    <ExternalLink className="mr-2" size={20} />
-                    Live Demo
-                  </a>
+                  </Link>
                 </motion.div>
                 <div className="absolute top-1/2 left-4 transform -translate-y-1/2">
                   <button
