@@ -72,6 +72,9 @@ export default function AboutMe() {
               height={150}
               className="rounded-full mx-auto mb-4 border-4 border-neonGreen neon-border grayscale hover:grayscale-0 transition-all duration-500 object-cover cursor-pointer"
               style={{ width: '150px', height: '150px' }}
+              priority
+              quality={85}
+              placeholder="blur"
             />
           </motion.div>
           <h1 className={`text-4xl font-bold text-neonGreen neon-glow mb-2 ${orbitron.className}`}>CHRISTOPER JOHN ARANDA</h1>
@@ -133,6 +136,8 @@ export default function AboutMe() {
                         width={40}
                         height={40}
                         className="w-10 h-10 object-contain transition-transform duration-300 group-hover:scale-110"
+                        loading="lazy"
+                        quality={75}
                       />
                     </div>
                     <span className={`text-sm font-medium text-lightGreen tracking-wide ${spaceGrotesk.className} group-hover:text-neonGreen transition-colors duration-300`}>

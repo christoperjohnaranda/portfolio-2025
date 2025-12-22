@@ -5,37 +5,51 @@ import { useState, useEffect, useMemo } from 'react'
 
 export default function AnimatedBackground() {
   const [isMounted, setIsMounted] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
 
-  // Floating orbs/shapes
-  const orbs = [
-    { size: 400, top: '5%', left: '-5%', duration: 15, delay: 0 },
-    { size: 350, top: '40%', right: '-10%', duration: 18, delay: 2 },
-    { size: 300, bottom: '10%', left: '10%', duration: 20, delay: 4 },
-    { size: 250, top: '60%', right: '15%', duration: 16, delay: 1 },
-    { size: 320, top: '20%', left: '50%', duration: 19, delay: 3 },
-  ]
+  useEffect(() => {
+    setIsMounted(true)
+    // Detect mobile
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
-  // Moving lines
+  // Floating orbs/shapes - Reduce on mobile
+  const orbs = useMemo(() => 
+    isMobile 
+      ? [
+          { size: 300, top: '10%', left: '0%', duration: 20, delay: 0 },
+          { size: 250, bottom: '20%', right: '0%', duration: 25, delay: 2 },
+        ]
+      : [
+          { size: 400, top: '5%', left: '-5%', duration: 15, delay: 0 },
+          { size: 350, top: '40%', right: '-10%', duration: 18, delay: 2 },
+          { size: 300, bottom: '10%', left: '10%', duration: 20, delay: 4 },
+          { size: 250, top: '60%', right: '15%', duration: 16, delay: 1 },
+          { size: 320, top: '20%', left: '50%', duration: 19, delay: 3 },
+        ]
+  , [isMobile])
+
+  // Moving lines - Desktop only
   const lines = [
     { width: 2, height: '100%', left: '20%', duration: 8, delay: 0 },
     { width: 1, height: '100%', left: '45%', duration: 10, delay: 2 },
     { width: 2, height: '100%', right: '30%', duration: 9, delay: 1 },
   ]
 
-  // Generate particles data once to avoid hydration mismatch
+  // Generate particles data once - Skip on mobile
   const particlesData = useMemo(() => 
-    Array.from({ length: 8 }, () => ({
+    isMobile ? [] : Array.from({ length: 8 }, () => ({
       left: Math.random() * 100,
       top: Math.random() * 100,
       xMovement: Math.random() * 50 - 25,
       duration: 5 + Math.random() * 3
-    })),
-    []
-  )
-
-  useEffect(() => {
-    setIsMounted(true)
-  }, [])
+    }))
+  , [isMobile])
 
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none" style={{ zIndex: 0 }}>
@@ -60,9 +74,14 @@ export default function AnimatedBackground() {
             right: orb.right,
             bottom: orb.bottom,
             background: `radial-gradient(circle, rgba(57, 255, 20, 0.25) 0%, rgba(57, 255, 20, 0.1) 40%, transparent 70%)`,
-            filter: 'blur(60px)',
+            filter: isMobile ? 'blur(30px)' : 'blur(60px)',
           }}
-          animate={{
+          animate={isMobile ? {
+            x: [0, 50, 0],
+            y: [0, -40, 0],
+            scale: [1, 1.15, 1],
+            opacity: [0.4, 0.6, 0.4],
+          } : {
             x: [0, 100, -50, 0],
             y: [0, -80, 60, 0],
             scale: [1, 1.3, 0.8, 1],
@@ -72,13 +91,13 @@ export default function AnimatedBackground() {
             duration: orb.duration,
             delay: orb.delay,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: isMobile ? "linear" : "easeInOut"
           }}
         />
       ))}
 
-      {/* Animated vertical lines */}
-      {lines.map((line, index) => (
+      {/* Animated vertical lines - Desktop only */}
+      {!isMobile && lines.map((line, index) => (
         <motion.div
           key={`line-${index}`}
           className="absolute"
@@ -104,29 +123,31 @@ export default function AnimatedBackground() {
         />
       ))}
 
-      {/* Animated grid overlay */}
-      <motion.div 
-        className="absolute inset-0"
-        style={{
-          backgroundImage: `
-            linear-gradient(rgba(57, 255, 20, 0.08) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(57, 255, 20, 0.08) 1px, transparent 1px)
-          `,
-          backgroundSize: '60px 60px',
-          opacity: 0.3,
-        }}
-        animate={{
-          opacity: [0.2, 0.4, 0.2],
-        }}
-        transition={{
-          duration: 5,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      />
+      {/* Animated grid overlay - Desktop only */}
+      {!isMobile && (
+        <motion.div 
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(57, 255, 20, 0.08) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(57, 255, 20, 0.08) 1px, transparent 1px)
+            `,
+            backgroundSize: '60px 60px',
+            opacity: 0.3,
+          }}
+          animate={{
+            opacity: [0.2, 0.4, 0.2],
+          }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+      )}
 
-      {/* Floating particles - Only render on client side */}
-      {isMounted && particlesData.map((particle, i) => (
+      {/* Floating particles - Desktop only */}
+      {!isMobile && isMounted && particlesData.map((particle, i) => (
         <motion.div
           key={`particle-${i}`}
           className="absolute w-1 h-1 bg-neonGreen rounded-full"
@@ -148,23 +169,25 @@ export default function AnimatedBackground() {
         />
       ))}
 
-      {/* Scanline effect */}
-      <motion.div
-        className="absolute w-full h-[2px] bg-gradient-to-r from-transparent via-neonGreen to-transparent"
-        style={{
-          left: 0,
-          filter: 'blur(2px)',
-          opacity: 0.3,
-        }}
-        animate={{
-          top: ['0%', '100%'],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "linear"
-        }}
-      />
+      {/* Scanline effect - Desktop only */}
+      {!isMobile && (
+        <motion.div
+          className="absolute w-full h-[2px] bg-gradient-to-r from-transparent via-neonGreen to-transparent"
+          style={{
+            left: 0,
+            filter: 'blur(2px)',
+            opacity: 0.3,
+          }}
+          animate={{
+            top: ['0%', '100%'],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        />
+      )}
 
       {/* Vignette effect */}
       <div 

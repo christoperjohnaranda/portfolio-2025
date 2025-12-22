@@ -1,13 +1,27 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export default function LaserCursor() {
+  const [isMobile, setIsMobile] = useState(false)
   const cursorRef = useRef<HTMLDivElement>(null)
   const trailsRef = useRef<HTMLDivElement>(null)
   const trails = useRef<Array<{ x: number; y: number; timestamp: number }>>([])
 
   useEffect(() => {
+    // Detect mobile and disable cursor
+    const checkMobile = () => {
+      const mobile = window.innerWidth < 768 || 'ontouchstart' in window
+      setIsMobile(mobile)
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    
+    // Don't setup cursor on mobile
+    if (isMobile) {
+      return () => window.removeEventListener('resize', checkMobile)
+    }
     const handleMouseMove = (e: MouseEvent) => {
       // Update cursor position directly without state
       if (cursorRef.current) {
@@ -71,9 +85,13 @@ export default function LaserCursor() {
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove)
+      window.removeEventListener('resize', checkMobile)
       clearInterval(cleanupInterval)
     }
-  }, [])
+  }, [isMobile])
+
+  // Don't render on mobile
+  if (isMobile) return null
 
   return (
     <>

@@ -113,6 +113,9 @@ export default function Home() {
                 className="h-16 sm:h-20 md:h-28 lg:h-32 w-auto grayscale hover:grayscale-0 hover:drop-shadow-[0_0_15px_rgba(57,255,20,0.5)] transition-[filter,box-shadow] duration-150" 
                 src={logo} 
                 alt={`web${index + 1}`}
+                loading="lazy"
+                quality={75}
+                placeholder="blur"
               />
             </motion.div>
           ))}
