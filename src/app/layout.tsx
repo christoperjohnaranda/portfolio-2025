@@ -6,6 +6,7 @@ import Footer from "./components/footer";
 import AnimatedBackground from "./components/AnimatedBackground";
 import LaserCursor from "./components/LaserCursor";
 import LoadingScreen from "./components/LoadingScreen";
+import ClientLayout from "./components/ClientLayout";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -34,11 +35,13 @@ export default function RootLayout({
         <LoadingScreen />
         <LaserCursor />
         <AnimatedBackground />
-        <div className="relative z-10">
-          <Navbar/>
-          {children}
-          <Footer/>
-        </div>
+        <ClientLayout>
+          <div className="relative z-10">
+            <Navbar/>
+            {children}
+            <Footer/>
+          </div>
+        </ClientLayout>
       </body>
     </html>
   );

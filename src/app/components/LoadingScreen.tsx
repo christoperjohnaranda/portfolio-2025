@@ -16,6 +16,7 @@ const firaCode = Fira_Code({
 
 export default function LoadingScreen() {
   const [isLoading, setIsLoading] = useState(true)
+  const [showFullLoading, setShowFullLoading] = useState(false)
   const [progress, setProgress] = useState(0)
   const [displayText, setDisplayText] = useState('')
   const [glitchName, setGlitchName] = useState('CHRISTOPER JOHN ARANDA')
@@ -46,6 +47,19 @@ export default function LoadingScreen() {
   useEffect(() => {
     // Set mounted to true on client side
     setIsMounted(true)
+    
+    // Check if this is the first visit in this session
+    const hasVisited = sessionStorage.getItem('hasVisitedPortfolio')
+    
+    if (!hasVisited) {
+      // First visit - show full loading screen
+      setShowFullLoading(true)
+      sessionStorage.setItem('hasVisitedPortfolio', 'true')
+    } else {
+      // Already visited - skip loading screen
+      setIsLoading(false)
+      return
+    }
     
     let currentTextIndex = 0
     let currentCharIndex = 0
@@ -114,7 +128,7 @@ export default function LoadingScreen() {
 
   return (
     <AnimatePresence>
-      {isLoading && (
+      {isLoading && showFullLoading && (
         <motion.div
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
