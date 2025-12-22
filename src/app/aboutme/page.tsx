@@ -34,6 +34,8 @@ const skills = [
   { name: 'Python', logo: '/assets/python.png' },
   { name: 'C', logo: '/assets/c.png' },
   { name: 'Java', logo: '/assets/java.png' },
+  { name: 'Prisma', logo: '/assets/prisma.png' },
+  { name: 'Laravel', logo: '/assets/laravel.png' },
 ]
 
 export default function AboutMe() {
