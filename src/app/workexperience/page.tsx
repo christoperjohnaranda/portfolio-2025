@@ -19,7 +19,7 @@ const workExperiences = [
     id: 1,
     company: 'Komisi Pemberantasan Korupsi',
     position: 'Junior Programmer',
-    period: 'Dec 2025 - Present',
+    period: 'Nov 2025 - Present',
     duration: '1 month',
     description: 'Developing and maintaining web applications using React and Node.js',
     achievements: [
