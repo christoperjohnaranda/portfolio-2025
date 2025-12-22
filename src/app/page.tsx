@@ -98,11 +98,19 @@ export default function Home() {
               key={index}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 1.4 + index * 0.1 }}
-              whileHover={{ scale: 1.1 }}
+              transition={{ 
+                duration: 0.5, 
+                delay: 1.4 + index * 0.1,
+                scale: { duration: 0.15, ease: "easeOut" }
+              }}
+              whileHover={{ 
+                scale: 1.1,
+                transition: { duration: 0.15, ease: "easeOut" }
+              }}
+              whileTap={{ scale: 0.95 }}
             >
               <Image 
-                className="h-24 md:h-32 w-auto grayscale hover:grayscale-0 hover:drop-shadow-[0_0_15px_rgba(57,255,20,0.5)] transition duration-300" 
+                className="h-24 md:h-32 w-auto grayscale hover:grayscale-0 hover:drop-shadow-[0_0_15px_rgba(57,255,20,0.5)] transition-[filter,box-shadow] duration-150" 
                 src={logo} 
                 alt={`web${index + 1}`}
               />
