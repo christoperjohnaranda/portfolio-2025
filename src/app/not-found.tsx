@@ -28,16 +28,16 @@ export default function NotFound() {
   }, [])
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden mt-20">
+    <div className="min-h-screen flex items-center justify-center px-4 py-8 md:py-0 relative overflow-hidden mt-16 md:mt-20">
       {/* Animated Background Grid */}
       <motion.div
         className="absolute inset-0 opacity-10"
         style={{
           backgroundImage: 'linear-gradient(rgba(57, 255, 20, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(57, 255, 20, 0.3) 1px, transparent 1px)',
-          backgroundSize: '50px 50px',
+          backgroundSize: '30px 30px',
         }}
         animate={{
-          backgroundPosition: ['0px 0px', '50px 50px'],
+          backgroundPosition: ['0px 0px', '30px 30px'],
         }}
         transition={{
           duration: 20,
@@ -48,7 +48,7 @@ export default function NotFound() {
 
       {/* Glowing Orbs */}
       <motion.div
-        className="absolute top-20 left-20 w-64 h-64 bg-neonGreen/20 rounded-full blur-3xl"
+        className="absolute top-10 md:top-20 left-5 md:left-20 w-32 md:w-64 h-32 md:h-64 bg-neonGreen/20 rounded-full blur-3xl"
         animate={{
           scale: [1, 1.2, 1],
           opacity: [0.3, 0.5, 0.3],
@@ -60,7 +60,7 @@ export default function NotFound() {
         }}
       />
       <motion.div
-        className="absolute bottom-20 right-20 w-64 h-64 bg-neonGreen/20 rounded-full blur-3xl"
+        className="absolute bottom-10 md:bottom-20 right-5 md:right-20 w-32 md:w-64 h-32 md:h-64 bg-neonGreen/20 rounded-full blur-3xl"
         animate={{
           scale: [1.2, 1, 1.2],
           opacity: [0.5, 0.3, 0.5],
@@ -73,7 +73,7 @@ export default function NotFound() {
         }}
       />
 
-      <div className="relative z-10 text-center max-w-2xl">
+      <div className="relative z-10 text-center max-w-full sm:max-w-xl md:max-w-2xl w-full">
         {/* 404 Large Text */}
         <motion.div
           initial={{ scale: 0, rotate: -180 }}
@@ -82,7 +82,7 @@ export default function NotFound() {
           className="relative"
         >
           <h1 
-            className={`text-[200px] md:text-[300px] font-black text-neonGreen ${orbitron.className}`}
+            className={`text-[120px] sm:text-[160px] md:text-[240px] lg:text-[300px] font-black text-neonGreen ${orbitron.className}`}
             style={{
               textShadow: '0 0 20px #39FF14, 0 0 40px #39FF14, 0 0 60px #39FF14',
               lineHeight: '1',
@@ -110,17 +110,17 @@ export default function NotFound() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}
-          className="mt-8 mb-4"
+          className="mt-4 md:mt-8 mb-4 px-4"
         >
           <h2 
-            className={`text-3xl md:text-5xl font-bold text-neonGreen mb-4 ${orbitron.className}`}
+            className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-neonGreen mb-3 md:mb-4 ${orbitron.className}`}
             style={{
               textShadow: '0 0 10px #39FF14',
             }}
           >
             PAGE NOT FOUND
           </h2>
-          <p className={`text-lightGreen text-lg md:text-xl ${firaCode.className}`}>
+          <p className={`text-lightGreen text-sm sm:text-base md:text-lg lg:text-xl ${firaCode.className}`}>
             {'[ERROR] The page you are looking for does not exist.'}
           </p>
         </motion.div>
@@ -130,7 +130,7 @@ export default function NotFound() {
           initial={{ opacity: 0 }}
           animate={{ opacity: [0, 1, 0, 1, 0, 1] }}
           transition={{ delay: 0.8, duration: 0.5 }}
-          className={`text-neonGreen/50 text-sm mb-8 ${firaCode.className}`}
+          className={`text-neonGreen/50 text-xs sm:text-sm mb-6 md:mb-8 px-4 ${firaCode.className}`}
         >
           {'> SYSTEM_ERROR: RESOURCE_NOT_AVAILABLE'}
         </motion.div>
@@ -140,18 +140,18 @@ export default function NotFound() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 0.6 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center px-4"
         >
           <Link href="/">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`flex items-center gap-2 px-6 py-3 bg-darkCard border-2 border-neonGreen text-neonGreen rounded-lg hover:bg-neonGreen hover:text-darkBg transition-all ${orbitron.className}`}
+              className={`flex items-center gap-2 px-5 md:px-6 py-2.5 md:py-3 bg-darkCard border-2 border-neonGreen text-neonGreen rounded-lg hover:bg-neonGreen hover:text-darkBg transition-all text-sm md:text-base ${orbitron.className}`}
               style={{
                 boxShadow: '0 0 20px rgba(57, 255, 20, 0.3)',
               }}
             >
-              <Home size={20} />
+              <Home size={18} className="md:w-5 md:h-5" />
               Back to Home
             </motion.button>
           </Link>
@@ -160,9 +160,9 @@ export default function NotFound() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => window.history.back()}
-            className={`flex items-center gap-2 px-6 py-3 bg-darkCard border-2 border-neonGreen/50 text-lightGreen rounded-lg hover:border-neonGreen hover:text-neonGreen transition-all ${orbitron.className}`}
+            className={`flex items-center gap-2 px-5 md:px-6 py-2.5 md:py-3 bg-darkCard border-2 border-neonGreen/50 text-lightGreen rounded-lg hover:border-neonGreen hover:text-neonGreen transition-all text-sm md:text-base ${orbitron.className}`}
           >
-            <ArrowLeft size={20} />
+            <ArrowLeft size={18} className="md:w-5 md:h-5" />
             Go Back
           </motion.button>
         </motion.div>
@@ -173,9 +173,9 @@ export default function NotFound() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2, duration: 0.6 }}
-            className="mt-12 p-4 bg-darkCard/50 border border-neonGreen/20 rounded-lg text-left overflow-x-auto"
+            className="mt-8 md:mt-12 p-3 md:p-4 bg-darkCard/50 border border-neonGreen/20 rounded-lg text-left overflow-x-auto mx-4 max-w-full"
           >
-            <pre className={`text-neonGreen/70 text-xs md:text-sm ${firaCode.className}`}>
+            <pre className={`text-neonGreen/70 text-[10px] sm:text-xs md:text-sm whitespace-pre-wrap break-all ${firaCode.className}`}>
 {`// Error Log
 {
   "status": 404,
