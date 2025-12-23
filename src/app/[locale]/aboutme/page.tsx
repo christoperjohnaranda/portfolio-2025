@@ -157,27 +157,41 @@ export default function AboutMe() {
                   transition={{ duration: 0.5 }}
                   className="border-l-4 border-neonGreen pl-4"
                 >
-                  <h3 className={`text-xl font-semibold mb-1 text-neonGreen ${orbitron.className}`}>{t('juniorProgrammer')}</h3>
-                  <p className={`text-lightGreen/80 mb-3 text-sm ${spaceGrotesk.className}`}>Komisi Pemberantasan Korupsi | {t('kpkDuration')}</p>
+                  <h3 className={`text-xl font-semibold mb-1 text-neonGreen ${orbitron.className}`}>{t('kpk.title')}</h3>
+                  <p className={`text-lightGreen/80 mb-3 text-sm ${spaceGrotesk.className}`}>{t('kpk.company')} | {t('kpk.duration')}</p>
                   <ul className={`list-disc list-inside text-lightGreen space-y-1 ${spaceGrotesk.className}`}>
-                    <li>{t('kpkDesc1')}</li>
-                    <li>{t('kpkDesc2')}</li>
+                    <li>{t('kpk.desc1')}</li>
+                    <li>{t('kpk.desc2')}</li>
                   </ul>
                 </motion.div>
 
-                {/* Freelance Experience */}
+                {/* Maro Experience */}
                 <motion.div
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                   className="border-l-4 border-neonGreen pl-4"
                 >
-                  <h3 className={`text-xl font-semibold mb-1 text-neonGreen ${orbitron.className}`}>{t('freelanceDeveloper')}</h3>
-                  <p className={`text-lightGreen/80 mb-3 text-sm ${spaceGrotesk.className}`}>Self-Employed | {t('freelanceDuration')}</p>
+                  <h3 className={`text-xl font-semibold mb-1 text-neonGreen ${orbitron.className}`}>{t('maro.title')}</h3>
+                  <p className={`text-lightGreen/80 mb-3 text-sm ${spaceGrotesk.className}`}>{t('maro.company')} | {t('maro.duration')}</p>
                   <ul className={`list-disc list-inside text-lightGreen space-y-1 ${spaceGrotesk.className}`}>
-                    <li>{t('freelanceDesc1')}</li>
-                    <li>{t('freelanceDesc2')}</li>
-                    <li>{t('freelanceDesc3')}</li>
+                    <li>{t('maro.desc1')}</li>
+                    <li>{t('maro.desc2')}</li>
+                  </ul>
+                </motion.div>
+
+                {/* SUB Experience */}
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  className="border-l-4 border-neonGreen pl-4"
+                >
+                  <h3 className={`text-xl font-semibold mb-1 text-neonGreen ${orbitron.className}`}>{t('sub.title')}</h3>
+                  <p className={`text-lightGreen/80 mb-3 text-sm ${spaceGrotesk.className}`}>{t('sub.company')} | {t('sub.duration')}</p>
+                  <ul className={`list-disc list-inside text-lightGreen space-y-1 ${spaceGrotesk.className}`}>
+                    <li>{t('sub.desc1')}</li>
+                    <li>{t('sub.desc2')}</li>
                   </ul>
                 </motion.div>
               </div>

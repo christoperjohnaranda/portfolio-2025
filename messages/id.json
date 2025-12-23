@@ -22,15 +22,27 @@
     "description": "Perjalanan saya sebagai Full Stack Developer didorong oleh rasa ingin tahu dan kecintaan yang tulus untuk memecahkan masalah melalui kode. Saya passionate dalam membuat aplikasi web yang tidak hanya bekerja dengan baik secara teknis, tetapi juga membuat perbedaan nyata dalam kehidupan sehari-hari orang. Baik itu membangun platform e-commerce, aplikasi mobile, atau sistem yang kompleks, saya mendekati setiap proyek dengan pola pikir bahwa teknologi yang hebat harus kuat sekaligus berpusat pada manusia. Saya percaya dalam menulis kode yang bersih dan mudah dipelihara serta terus belajar untuk tetap unggul di bidang yang terus berkembang ini.",
     "tabSkills": "Keahlian",
     "tabExperience": "Pengalaman",
-    "juniorProgrammer": "Junior Programmer",
-    "kpkDuration": "Nov 2025 - Sekarang",
-    "kpkDesc1": "Mengembangkan dan memelihara aplikasi web menggunakan React, Vite.js dan Laravel",
-    "kpkDesc2": "Berkolaborasi dengan tim untuk membangun aplikasi skala enterprise",
-    "freelanceDeveloper": "Freelance Web Developer",
-    "freelanceDuration": "Jan 2024 - Present",
-    "freelanceDesc1": "Membangun aplikasi web full-stack untuk berbagai klien",
-    "freelanceDesc2": "Mengembangkan website e-commerce dengan integrasi pembayaran yang aman",
-    "freelanceDesc3": "Membuat aplikasi mobile dengan React Native dan Expo"
+    "kpk": {
+      "title": "Junior Programmer",
+      "company": "Komisi Pemberantasan Korupsi",
+      "duration": "Nov 2025 - Sekarang",
+      "desc1": "Mengembangkan aplikasi perekaman persidangan korupsi nasional yang digunakan di seluruh Indonesia",
+      "desc2": "Membangun aplikasi full-stack menggunakan tech stack modern: React, Vite, TypeScript, dan Tailwind CSS"
+    },
+    "maro": {
+      "title": "Full Stack Developer",
+      "company": "PT Maro Anugrah Jaya",
+      "duration": "Sep 2024 - Mei 2025",
+      "desc1": "Mengoptimalkan performa aplikasi web dengan menerapkan best practices React dan Next.js",
+      "desc2": "Mengembangkan RESTful API menggunakan Express dan MySQL yang melayani lebih dari 1000 request harian"
+    },
+    "sub": {
+      "title": "Website Developer",
+      "company": "PT Solusi Usaha Berdikari",
+      "duration": "Feb 2024 - Jul 2024",
+      "desc1": "Mengimplementasikan pola desain responsif dan mengoptimalkan struktur kode",
+      "desc2": "Mengembangkan dan mengintegrasikan fitur baru menggunakan React.js"
+    }
   },
   "workExperience": {
     "pageTitle": "Perjalanan Profesional Saya",

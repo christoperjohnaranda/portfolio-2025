@@ -22,15 +22,27 @@
     "description": "My journey as a Full Stack Developer has been driven by curiosity and a genuine love for problem-solving through code. I'm passionate about creating web applications that not only work well technically, but also make a real difference in people's daily lives. Whether it's building e-commerce platforms, mobile applications, or complex systems, I approach each project with the mindset that great technology should be both powerful and human-centered. I believe in writing clean, maintainable code and continuously learning to stay ahead in this ever-evolving field.",
     "tabSkills": "Skills",
     "tabExperience": "Experience",
-    "juniorProgrammer": "Junior Programmer",
-    "kpkDuration": "Nov 2025 - Present",
-    "kpkDesc1": "Developing and maintaining web applications using React, Vite.js and Laravel",
-    "kpkDesc2": "Collaborating with teams to build enterprise-scale applications",
-    "freelanceDeveloper": "Freelance Web Developer",
-    "freelanceDuration": "Jan 2024 - Present",
-    "freelanceDesc1": "Building full-stack web applications for various clients",
-    "freelanceDesc2": "Developing e-commerce websites with secure payment integration",
-    "freelanceDesc3": "Creating mobile applications with React Native and Expo"
+    "kpk": {
+      "title": "Junior Programmer",
+      "company": "Komisi Pemberantasan Korupsi",
+      "duration": "Nov 2025 - Present",
+      "desc1": "Developed a nationwide corruption trial recording application used across Indonesia",
+      "desc2": "Built full-stack application using modern tech stack: React, Vite, TypeScript, and Tailwind CSS"
+    },
+    "maro": {
+      "title": "Full Stack Developer",
+      "company": "PT Maro Anugrah Jaya",
+      "duration": "Sep 2024 - May 2025",
+      "desc1": "Optimized web application performance by implementing React and Next.js best practices",
+      "desc2": "Developed RESTful APIs using Express and MySQL serving over 1000 daily requests"
+    },
+    "sub": {
+      "title": "Website Developer",
+      "company": "PT Solusi Usaha Berdikari",
+      "duration": "Feb 2024 - Jul 2024",
+      "desc1": "Implemented responsive design patterns and optimized code structure",
+      "desc2": "Developed and integrated new features using React.js"
+    }
   },
   "workExperience": {
     "pageTitle": "My Professional Journey",
