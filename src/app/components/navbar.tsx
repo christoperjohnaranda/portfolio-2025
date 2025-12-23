@@ -48,6 +48,7 @@ export default function Navbar(){
                                 <a href="/aboutme" className={`navbar-link rounded-md px-3 py-2 text-sm font-medium text-lightGreen transition-all duration-300 ${orbitron.className}`}>About Me</a>
                                 <a href="/workexperience" className={`navbar-link rounded-md px-3 py-2 text-sm font-medium text-lightGreen transition-all duration-300 ${orbitron.className}`}>Work Experience</a>
                                 <a href="/project" className={`navbar-link rounded-md px-3 py-2 text-sm font-medium text-lightGreen transition-all duration-300 ${orbitron.className}`}>Projects</a>
+                                <a href="/contact" className={`navbar-link rounded-md px-3 py-2 text-sm font-medium text-lightGreen transition-all duration-300 ${orbitron.className}`}>Contact</a>
                             </div>
                         </div>
                     </div>
@@ -84,6 +85,13 @@ export default function Navbar(){
                             className={`navbar-link-mobile block rounded-md px-3 py-2 text-base font-medium text-lightGreen transition-all duration-300 ${orbitron.className}`}
                         >
                             Projects
+                        </a>
+                        <a 
+                            href="/contact" 
+                            onClick={toggleMenu}
+                            className={`navbar-link-mobile block rounded-md px-3 py-2 text-base font-medium text-lightGreen transition-all duration-300 ${orbitron.className}`}
+                        >
+                            Contact
                         </a>
                     </div>
                 </div>
