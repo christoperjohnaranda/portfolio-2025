@@ -8,7 +8,7 @@ import LaserCursor from "../components/LaserCursor";
 import LoadingScreen from "../components/LoadingScreen";
 import ClientLayout from "../components/ClientLayout";
 import { NextIntlClientProvider } from 'next-intl'
-import { getMessages } from 'next-intl/server'
+import { getMessages, unstable_setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { locales } from '@/i18n'
 
@@ -83,6 +83,9 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { locale: string };
 }>) {
+  // Enable static rendering
+  unstable_setRequestLocale(locale)
+  
   // Validate locale
   if (!locales.includes(locale as 'id' | 'en')) {
     notFound()
