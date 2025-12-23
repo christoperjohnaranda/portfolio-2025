@@ -22,6 +22,7 @@
     "description": "Perjalanan saya sebagai Full Stack Developer didorong oleh rasa ingin tahu dan kecintaan yang tulus untuk memecahkan masalah melalui kode. Saya passionate dalam membuat aplikasi web yang tidak hanya bekerja dengan baik secara teknis, tetapi juga membuat perbedaan nyata dalam kehidupan sehari-hari orang. Baik itu membangun platform e-commerce, aplikasi mobile, atau sistem yang kompleks, saya mendekati setiap proyek dengan pola pikir bahwa teknologi yang hebat harus kuat sekaligus berpusat pada manusia. Saya percaya dalam menulis kode yang bersih dan mudah dipelihara serta terus belajar untuk tetap unggul di bidang yang terus berkembang ini.",
     "tabSkills": "Keahlian",
     "tabExperience": "Pengalaman",
+    "tabEducation": "Pendidikan",
     "kpk": {
       "title": "Junior Programmer",
       "company": "Komisi Pemberantasan Korupsi",
@@ -42,6 +43,14 @@
       "duration": "Feb 2024 - Jul 2024",
       "desc1": "Mengimplementasikan pola desain responsif dan mengoptimalkan struktur kode",
       "desc2": "Mengembangkan dan mengintegrasikan fitur baru menggunakan React.js"
+    },
+    "umn": {
+      "degree": "Sarjana Teknik (S.T)",
+      "institution": "Universitas Multimedia Nusantara",
+      "major": "Teknik Komputer",
+      "duration": "2021 - 2025",
+      "desc1": "Mempelajari pengembangan perangkat lunak, arsitektur komputer, dan sistem jaringan",
+      "desc2": "Fokus pada pengembangan aplikasi web dan mobile dengan teknologi modern"
     }
   },
   "workExperience": {

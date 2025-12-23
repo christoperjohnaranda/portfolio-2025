@@ -22,6 +22,7 @@
     "description": "My journey as a Full Stack Developer has been driven by curiosity and a genuine love for problem-solving through code. I'm passionate about creating web applications that not only work well technically, but also make a real difference in people's daily lives. Whether it's building e-commerce platforms, mobile applications, or complex systems, I approach each project with the mindset that great technology should be both powerful and human-centered. I believe in writing clean, maintainable code and continuously learning to stay ahead in this ever-evolving field.",
     "tabSkills": "Skills",
     "tabExperience": "Experience",
+    "tabEducation": "Education",
     "kpk": {
       "title": "Junior Programmer",
       "company": "Komisi Pemberantasan Korupsi",
@@ -42,6 +43,14 @@
       "duration": "Feb 2024 - Jul 2024",
       "desc1": "Implemented responsive design patterns and optimized code structure",
       "desc2": "Developed and integrated new features using React.js"
+    },
+    "umn": {
+      "degree": "Bachelor of Engineering (S.T)",
+      "institution": "Universitas Multimedia Nusantara",
+      "major": "Computer Engineering",
+      "duration": "2021 - 2025",
+      "desc1": "Studied software development, computer architecture, and network systems",
+      "desc2": "Focused on web and mobile application development with modern technologies"
     }
   },
   "workExperience": {
