@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { Mail, Phone, MapPin } from 'lucide-react'
 import { Orbitron, Space_Grotesk } from 'next/font/google'
+import { useTranslations } from 'next-intl'
 
 const orbitron = Orbitron({ 
   subsets: ['latin'],
@@ -15,25 +16,27 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export default function Contact() {
+  const t = useTranslations('contact')
+  
   const contactInfo = [
     {
       icon: Mail,
-      title: 'Email',
+      title: t('email'),
       value: 'christoperjohnaranda@gmail.com',
       link: 'mailto:christoperjohnaranda@gmail.com',
       color: 'from-blue-500 to-cyan-500'
     },
     {
       icon: Phone,
-      title: 'WhatsApp',
+      title: t('whatsapp'),
       value: '+62 856-4880-6508',
       link: 'https://wa.me/6285648806508',
       color: 'from-green-500 to-emerald-500'
     },
     {
       icon: MapPin,
-      title: 'Location',
-      value: 'Indonesia',
+      title: t('location'),
+      value: t('locationValue'),
       link: '#',
       color: 'from-purple-500 to-pink-500'
     }
@@ -50,10 +53,10 @@ export default function Contact() {
           className="text-center mb-12"
         >
           <h1 className={`text-4xl md:text-6xl font-bold text-neonGreen neon-glow mb-4 ${orbitron.className}`}>
-            CONTACT ME
+            {t('pageTitle')}
           </h1>
           <p className={`text-lg md:text-xl text-lightGreen max-w-2xl mx-auto ${spaceGrotesk.className}`}>
-            Let&apos;s work together! Reach out through any of the methods below.
+            {t('pageSubtitle')}
           </p>
         </motion.div>
 
@@ -102,12 +105,15 @@ export default function Contact() {
 
           <div className="relative z-10">
             <h2 className={`text-2xl md:text-3xl font-bold text-neonGreen mb-4 ${orbitron.className}`}>
-              LET&apos;S CONNECT
+              {t('connectTitle')}
             </h2>
             <p className={`text-lightGreen/70 text-base md:text-lg mb-6 ${spaceGrotesk.className}`}>
-              Feel free to reach out through any of the contact methods above.
-              <br />
-              I&apos;m always open to discussing new projects and opportunities.
+              {t('connectMessage').split('\n').map((line, i) => (
+                <span key={i}>
+                  {line}
+                  {i < t('connectMessage').split('\n').length - 1 && <br />}
+                </span>
+              ))}
             </p>
             <div className="inline-block">
               <a 
@@ -115,7 +121,7 @@ export default function Contact() {
                 className={`inline-flex items-center gap-2 bg-neonGreen text-darkBg font-bold py-3 px-8 rounded-lg hover:bg-neonGreen/90 transition-all ${orbitron.className}`}
               >
                 <Mail className="w-5 h-5" />
-                Email Me
+                {t('emailButton')}
               </a>
             </div>
           </div>
@@ -131,7 +137,7 @@ export default function Contact() {
           <div className="inline-flex items-center gap-2 bg-darkCard border border-neonGreen/20 rounded-full px-6 py-3">
             <div className="w-3 h-3 bg-neonGreen rounded-full animate-pulse" />
             <span className={`text-lightGreen ${spaceGrotesk.className}`}>
-              Available for freelance projects
+              {t('availability')}
             </span>
           </div>
         </motion.div>

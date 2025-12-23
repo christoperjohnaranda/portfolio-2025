@@ -1,0 +1,141 @@
+{
+  "nav": {
+    "dashboard": "Dashboard",
+    "aboutMe": "About Me",
+    "workExperience": "Work Experience",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "home": {
+    "greeting": "Hello, I'm",
+    "name": "Christoper John Aranda",
+    "title": "A Passionate Full Stack Developer",
+    "description": "Passionate about crafting elegant solutions through code.\nI believe great technology should solve real problems and make people's lives easier.",
+    "cta": "Let's Talk",
+    "workedWith": "Worked With"
+  },
+  "about": {
+    "pageTitle": "ABOUT ME",
+    "fullName": "CHRISTOPER JOHN ARANDA",
+    "role": "Full Stack Developer",
+    "heading": "About Me",
+    "description": "My journey as a Full Stack Developer has been driven by curiosity and a genuine love for problem-solving through code. I'm passionate about creating web applications that not only work well technically, but also make a real difference in people's daily lives. Whether it's building e-commerce platforms, mobile applications, or complex systems, I approach each project with the mindset that great technology should be both powerful and human-centered. I believe in writing clean, maintainable code and continuously learning to stay ahead in this ever-evolving field.",
+    "tabSkills": "Skills",
+    "tabExperience": "Experience",
+    "juniorProgrammer": "Junior Programmer",
+    "kpkDuration": "Nov 2025 - Present",
+    "kpkDesc1": "Developing and maintaining web applications using React, Vite.js and Laravel",
+    "kpkDesc2": "Collaborating with teams to build enterprise-scale applications",
+    "freelanceDeveloper": "Freelance Web Developer",
+    "freelanceDuration": "Jan 2024 - Present",
+    "freelanceDesc1": "Building full-stack web applications for various clients",
+    "freelanceDesc2": "Developing e-commerce websites with secure payment integration",
+    "freelanceDesc3": "Creating mobile applications with React Native and Expo"
+  },
+  "workExperience": {
+    "pageTitle": "My Professional Journey",
+    "viewDetails": "Click to view details",
+    "achievements": "Key Achievements",
+    "skills": "Technologies & Skills",
+    "kpk": {
+      "title": "Junior Programmer",
+      "company": "Komisi Pemberantasan Korupsi",
+      "duration": "Nov 2025 - Present",
+      "durationShort": "1 month",
+      "description": "Developing and maintaining web applications using React and Node.js",
+      "achievement1": "Developed a nationwide corruption trial recording application used across Indonesia",
+      "achievement2": "Built full-stack application using modern tech stack: React, Vite, TypeScript, and Tailwind CSS for frontend",
+      "achievement3": "Implemented robust backend system with Laravel and PostgreSQL for handling critical legal data",
+      "achievement4": "Collaborated with legal teams to ensure the application meets judicial recording standards and compliance requirements",
+      "skills": ["React", "Vite.js", "TypeScript", "Tailwind CSS", "Laravel", "PostgreSQL", "HTML", "CSS", "JavaScript"]
+    },
+    "maro": {
+      "title": "Full Stack Developer",
+      "company": "PT Maro Anugrah Jaya",
+      "duration": "Sep 2024 - May 2025",
+      "durationShort": "9 months",
+      "description": "Developing and maintaining full-stack web applications using React, Next.js, Expo, and Node.js with a focus on performance and user experience.",
+      "achievement1": "Optimized web application performance by implementing React and Next.js best practices, resulting in a 40% improvement in loading speed",
+      "achievement2": "Developed RESTful APIs using Express and MySQL serving over 1000 daily requests",
+      "achievement3": "Implemented responsive UI/UX using Tailwind CSS and TypeScript, increasing user engagement by 35%",
+      "skills": ["React", "Next.js", "PHP", "HTML", "CSS", "Tailwind CSS", "JavaScript", "TypeScript", "Node.js", "Express", "MySQL"]
+    },
+    "sub": {
+      "title": "Website Developer",
+      "company": "PT Solusi Usaha Berdikari",
+      "duration": "Feb 2024 - Jul 2024",
+      "durationShort": "6 months",
+      "description": "Developing and maintaining web applications with a focus on front-end development and user interface optimization using modern JavaScript frameworks.",
+      "achievement1": "Implemented responsive design patterns and optimized code structure, reducing load time by 40%",
+      "achievement2": "Developed and integrated new features using React.js, leading to a 15% increase in user engagement",
+      "achievement3": "Actively contributed to team knowledge sharing and documentation, improving development workflow efficiency",
+      "skills": ["React", "JavaScript", "TypeScript", "HTML", "CSS", "Bootstrap", "Git", "REST APIs", "Expo"]
+    }
+  },
+  "projects": {
+    "title": "My Projects",
+    "technologiesUsed": "Technologies Used",
+    "viewOnGithub": "View on GitHub",
+    "items": {
+      "1": {
+        "title": "Website for Calculating Water Usage Billing",
+        "description": "A full-stack website for calculating water usage billing and secure payment integration.",
+        "technologies": ["PHP", "MySQL", "JavaScript", "HTML", "CSS", "Bootstrap"],
+        "gradient": "from-blue-500 via-cyan-500 to-teal-500"
+      },
+      "2": {
+        "title": "Restaurant Landing Page",
+        "description": "A landing page for a restaurant with a menu and orders system.",
+        "technologies": ["Next.js", "Tailwind CSS", "TypeScript", "Framer Motion"],
+        "gradient": "from-orange-500 via-red-500 to-pink-500"
+      },
+      "3": {
+        "title": "Company Profile Website",
+        "description": "A website for a company to showcase their services and products.",
+        "technologies": ["Next.js", "TypeScript", "Bootstrap", "CSS", "HTML"],
+        "gradient": "from-purple-500 via-violet-500 to-indigo-500"
+      },
+      "4": {
+        "title": "Corruption Trial Recording Application",
+        "description": "A nationwide web application for recording and managing corruption trial proceedings across Indonesia, developed for the Corruption Eradication Commission (KPK).",
+        "technologies": ["React", "Vite.js", "TypeScript", "Tailwind CSS", "Laravel", "PostgreSQL"],
+        "gradient": "from-emerald-500 via-green-500 to-lime-500"
+      },
+      "5": {
+        "title": "Franchise POS System",
+        "description": "A comprehensive Point of Sale (POS) mobile application designed for franchise cashiers, featuring inventory management, sales tracking, and real-time reporting capabilities.",
+        "technologies": ["React Native", "Expo", "TypeScript", "Kotlin", "Node.js", "Express", "Prisma", "MySQL"],
+        "gradient": "from-yellow-500 via-amber-500 to-orange-500"
+      }
+    }
+  },
+  "contact": {
+    "pageTitle": "CONTACT ME",
+    "pageSubtitle": "Let's work together! Reach out through any of the methods below.",
+    "email": "Email",
+    "whatsapp": "WhatsApp",
+    "location": "Location",
+    "locationValue": "Indonesia",
+    "connectTitle": "LET'S CONNECT",
+    "connectMessage": "Feel free to reach out through any of the contact methods above.\nI'm always open to discussing new projects and opportunities.",
+    "emailButton": "Email Me",
+    "availability": "Available for freelance projects"
+  },
+  "notFound": {
+    "title": "PAGE NOT FOUND",
+    "message": "[ERROR] The page you are looking for does not exist.",
+    "systemError": "> SYSTEM_ERROR: RESOURCE_NOT_AVAILABLE",
+    "backHome": "Back to Home",
+    "goBack": "Go Back",
+    "errorLog": "// Error Log"
+  },
+  "footer": {
+    "copyright": "© 2025 Christoper John Aranda. All Rights Reserved.",
+    "email": "Email",
+    "whatsapp": "WhatsApp",
+    "facebook": "Facebook page",
+    "instagram": "Instagram page",
+    "github": "GitHub account"
+  }
+}
+

@@ -3,6 +3,8 @@
 import React, { useState } from "react";
 import "../globals.css";
 import { Orbitron } from 'next/font/google'
+import { useTranslations, useLocale } from 'next-intl'
+import LanguageSwitcher from './LanguageSwitcher'
 
 const orbitron = Orbitron({ 
   subsets: ['latin'],
@@ -11,6 +13,8 @@ const orbitron = Orbitron({
 
 export default function Navbar(){
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const t = useTranslations('nav')
+    const locale = useLocale()
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -41,15 +45,18 @@ export default function Navbar(){
                             </svg>
                         </button>
                     </div>
-                    <div className="flex items-center justify-center">
+                    <div className="flex items-center justify-center gap-4">
                         <div className="flex justify-center items-center hidden sm:ml-6 sm:block">
                             <div className="flex justify-center items-center">
-                                <a href="/" className={`navbar-link rounded-md px-3 py-2 text-sm font-medium text-lightGreen transition-all duration-300 ${orbitron.className}`}>Dashboard</a>
-                                <a href="/aboutme" className={`navbar-link rounded-md px-3 py-2 text-sm font-medium text-lightGreen transition-all duration-300 ${orbitron.className}`}>About Me</a>
-                                <a href="/workexperience" className={`navbar-link rounded-md px-3 py-2 text-sm font-medium text-lightGreen transition-all duration-300 ${orbitron.className}`}>Work Experience</a>
-                                <a href="/project" className={`navbar-link rounded-md px-3 py-2 text-sm font-medium text-lightGreen transition-all duration-300 ${orbitron.className}`}>Projects</a>
-                                <a href="/contact" className={`navbar-link rounded-md px-3 py-2 text-sm font-medium text-lightGreen transition-all duration-300 ${orbitron.className}`}>Contact</a>
+                                <a href={`/${locale}`} className={`navbar-link rounded-md px-3 py-2 text-sm font-medium text-lightGreen transition-all duration-300 ${orbitron.className}`}>{t('dashboard')}</a>
+                                <a href={`/${locale}/aboutme`} className={`navbar-link rounded-md px-3 py-2 text-sm font-medium text-lightGreen transition-all duration-300 ${orbitron.className}`}>{t('aboutMe')}</a>
+                                <a href={`/${locale}/workexperience`} className={`navbar-link rounded-md px-3 py-2 text-sm font-medium text-lightGreen transition-all duration-300 ${orbitron.className}`}>{t('workExperience')}</a>
+                                <a href={`/${locale}/project`} className={`navbar-link rounded-md px-3 py-2 text-sm font-medium text-lightGreen transition-all duration-300 ${orbitron.className}`}>{t('projects')}</a>
+                                <a href={`/${locale}/contact`} className={`navbar-link rounded-md px-3 py-2 text-sm font-medium text-lightGreen transition-all duration-300 ${orbitron.className}`}>{t('contact')}</a>
                             </div>
+                        </div>
+                        <div className="hidden sm:block">
+                            <LanguageSwitcher />
                         </div>
                     </div>
                 </div>
@@ -59,40 +66,43 @@ export default function Navbar(){
                 <div className="sm:hidden" id="mobile-menu">
                     <div className="space-y-1 px-2 pb-3 pt-2 border-t border-neonGreen/20">
                         <a 
-                            href="/" 
+                            href={`/${locale}`}
                             onClick={toggleMenu}
                             className={`navbar-link-mobile block rounded-md px-3 py-2 text-base font-medium text-lightGreen transition-all duration-300 ${orbitron.className}`}
                         >
-                            Dashboard
+                            {t('dashboard')}
                         </a>
                         <a 
-                            href="/aboutme" 
+                            href={`/${locale}/aboutme`}
                             onClick={toggleMenu}
                             className={`navbar-link-mobile block rounded-md px-3 py-2 text-base font-medium text-lightGreen transition-all duration-300 ${orbitron.className}`}
                         >
-                            About Me
+                            {t('aboutMe')}
                         </a>
                         <a 
-                            href="/workexperience" 
+                            href={`/${locale}/workexperience`}
                             onClick={toggleMenu}
                             className={`navbar-link-mobile block rounded-md px-3 py-2 text-base font-medium text-lightGreen transition-all duration-300 ${orbitron.className}`}
                         >
-                            Work Experience
+                            {t('workExperience')}
                         </a>
                         <a 
-                            href="/project" 
+                            href={`/${locale}/project`}
                             onClick={toggleMenu}
                             className={`navbar-link-mobile block rounded-md px-3 py-2 text-base font-medium text-lightGreen transition-all duration-300 ${orbitron.className}`}
                         >
-                            Projects
+                            {t('projects')}
                         </a>
                         <a 
-                            href="/contact" 
+                            href={`/${locale}/contact`}
                             onClick={toggleMenu}
                             className={`navbar-link-mobile block rounded-md px-3 py-2 text-base font-medium text-lightGreen transition-all duration-300 ${orbitron.className}`}
                         >
-                            Contact
+                            {t('contact')}
                         </a>
+                        <div className="px-3 py-2">
+                            <LanguageSwitcher />
+                        </div>
                     </div>
                 </div>
             )}

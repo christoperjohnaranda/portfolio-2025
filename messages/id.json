@@ -1,0 +1,141 @@
+{
+  "nav": {
+    "dashboard": "Beranda",
+    "aboutMe": "Tentang Saya",
+    "workExperience": "Pengalaman Kerja",
+    "projects": "Proyek",
+    "contact": "Kontak"
+  },
+  "home": {
+    "greeting": "Halo, Saya",
+    "name": "Christoper John Aranda",
+    "title": "Seorang Full Stack Developer yang Passionate",
+    "description": "Passionate tentang membuat solusi elegan melalui kode.\nSaya percaya teknologi yang hebat harus memecahkan masalah nyata dan membuat hidup orang lebih mudah.",
+    "cta": "Ayo Bicara",
+    "workedWith": "Bekerja Dengan"
+  },
+  "about": {
+    "pageTitle": "TENTANG SAYA",
+    "fullName": "CHRISTOPER JOHN ARANDA",
+    "role": "Full Stack Developer",
+    "heading": "Tentang Saya",
+    "description": "Perjalanan saya sebagai Full Stack Developer didorong oleh rasa ingin tahu dan kecintaan yang tulus untuk memecahkan masalah melalui kode. Saya passionate dalam membuat aplikasi web yang tidak hanya bekerja dengan baik secara teknis, tetapi juga membuat perbedaan nyata dalam kehidupan sehari-hari orang. Baik itu membangun platform e-commerce, aplikasi mobile, atau sistem yang kompleks, saya mendekati setiap proyek dengan pola pikir bahwa teknologi yang hebat harus kuat sekaligus berpusat pada manusia. Saya percaya dalam menulis kode yang bersih dan mudah dipelihara serta terus belajar untuk tetap unggul di bidang yang terus berkembang ini.",
+    "tabSkills": "Keahlian",
+    "tabExperience": "Pengalaman",
+    "juniorProgrammer": "Junior Programmer",
+    "kpkDuration": "Nov 2025 - Sekarang",
+    "kpkDesc1": "Mengembangkan dan memelihara aplikasi web menggunakan React, Vite.js dan Laravel",
+    "kpkDesc2": "Berkolaborasi dengan tim untuk membangun aplikasi skala enterprise",
+    "freelanceDeveloper": "Freelance Web Developer",
+    "freelanceDuration": "Jan 2024 - Present",
+    "freelanceDesc1": "Membangun aplikasi web full-stack untuk berbagai klien",
+    "freelanceDesc2": "Mengembangkan website e-commerce dengan integrasi pembayaran yang aman",
+    "freelanceDesc3": "Membuat aplikasi mobile dengan React Native dan Expo"
+  },
+  "workExperience": {
+    "pageTitle": "Perjalanan Profesional Saya",
+    "viewDetails": "Klik untuk lihat detail",
+    "achievements": "Pencapaian Utama",
+    "skills": "Teknologi & Keahlian",
+    "kpk": {
+      "title": "Junior Programmer",
+      "company": "Komisi Pemberantasan Korupsi",
+      "duration": "Nov 2025 - Sekarang",
+      "durationShort": "1 bulan",
+      "description": "Mengembangkan dan memelihara aplikasi web menggunakan React dan Node.js",
+      "achievement1": "Mengembangkan aplikasi perekaman persidangan korupsi nasional yang digunakan di seluruh Indonesia",
+      "achievement2": "Membangun aplikasi full-stack menggunakan tech stack modern: React, Vite, TypeScript, dan Tailwind CSS untuk frontend",
+      "achievement3": "Mengimplementasikan sistem backend yang robust dengan Laravel dan PostgreSQL untuk menangani data legal yang kritis",
+      "achievement4": "Berkolaborasi dengan tim legal untuk memastikan aplikasi memenuhi standar perekaman peradilan dan persyaratan compliance",
+      "skills": ["React", "Vite.js", "TypeScript", "Tailwind CSS", "Laravel", "PostgreSQL", "HTML", "CSS", "JavaScript"]
+    },
+    "maro": {
+      "title": "Full Stack Developer",
+      "company": "PT Maro Anugrah Jaya",
+      "duration": "Sep 2024 - Mei 2025",
+      "durationShort": "9 bulan",
+      "description": "Mengembangkan dan memelihara aplikasi web full-stack menggunakan React, Next.js, Expo, dan Node.js dengan fokus pada performa dan pengalaman pengguna.",
+      "achievement1": "Mengoptimalkan performa aplikasi web dengan menerapkan best practices React dan Next.js, menghasilkan peningkatan 40% dalam kecepatan loading",
+      "achievement2": "Mengembangkan RESTful API menggunakan Express dan MySQL yang melayani lebih dari 1000 request harian",
+      "achievement3": "Mengimplementasikan UI/UX responsif menggunakan Tailwind CSS dan TypeScript, meningkatkan engagement pengguna sebesar 35%",
+      "skills": ["React", "Next.js", "PHP", "HTML", "CSS", "Tailwind CSS", "JavaScript", "TypeScript", "Node.js", "Express", "MySQL"]
+    },
+    "sub": {
+      "title": "Website Developer",
+      "company": "PT Solusi Usaha Berdikari",
+      "duration": "Feb 2024 - Jul 2024",
+      "durationShort": "6 bulan",
+      "description": "Mengembangkan dan memelihara aplikasi web dengan fokus pada pengembangan front-end dan optimasi user interface menggunakan framework JavaScript modern.",
+      "achievement1": "Mengimplementasikan pola desain responsif dan mengoptimalkan struktur kode, mengurangi waktu loading sebesar 40%",
+      "achievement2": "Mengembangkan dan mengintegrasikan fitur baru menggunakan React.js, menghasilkan peningkatan 15% dalam engagement pengguna",
+      "achievement3": "Aktif berkontribusi dalam knowledge sharing tim dan dokumentasi, meningkatkan efisiensi workflow pengembangan",
+      "skills": ["React", "JavaScript", "TypeScript", "HTML", "CSS", "Bootstrap", "Git", "REST APIs", "Expo"]
+    }
+  },
+  "projects": {
+    "title": "Proyek Saya",
+    "technologiesUsed": "Teknologi yang Digunakan",
+    "viewOnGithub": "Lihat di GitHub",
+    "items": {
+      "1": {
+        "title": "Website Penghitungan Tagihan Penggunaan Air",
+        "description": "Website full-stack untuk menghitung tagihan penggunaan air dan integrasi pembayaran yang aman.",
+        "technologies": ["PHP", "MySQL", "JavaScript", "HTML", "CSS", "Bootstrap"],
+        "gradient": "from-blue-500 via-cyan-500 to-teal-500"
+      },
+      "2": {
+        "title": "Landing Page Restoran",
+        "description": "Landing page untuk restoran dengan sistem menu dan pemesanan.",
+        "technologies": ["Next.js", "Tailwind CSS", "TypeScript", "Framer Motion"],
+        "gradient": "from-orange-500 via-red-500 to-pink-500"
+      },
+      "3": {
+        "title": "Website Company Profile",
+        "description": "Website untuk perusahaan untuk menampilkan layanan dan produk mereka.",
+        "technologies": ["Next.js", "TypeScript", "Bootstrap", "CSS", "HTML"],
+        "gradient": "from-purple-500 via-violet-500 to-indigo-500"
+      },
+      "4": {
+        "title": "Aplikasi Perekaman Persidangan Korupsi",
+        "description": "Aplikasi web nasional untuk merekam dan mengelola proses persidangan korupsi di seluruh Indonesia, dikembangkan untuk Komisi Pemberantasan Korupsi (KPK).",
+        "technologies": ["React", "Vite.js", "TypeScript", "Tailwind CSS", "Laravel", "PostgreSQL"],
+        "gradient": "from-emerald-500 via-green-500 to-lime-500"
+      },
+      "5": {
+        "title": "Sistem POS Franchise",
+        "description": "Aplikasi mobile Point of Sale (POS) komprehensif yang dirancang untuk kasir franchise, dengan fitur manajemen inventori, pelacakan penjualan, dan pelaporan real-time.",
+        "technologies": ["React Native", "Expo", "TypeScript", "Kotlin", "Node.js", "Express", "Prisma", "MySQL"],
+        "gradient": "from-yellow-500 via-amber-500 to-orange-500"
+      }
+    }
+  },
+  "contact": {
+    "pageTitle": "HUBUNGI SAYA",
+    "pageSubtitle": "Mari bekerja sama! Hubungi saya melalui salah satu metode di bawah ini.",
+    "email": "Email",
+    "whatsapp": "WhatsApp",
+    "location": "Lokasi",
+    "locationValue": "Indonesia",
+    "connectTitle": "MARI TERHUBUNG",
+    "connectMessage": "Jangan ragu untuk menghubungi melalui salah satu metode kontak di atas.\nSaya selalu terbuka untuk mendiskusikan proyek baru dan peluang.",
+    "emailButton": "Email Saya",
+    "availability": "Tersedia untuk proyek freelance"
+  },
+  "notFound": {
+    "title": "HALAMAN TIDAK DITEMUKAN",
+    "message": "[ERROR] Halaman yang Anda cari tidak ada.",
+    "systemError": "> SYSTEM_ERROR: RESOURCE_NOT_AVAILABLE",
+    "backHome": "Kembali ke Beranda",
+    "goBack": "Kembali",
+    "errorLog": "// Log Error"
+  },
+  "footer": {
+    "copyright": "© 2025 Christoper John Aranda. Semua Hak Dilindungi.",
+    "email": "Email",
+    "whatsapp": "WhatsApp",
+    "facebook": "Halaman Facebook",
+    "instagram": "Halaman Instagram",
+    "github": "Akun GitHub"
+  }
+}
+

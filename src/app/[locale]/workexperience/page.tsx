@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import { Briefcase, Calendar, Award } from 'lucide-react'
 import { Space_Grotesk, Orbitron } from 'next/font/google'
+import { useTranslations } from 'next-intl'
 
 const spaceGrotesk = Space_Grotesk({ 
   subsets: ['latin'],
@@ -14,56 +15,71 @@ const orbitron = Orbitron({
   weight: ['400', '500', '700', '900']
 })
 
-const workExperiences = [
-  {
-    id: 1,
-    company: 'Komisi Pemberantasan Korupsi',
-    position: 'Junior Programmer',
-    period: 'Nov 2025 - Present',
-    duration: '1 month',
-    description: 'Developing and maintaining web applications using React and Node.js',
-    achievements: [
-      'Developed a nationwide corruption trial recording application used across Indonesia',
-      'Built full-stack application using modern tech stack: React, Vite, TypeScript, and Tailwind CSS for frontend',
-      'Implemented robust backend system with Laravel and PostgreSQL for handling critical legal data',
-      'Collaborated with legal teams to ensure the application meets judicial recording standards and compliance requirements'
-    ],
-    skills: ['React', 'Vite.js', 'TypeScript', 'Tailwind CSS', 'Laravel', 'PostgreSQL', 'HTML', 'CSS', 'JavaScript'],
-    gradient: 'from-emerald-500 via-green-500 to-teal-500',
-  },
-  {
-    id: 2,
-    company: 'PT Maro Anugrah Jaya',
-    position: 'Full Stack Developer',
-    period: 'Sep 2024 - May 2025',
-    duration: '9 months',
-    description: 'Developing and maintaining full-stack web applications using React, Next.js, Expo, and Node.js with a focus on performance and user experience.',
-    achievements: [
-      'Optimized web application performance by implementing React and Next.js best practices, resulting in a 40% improvement in loading speed',
-      'Developed RESTful APIs using Express and MySQL serving over 1000 daily requests',
-      'Implemented responsive UI/UX using Tailwind CSS and TypeScript, increasing user engagement by 35%'
-    ],
-    skills: ['React', 'Next.js', 'PHP', 'HTML', 'CSS', 'Tailwind CSS', 'JavaScript', 'TypeScript', 'Node.js', 'Express', 'MySQL'],
-    gradient: 'from-lime-500 via-green-500 to-emerald-500',
-  },
-  {
-    id: 3,
-    company: 'PT Solusi Usaha Berdikari',
-    position: 'Website Developer',
-    period: 'Feb 2024 - Jul 2024',
-    duration: '6 months',
-    description: 'Developing and maintaining web applications with a focus on front-end development and user interface optimization using modern JavaScript frameworks.',
-    achievements: [
-      'Implemented responsive design patterns and optimized code structure, reducing load time by 40%',
-      'Developed and integrated new features using React.js, leading to a 15% increase in user engagement',
-      'Actively contributed to team knowledge sharing and documentation, improving development workflow efficiency'
-    ],
-    skills: ['React', 'JavaScript', 'TypeScript', 'HTML', 'CSS', 'Bootstrap', 'Git', 'REST APIs', 'Expo'],
-    gradient: 'from-green-500 via-emerald-500 to-teal-500',
-  },
-]
+interface WorkExperience {
+  id: number
+  company: string
+  position: string
+  period: string
+  duration: string
+  description: string
+  achievements: string[]
+  skills: string[]
+  gradient: string
+}
 
 export default function EnhancedWorkExperienceJourney() {
+  const t = useTranslations('workExperience')
+  
+  // Build work experiences from translations
+  const workExperiences: WorkExperience[] = [
+    {
+      id: 1,
+      company: t('kpk.company'),
+      position: t('kpk.title'),
+      period: t('kpk.duration'),
+      duration: t('kpk.durationShort'),
+      description: t('kpk.description'),
+      achievements: [
+        t('kpk.achievement1'),
+        t('kpk.achievement2'),
+        t('kpk.achievement3'),
+        t('kpk.achievement4')
+      ],
+      skills: t.raw('kpk.skills') as string[],
+      gradient: 'from-emerald-500 via-green-500 to-teal-500',
+    },
+    {
+      id: 2,
+      company: t('maro.company'),
+      position: t('maro.title'),
+      period: t('maro.duration'),
+      duration: t('maro.durationShort'),
+      description: t('maro.description'),
+      achievements: [
+        t('maro.achievement1'),
+        t('maro.achievement2'),
+        t('maro.achievement3')
+      ],
+      skills: t.raw('maro.skills') as string[],
+      gradient: 'from-lime-500 via-green-500 to-emerald-500',
+    },
+    {
+      id: 3,
+      company: t('sub.company'),
+      position: t('sub.title'),
+      period: t('sub.duration'),
+      duration: t('sub.durationShort'),
+      description: t('sub.description'),
+      achievements: [
+        t('sub.achievement1'),
+        t('sub.achievement2'),
+        t('sub.achievement3')
+      ],
+      skills: t.raw('sub.skills') as string[],
+      gradient: 'from-green-500 via-emerald-500 to-teal-500',
+    },
+  ]
+  
   const [activeExperience, setActiveExperience] = useState(workExperiences[0].id)
 
   return (
@@ -75,7 +91,7 @@ export default function EnhancedWorkExperienceJourney() {
           transition={{ duration: 0.5 }}
           className={`text-3xl md:text-4xl lg:text-5xl font-bold text-center text-neonGreen neon-glow mb-8 md:mb-12 ${orbitron.className}`}
         >
-          My Professional Journey
+          {t('pageTitle')}
         </motion.h1>
         
         <div className="relative">
@@ -180,7 +196,7 @@ export default function EnhancedWorkExperienceJourney() {
                       initial={{ x: -10 }}
                       whileHover={{ x: 0 }}
                     >
-                      <span className="text-neonGreen text-xs font-bold">Click to view details →</span>
+                      <span className="text-neonGreen text-xs font-bold">{t('viewDetails')} →</span>
                     </motion.div>
                   </div>
                   
@@ -237,7 +253,7 @@ export default function EnhancedWorkExperienceJourney() {
                       <div className="w-8 h-8 md:w-10 md:h-10 bg-neonGreen/20 rounded-lg flex items-center justify-center mr-3">
                         <Award className="w-5 h-5 md:w-6 md:h-6 text-neonGreen" />
                       </div>
-                      Key Achievements
+                      {t('achievements')}
                     </h3>
                     <ul className="list-none space-y-3 md:space-y-4">
                       {workExperiences.find(exp => exp.id === activeExperience)?.achievements.map((achievement, index) => (
@@ -262,7 +278,7 @@ export default function EnhancedWorkExperienceJourney() {
                   {/* Skills section with gradient tags */}
                   <div>
                     <h3 className={`text-lg md:text-2xl font-bold text-neonGreen mb-4 md:mb-6 ${orbitron.className}`}>
-                      Technologies & Skills
+                      {t('skills')}
                     </h3>
                     <div className="flex flex-wrap gap-2 md:gap-3">
                       {workExperiences.find(exp => exp.id === activeExperience)?.skills.map((skill, index) => (
@@ -288,3 +304,4 @@ export default function EnhancedWorkExperienceJourney() {
     </div>
   )
 }
+

@@ -5,6 +5,7 @@ import { motion, AnimatePresence, useInView } from 'framer-motion'
 import Link from 'next/link'
 import { Github, X, ChevronLeft, ChevronRight } from 'lucide-react'
 import { Orbitron } from 'next/font/google'
+import { useTranslations } from 'next-intl'
 
 const orbitron = Orbitron({ 
   subsets: ['latin'],
@@ -26,63 +27,15 @@ interface Project {
 interface ProjectCardProps {
   project: Project
   onClick: (project: Project) => void
+  isHovered: boolean
+  onHover: (id: number | null) => void
 }
 
-const projects = [
-  {
-    id: 1,
-    title: 'Website for Calculating Water Usage Billing',
-    description: 'A full-stack website for calculating water usage billing and secure payment integration.',
-    image: '/placeholder.svg?height=400&width=600',
-    technologies: ['PHP', 'MySQL', 'JavaScript', 'HTML', 'CSS', 'Bootstrap'],
-    githubLink: '/404',
-    gradient: 'from-blue-500 via-cyan-500 to-teal-500'
-  },
-  {
-    id: 2,
-    title: 'Restaurant Landing Page',
-    description: 'A landing page for a restaurant with a menu and orders system.',
-    image: '/placeholder.svg?height=400&width=600',
-    technologies: ['Next.js', 'Tailwind CSS', 'TypeScript', 'Framer Motion'],
-    githubLink: '/404',
-    gradient: 'from-orange-500 via-red-500 to-pink-500'
-  },
-  {
-    id: 3,
-    title: 'Company Profile Website',
-    description: 'A website for a company to showcase their services and products.',
-    image: '/placeholder.svg?height=400&width=600',
-    technologies: ['Next.js', 'TypeScript', 'Bootstrap', 'CSS', 'HTML'],
-    githubLink: '/404',
-    gradient: 'from-purple-500 via-violet-500 to-indigo-500'
-  },
-  {
-    id: 4,
-    title: 'Corruption Trial Recording Application',
-    description: 'A nationwide web application for recording and managing corruption trial proceedings across Indonesia, developed for the Corruption Eradication Commission (KPK).',
-    image: '/placeholder.svg?height=400&width=600',
-    technologies: ['React', 'Vite.js', 'TypeScript', 'Tailwind CSS', 'Laravel', 'PostgreSQL'],
-    githubLink: '/404',
-    gradient: 'from-emerald-500 via-green-500 to-lime-500'
-  },
-  {
-    id: 5,
-    title: 'Franchise POS System',
-    description: 'A comprehensive Point of Sale (POS) mobile application designed for franchise cashiers, featuring inventory management, sales tracking, and real-time reporting capabilities.',
-    image: '/placeholder.svg?height=400&width=600',
-    technologies: ['React Native', 'Expo', 'TypeScript', 'Kotlin', 'Node.js', 'Express', 'Prisma', 'MySQL'],
-    githubLink: '/404',
-    gradient: 'from-yellow-500 via-amber-500 to-orange-500'
-  },
-  
-]
-
-const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
+const ProjectCard = ({ project, onClick, isHovered, onHover }: ProjectCardProps) => {
   const ref = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { once: true })
   const [rotateX, setRotateX] = useState(0)
   const [rotateY, setRotateY] = useState(0)
-  const [isHovered, setIsHovered] = useState(false)
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!ref.current) return
@@ -105,7 +58,7 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
   const handleMouseLeave = () => {
     setRotateX(0)
     setRotateY(0)
-    setIsHovered(false)
+    onHover(null)
   }
 
   return (
@@ -116,7 +69,7 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
       transition={{ duration: 0.5 }}
       whileTap={{ scale: 0.98 }}
       onMouseMove={handleMouseMove}
-      onMouseEnter={() => setIsHovered(true)}
+      onMouseEnter={() => onHover(project.id)}
       onMouseLeave={handleMouseLeave}
       onClick={() => onClick(project)}
       className="relative cursor-pointer h-full"
@@ -308,8 +261,21 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
 }
 
 export default function Projects() {
+  const t = useTranslations('projects')
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
   const [direction, setDirection] = useState<number>(0)
+  const [hoveredCard, setHoveredCard] = useState<number | null>(null)
+
+  // Build projects array from translations
+  const projects: Project[] = [1, 2, 3, 4, 5].map(id => ({
+    id,
+    title: t(`items.${id}.title`),
+    description: t(`items.${id}.description`),
+    image: '/placeholder.svg?height=400&width=600',
+    technologies: t.raw(`items.${id}.technologies`) as string[],
+    githubLink: '/404',
+    gradient: t(`items.${id}.gradient`)
+  }))
 
   const handleProjectClick = (project: Project) => {
     setSelectedProject(project)
@@ -341,7 +307,7 @@ export default function Projects() {
           transition={{ duration: 0.5 }}
           className={`text-5xl font-bold text-center mb-12 text-neonGreen neon-glow ${orbitron.className}`}
         >
-          My Projects
+          {t('title')}
         </motion.h1>
 
         <motion.div 
@@ -359,7 +325,13 @@ export default function Projects() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch"
         >
           {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} onClick={handleProjectClick} />
+            <ProjectCard 
+              key={project.id} 
+              project={project} 
+              onClick={handleProjectClick}
+              isHovered={hoveredCard === project.id}
+              onHover={setHoveredCard}
+            />
           ))}
         </motion.div>
 
@@ -467,7 +439,7 @@ export default function Projects() {
                   transition={{ delay: 0.4 }}
                   className="mb-6"
                 >
-                  <h3 className="text-xl font-semibold mb-2 text-neonGreen">Technologies Used</h3>
+                  <h3 className="text-xl font-semibold mb-2 text-neonGreen">{t('technologiesUsed')}</h3>
                   <div className="flex flex-wrap gap-2">
                     {selectedProject.technologies.map((tech, index) => (
                       <motion.span
@@ -492,7 +464,7 @@ export default function Projects() {
                     className="inline-flex items-center justify-center px-6 py-3 bg-darkAccent hover:bg-neonGreen hover:text-darkBg text-neonGreen border border-neonGreen/30 rounded-lg transition-all"
                   >
                     <Github className="mr-2" size={20} />
-                    View on GitHub
+                    {t('viewOnGithub')}
                   </Link>
                 </motion.div>
                 <div className="absolute top-1/2 left-4 transform -translate-y-1/2">
@@ -519,3 +491,4 @@ export default function Projects() {
     </div>
   )
 }
+
