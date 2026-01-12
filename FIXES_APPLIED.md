@@ -142,3 +142,9 @@ Only 2 pages need the translation pattern applied:
 Just restart the dev server and test it!
 
 
+
+
+
+
+
+
