@@ -11,14 +11,21 @@ export default createMiddleware({
   // Automatically detect locale from browser/headers
   localeDetection: true,
 
-  // Always use prefix (e.g., /id/about, /en/about)
-  localePrefix: 'always'
+  // Only use prefix for non-default locales
+  // Indonesian (default): / or /project
+  // English: /en or /en/project
+  localePrefix: 'as-needed'
 })
 
 export const config = {
   // Match only internationalized pathnames
-  matcher: ['/', '/(id|en)/:path*']
+  matcher: [
+    '/',
+    '/(id|en)/:path*',
+    '/((?!api|_next|_vercel|.*\\..*).*)'
+  ]
 }
+
 
 
 

@@ -27,11 +27,19 @@ export default function LanguageSwitcher() {
   const switchLocale = (newLocale: string) => {
     if (newLocale === locale) return
 
-    // Get current path without locale prefix
-    const pathWithoutLocale = pathname.replace(`/${locale}`, '')
+    // Handle path based on current and new locale
+    let newPath = pathname
+    
+    if (locale === 'en') {
+      // From EN to ID: remove /en prefix
+      newPath = pathname.replace(/^\/en/, '') || '/'
+    } else {
+      // From ID to EN: add /en prefix
+      newPath = `/en${pathname}`
+    }
     
     // Navigate to new locale
-    router.push(`/${newLocale}${pathWithoutLocale || ''}`)
+    router.push(newPath)
     router.refresh()
     setIsOpen(false)
   }
