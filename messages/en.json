@@ -1,47 +1,47 @@
 {
   "nav": {
-    "dashboard": "Dashboard",
+    "dashboard": "Home",
     "aboutMe": "About Me",
-    "workExperience": "Work Experience",
+    "workExperience": "Experience",
     "projects": "Projects",
     "contact": "Contact"
   },
   "home": {
-    "greeting": "Hello, I'm",
+    "greeting": "Hi, I'm",
     "name": "Christoper John Aranda",
-    "title": "A Passionate Full Stack Developer",
-    "description": "Passionate about crafting elegant solutions through code.\nI believe great technology should solve real problems and make people's lives easier.",
+    "title": "Full Stack Developer — Building End-to-End",
+    "description": "I build digital solutions that don't just work — they make a difference.\nI believe great code is about real impact, not just technical perfection.",
     "cta": "Let's Talk",
-    "workedWith": "Worked With"
+    "workedWith": "Trusted By"
   },
   "about": {
     "pageTitle": "ABOUT ME",
     "fullName": "CHRISTOPER JOHN ARANDA",
     "role": "Full Stack Developer",
     "heading": "About Me",
-    "description": "My journey as a Full Stack Developer has been driven by curiosity and a genuine love for problem-solving through code. I'm passionate about creating web applications that not only work well technically, but also make a real difference in people's daily lives. Whether it's building e-commerce platforms, mobile applications, or complex systems, I approach each project with the mindset that great technology should be both powerful and human-centered. I believe in writing clean, maintainable code and continuously learning to stay ahead in this ever-evolving field.",
+    "description": "My journey as a Full Stack Developer was born from a relentless curiosity and a genuine love for solving problems through code. I believe a great application isn't just about technical performance — it's about the real impact it creates for its users. From building e-commerce platforms and mobile apps to national-scale systems, I approach every project with one principle: great technology should be both powerful and deeply human. I'm committed to writing clean, maintainable code and continuously sharpening my craft to stay ahead in an ever-evolving industry.",
     "tabSkills": "Skills",
     "tabExperience": "Experience",
     "tabEducation": "Education",
     "kpk": {
       "title": "Junior Programmer",
-      "company": "Komisi Pemberantasan Korupsi",
+      "company": "Corruption Eradication Commission (KPK)",
       "duration": "Nov 2025 - Present",
-      "desc1": "Developed a nationwide corruption trial recording application used across Indonesia",
-      "desc2": "Built full-stack application using modern tech stack: React, Vite, TypeScript, and Tailwind CSS"
+      "desc1": "Built a nationwide corruption trial recording application deployed across Indonesia",
+      "desc2": "Developed full-stack application using React, Vite, TypeScript, and Tailwind CSS"
     },
     "maro": {
       "title": "Full Stack Developer",
       "company": "PT Maro Anugrah Jaya",
       "duration": "Sep 2024 - May 2025",
-      "desc1": "Optimized web application performance by implementing React and Next.js best practices",
-      "desc2": "Developed RESTful APIs using Express and MySQL serving over 1000 daily requests"
+      "desc1": "Boosted web application performance by applying React and Next.js best practices",
+      "desc2": "Built RESTful APIs with Express and MySQL handling over 1,000 daily requests"
     },
     "sub": {
       "title": "Website Developer",
       "company": "PT Solusi Usaha Berdikari",
       "duration": "Feb 2024 - Jul 2024",
-      "desc1": "Implemented responsive design patterns and optimized code structure",
+      "desc1": "Applied responsive design patterns and optimized code structure for better performance",
       "desc2": "Developed and integrated new features using React.js"
     },
     "umn": {
@@ -60,14 +60,14 @@
     "skills": "Technologies & Skills",
     "kpk": {
       "title": "Junior Programmer",
-      "company": "Komisi Pemberantasan Korupsi",
+      "company": "Corruption Eradication Commission (KPK)",
       "duration": "Nov 2025 - Present",
       "durationShort": "1 month",
-      "description": "Developing and maintaining web applications using React and Node.js",
-      "achievement1": "Developed a nationwide corruption trial recording application used across Indonesia",
-      "achievement2": "Built full-stack application using modern tech stack: React, Vite, TypeScript, and Tailwind CSS for frontend",
-      "achievement3": "Implemented robust backend system with Laravel and PostgreSQL for handling critical legal data",
-      "achievement4": "Collaborated with legal teams to ensure the application meets judicial recording standards and compliance requirements",
+      "description": "Building and maintaining a national-scale web application using React and Laravel to support law enforcement operations across Indonesia.",
+      "achievement1": "Built a nationwide corruption trial recording application now deployed across all regions of Indonesia",
+      "achievement2": "Developed full-stack application using React, Vite, TypeScript, and Tailwind CSS for the frontend layer",
+      "achievement3": "Designed a robust backend system with Laravel and PostgreSQL for handling critical legal data",
+      "achievement4": "Worked directly with KPK's legal team to ensure the application meets judicial recording standards and compliance regulations",
       "skills": ["React", "Vite.js", "TypeScript", "Tailwind CSS", "Laravel", "PostgreSQL", "HTML", "CSS", "JavaScript"]
     },
     "maro": {
@@ -75,10 +75,10 @@
       "company": "PT Maro Anugrah Jaya",
       "duration": "Sep 2024 - May 2025",
       "durationShort": "9 months",
-      "description": "Developing and maintaining full-stack web applications using React, Next.js, Expo, and Node.js with a focus on performance and user experience.",
-      "achievement1": "Optimized web application performance by implementing React and Next.js best practices, resulting in a 40% improvement in loading speed",
-      "achievement2": "Developed RESTful APIs using Express and MySQL serving over 1000 daily requests",
-      "achievement3": "Implemented responsive UI/UX using Tailwind CSS and TypeScript, increasing user engagement by 35%",
+      "description": "Developed and maintained full-stack web applications using React, Next.js, Expo, and Node.js with a strong focus on performance and seamless user experience.",
+      "achievement1": "Improved web application performance by 40% by implementing React and Next.js best practices",
+      "achievement2": "Built RESTful APIs using Express and MySQL reliably serving over 1,000 daily requests",
+      "achievement3": "Delivered responsive UI/UX with Tailwind CSS and TypeScript, contributing to a 35% increase in user engagement",
       "skills": ["React", "Next.js", "PHP", "HTML", "CSS", "Tailwind CSS", "JavaScript", "TypeScript", "Node.js", "Express", "MySQL"]
     },
     "sub": {
@@ -86,10 +86,10 @@
       "company": "PT Solusi Usaha Berdikari",
       "duration": "Feb 2024 - Jul 2024",
       "durationShort": "6 months",
-      "description": "Developing and maintaining web applications with a focus on front-end development and user interface optimization using modern JavaScript frameworks.",
-      "achievement1": "Implemented responsive design patterns and optimized code structure, reducing load time by 40%",
-      "achievement2": "Developed and integrated new features using React.js, leading to a 15% increase in user engagement",
-      "achievement3": "Actively contributed to team knowledge sharing and documentation, improving development workflow efficiency",
+      "description": "Developed and maintained web applications with a focus on responsive front-end development and UI optimization using modern JavaScript frameworks.",
+      "achievement1": "Applied responsive design patterns and optimized code structure, cutting load time by 40%",
+      "achievement2": "Developed and integrated new features with React.js, driving a 15% increase in user engagement",
+      "achievement3": "Actively contributed to team knowledge sharing and documentation, meaningfully improving development workflow efficiency",
       "skills": ["React", "JavaScript", "TypeScript", "HTML", "CSS", "Bootstrap", "Git", "REST APIs", "Expo"]
     }
   },
@@ -99,53 +99,53 @@
     "viewOnGithub": "View on GitHub",
     "items": {
       "1": {
-        "title": "Website for Calculating Water Usage Billing",
-        "description": "A full-stack website for calculating water usage billing and secure payment integration.",
+        "title": "Water Billing Management System",
+        "description": "A full-stack platform for calculating and managing customer water usage bills, complete with secure payment integration and automated reporting.",
         "technologies": ["PHP", "MySQL", "JavaScript", "HTML", "CSS", "Bootstrap"],
         "gradient": "from-blue-500 via-cyan-500 to-teal-500"
       },
       "2": {
         "title": "Restaurant Landing Page",
-        "description": "A landing page for a restaurant with a menu and orders system.",
+        "description": "A modern, visually-rich landing page for a restaurant featuring an interactive menu, online ordering system, and smooth animations.",
         "technologies": ["Next.js", "Tailwind CSS", "TypeScript", "Framer Motion"],
         "gradient": "from-orange-500 via-red-500 to-pink-500"
       },
       "3": {
         "title": "Company Profile Website",
-        "description": "A website for a company to showcase their services and products.",
+        "description": "A professional website designed to introduce a company, showcase its key services, and build credibility with potential clients.",
         "technologies": ["Next.js", "TypeScript", "Bootstrap", "CSS", "HTML"],
         "gradient": "from-purple-500 via-violet-500 to-indigo-500"
       },
       "4": {
         "title": "Franchise POS System",
-        "description": "A comprehensive Point of Sale (POS) mobile application designed for franchise cashiers, featuring inventory management, sales tracking, and real-time reporting capabilities.",
+        "description": "A comprehensive Point of Sale mobile app built for franchise cashiers — featuring inventory management, real-time sales tracking, and detailed business reporting.",
         "technologies": ["React Native", "Expo", "TypeScript", "Kotlin", "Node.js", "Express", "Prisma", "MySQL"],
         "gradient": "from-yellow-500 via-amber-500 to-orange-500"
       },
       "5": {
-        "title": "Corruption Trial Recording Application",
-        "description": "A nationwide web application for recording and managing corruption trial proceedings across Indonesia, developed for the Corruption Eradication Commission (KPK).",
+        "title": "Corruption Trial Recording App",
+        "description": "A national-scale web system for recording and managing corruption trial proceedings across Indonesia, built directly for the Corruption Eradication Commission (KPK).",
         "technologies": ["React", "Vite.js", "TypeScript", "Tailwind CSS", "Laravel", "PostgreSQL"],
         "gradient": "from-emerald-500 via-green-500 to-lime-500"
       },
       "6": {
         "title": "TELUNAS Application",
-        "description": "An application that helps the KPK to conduct investigations, terharap orang, perusahaan, yayasan, because this application is interconnected with many external APIs.",
+        "description": "A digital investigation platform for KPK that enables in-depth tracing of individuals, companies, and foundations through integration with multiple external APIs.",
         "technologies": ["PHP", "Vue.js", "Laravel", "Quasar Framework", "MongoDB", "PostgreSQL"],
         "gradient": "from-pink-500 via-rose-500 to-fuchsia-500"
       }
     }
   },
   "contact": {
-    "pageTitle": "CONTACT ME",
-    "pageSubtitle": "Let's work together! Reach out through any of the methods below.",
+    "pageTitle": "GET IN TOUCH",
+    "pageSubtitle": "Have a project idea or want to collaborate? I'd love to hear about it.",
     "email": "Email",
     "whatsapp": "WhatsApp",
     "location": "Location",
     "locationValue": "Indonesia",
     "connectTitle": "LET'S CONNECT",
-    "connectMessage": "Feel free to reach out through any of the contact methods above.\nI'm always open to discussing new projects and opportunities.",
-    "emailButton": "Email Me",
+    "connectMessage": "I'm open to new opportunities, exciting projects, or even just a good conversation.\nDon't hesitate to reach out — I usually respond quickly!",
+    "emailButton": "Send Email",
     "availability": "Available for freelance projects"
   },
   "notFound": {
@@ -165,4 +165,3 @@
     "github": "GitHub account"
   }
 }
-
