@@ -117,16 +117,22 @@
         "gradient": "from-purple-500 via-violet-500 to-indigo-500"
       },
       "4": {
+        "title": "Sistem POS Franchise",
+        "description": "Aplikasi mobile Point of Sale (POS) komprehensif yang dirancang untuk kasir franchise, dengan fitur manajemen inventori, pelacakan penjualan, dan pelaporan real-time.",
+        "technologies": ["React Native", "Expo", "TypeScript", "Kotlin", "Node.js", "Express", "Prisma", "MySQL"],
+        "gradient": "from-yellow-500 via-amber-500 to-orange-500"
+      },
+      "5": {
         "title": "Aplikasi Perekaman Persidangan Korupsi",
         "description": "Aplikasi web nasional untuk merekam dan mengelola proses persidangan korupsi di seluruh Indonesia, dikembangkan untuk Komisi Pemberantasan Korupsi (KPK).",
         "technologies": ["React", "Vite.js", "TypeScript", "Tailwind CSS", "Laravel", "PostgreSQL"],
         "gradient": "from-emerald-500 via-green-500 to-lime-500"
       },
-      "5": {
-        "title": "Sistem POS Franchise",
-        "description": "Aplikasi mobile Point of Sale (POS) komprehensif yang dirancang untuk kasir franchise, dengan fitur manajemen inventori, pelacakan penjualan, dan pelaporan real-time.",
-        "technologies": ["React Native", "Expo", "TypeScript", "Kotlin", "Node.js", "Express", "Prisma", "MySQL"],
-        "gradient": "from-yellow-500 via-amber-500 to-orange-500"
+      "6": {
+        "title": "Aplikasi TELUNAS",
+        "description": "Aplikasi yang membantu pihak KPK untuk melakukan penyelidikan, terharap orang, perusahaan, yayasan, karena aplikasi ini terinterkoneksi dengan banyak API eksternal.",
+        "technologies": ["PHP", "Vue.js", "Laravel", "Quasar Framework", "MongoDB", "PostgreSQL"],
+        "gradient": "from-pink-500 via-rose-500 to-fuchsia-500"
       }
     }
   },

@@ -117,16 +117,22 @@
         "gradient": "from-purple-500 via-violet-500 to-indigo-500"
       },
       "4": {
+        "title": "Franchise POS System",
+        "description": "A comprehensive Point of Sale (POS) mobile application designed for franchise cashiers, featuring inventory management, sales tracking, and real-time reporting capabilities.",
+        "technologies": ["React Native", "Expo", "TypeScript", "Kotlin", "Node.js", "Express", "Prisma", "MySQL"],
+        "gradient": "from-yellow-500 via-amber-500 to-orange-500"
+      },
+      "5": {
         "title": "Corruption Trial Recording Application",
         "description": "A nationwide web application for recording and managing corruption trial proceedings across Indonesia, developed for the Corruption Eradication Commission (KPK).",
         "technologies": ["React", "Vite.js", "TypeScript", "Tailwind CSS", "Laravel", "PostgreSQL"],
         "gradient": "from-emerald-500 via-green-500 to-lime-500"
       },
-      "5": {
-        "title": "Franchise POS System",
-        "description": "A comprehensive Point of Sale (POS) mobile application designed for franchise cashiers, featuring inventory management, sales tracking, and real-time reporting capabilities.",
-        "technologies": ["React Native", "Expo", "TypeScript", "Kotlin", "Node.js", "Express", "Prisma", "MySQL"],
-        "gradient": "from-yellow-500 via-amber-500 to-orange-500"
+      "6": {
+        "title": "TELUNAS Application",
+        "description": "An application that helps the KPK to conduct investigations, terharap orang, perusahaan, yayasan, because this application is interconnected with many external APIs.",
+        "technologies": ["PHP", "Vue.js", "Laravel", "Quasar Framework", "MongoDB", "PostgreSQL"],
+        "gradient": "from-pink-500 via-rose-500 to-fuchsia-500"
       }
     }
   },

@@ -12,6 +12,16 @@ const orbitron = Orbitron({
   weight: ['400', '500', '700', '900']
 })
 
+// Accent colors per card (rgb values for inline style usage)
+const ACCENT_COLORS = [
+  { rgb: '34, 211, 238',  hex: '#22d3ee' }, // 1 — cyan
+  { rgb: '249, 115, 22',  hex: '#f97316' }, // 2 — orange
+  { rgb: '168, 85, 247',  hex: '#a855f7' }, // 3 — purple
+  { rgb: '251, 191, 36',  hex: '#fbbf24' }, // 4 — amber
+  { rgb: '57, 255, 20',   hex: '#39FF14' }, // 5 — neon green
+  { rgb: '236, 72, 153',  hex: '#ec4899' }, // 6 — pink
+]
+
 // Add interface for Project type
 interface Project {
   id: number
@@ -21,6 +31,7 @@ interface Project {
   technologies: string[]
   githubLink: string
   gradient: string
+  accent: { rgb: string; hex: string }
 }
 
 // Add type for ProjectCard props
@@ -36,6 +47,7 @@ const ProjectCard = ({ project, onClick, isHovered, onHover }: ProjectCardProps)
   const isInView = useInView(ref, { once: true })
   const [rotateX, setRotateX] = useState(0)
   const [rotateY, setRotateY] = useState(0)
+  const { rgb, hex } = project.accent
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!ref.current) return
@@ -78,7 +90,8 @@ const ProjectCard = ({ project, onClick, isHovered, onHover }: ProjectCardProps)
       }}
     >
       <motion.div
-        className="relative bg-darkCard border border-neonGreen/20 rounded-lg overflow-hidden shadow-lg h-full flex flex-col min-h-[480px]"
+        className="relative bg-darkCard rounded-lg overflow-hidden shadow-lg h-full flex flex-col min-h-[480px]"
+        style={{ border: `1px solid rgba(${rgb}, 0.25)` }}
         animate={{
           rotateX: rotateX,
           rotateY: rotateY,
@@ -89,18 +102,15 @@ const ProjectCard = ({ project, onClick, isHovered, onHover }: ProjectCardProps)
           stiffness: 300,
           damping: 20,
         }}
-        style={{
-          transformStyle: 'preserve-3d',
-          boxShadow: isHovered 
-            ? '0 20px 40px rgba(57, 255, 20, 0.3), 0 0 30px rgba(57, 255, 20, 0.2)' 
-            : '0 10px 20px rgba(0, 0, 0, 0.3)',
+        whileHover={{
+          boxShadow: `0 20px 40px rgba(${rgb}, 0.3), 0 0 30px rgba(${rgb}, 0.2)`,
         }}
       >
         {/* Shimmer overlay */}
         <motion.div
           className="absolute inset-0 z-10 pointer-events-none"
           style={{
-            background: 'linear-gradient(135deg, transparent 0%, rgba(57, 255, 20, 0.1) 50%, transparent 100%)',
+            background: `linear-gradient(135deg, transparent 0%, rgba(${rgb}, 0.08) 50%, transparent 100%)`,
             backgroundSize: '200% 200%',
           }}
           animate={{
@@ -113,18 +123,16 @@ const ProjectCard = ({ project, onClick, isHovered, onHover }: ProjectCardProps)
           }}
         />
 
-        {/* Neon border glow */}
+        {/* Accent border glow on hover */}
         <motion.div
           className="absolute inset-0 rounded-lg pointer-events-none"
           animate={{
-            borderColor: isHovered ? 'rgba(57, 255, 20, 0.8)' : 'rgba(57, 255, 20, 0.2)',
-          }}
-          style={{
-            border: '2px solid',
-            boxShadow: isHovered 
-              ? '0 0 20px rgba(57, 255, 20, 0.5), inset 0 0 20px rgba(57, 255, 20, 0.1)' 
+            borderColor: isHovered ? `rgba(${rgb}, 0.9)` : `rgba(${rgb}, 0.25)`,
+            boxShadow: isHovered
+              ? `0 0 20px rgba(${rgb}, 0.4), inset 0 0 20px rgba(${rgb}, 0.08)`
               : 'none',
           }}
+          style={{ border: '2px solid' }}
           transition={{ duration: 0.3 }}
         />
 
@@ -244,7 +252,8 @@ const ProjectCard = ({ project, onClick, isHovered, onHover }: ProjectCardProps)
                 animate={{ opacity: 1, scale: 1 }}
                 whileHover={{ scale: 1.1, y: -2 }}
                 transition={{ delay: index * 0.1 }}
-                className="px-2 py-1 bg-darkAccent text-neonGreen border border-neonGreen/30 rounded-full text-xs hover:border-neonGreen hover:shadow-[0_0_10px_rgba(57,255,20,0.3)]"
+                className="px-2 py-1 bg-darkAccent text-neonGreen rounded-full text-xs"
+                style={{ border: `1px solid rgba(${rgb}, 0.4)` }}
               >
                 {tech}
               </motion.span>
@@ -253,8 +262,8 @@ const ProjectCard = ({ project, onClick, isHovered, onHover }: ProjectCardProps)
         </div>
 
         {/* Corner accents */}
-        <div className="absolute top-2 right-2 w-8 h-8 border-t-2 border-r-2 border-neonGreen/30 rounded-tr-lg" />
-        <div className="absolute bottom-2 left-2 w-8 h-8 border-b-2 border-l-2 border-neonGreen/30 rounded-bl-lg" />
+        <div className="absolute top-2 right-2 w-8 h-8 rounded-tr-lg" style={{ borderTop: `2px solid rgba(${rgb}, 0.5)`, borderRight: `2px solid rgba(${rgb}, 0.5)` }} />
+        <div className="absolute bottom-2 left-2 w-8 h-8 rounded-bl-lg" style={{ borderBottom: `2px solid rgba(${rgb}, 0.5)`, borderLeft: `2px solid rgba(${rgb}, 0.5)` }} />
       </motion.div>
     </motion.div>
   )
@@ -267,14 +276,15 @@ export default function Projects() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null)
 
   // Build projects array from translations
-  const projects: Project[] = [1, 2, 3, 4, 5].map(id => ({
+  const projects: Project[] = [1, 2, 3, 4, 5, 6].map(id => ({
     id,
     title: t(`items.${id}.title`),
     description: t(`items.${id}.description`),
     image: '/placeholder.svg?height=400&width=600',
     technologies: t.raw(`items.${id}.technologies`) as string[],
     githubLink: '/404',
-    gradient: t(`items.${id}.gradient`)
+    gradient: t(`items.${id}.gradient`),
+    accent: ACCENT_COLORS[id - 1],
   }))
 
   const handleProjectClick = (project: Project) => {
@@ -350,7 +360,11 @@ export default function Projects() {
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: direction * -50, opacity: 0 }}
                 transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-                className="bg-darkCard border-2 border-neonGreen rounded-lg p-8 max-w-3xl w-full max-h-[90vh] overflow-y-auto relative"
+                className="bg-darkCard rounded-lg p-8 max-w-3xl w-full max-h-[90vh] overflow-y-auto relative"
+                style={{
+                  border: `2px solid ${selectedProject.accent.hex}`,
+                  boxShadow: `0 0 30px rgba(${selectedProject.accent.rgb}, 0.3)`,
+                }}
                 onClick={(e) => e.stopPropagation()}
               >
                 <button
