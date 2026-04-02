@@ -74,15 +74,12 @@ body {
 /* Navbar link hover effects */
 .navbar-link {
   position: relative;
-  transition: all 0.3s ease;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .navbar-link:hover {
   color: #39FF14;
-  text-shadow: 
-    0 0 10px rgba(57, 255, 20, 0.8),
-    0 0 20px rgba(57, 255, 20, 0.6),
-    0 0 30px rgba(57, 255, 20, 0.4);
+  text-shadow: 0 0 10px rgba(57, 255, 20, 0.8);
   transform: scale(1.1);
 }
 
@@ -93,15 +90,12 @@ body {
 /* Mobile navbar link hover effects */
 .navbar-link-mobile {
   position: relative;
-  transition: all 0.3s ease;
+  transition: color 0.2s ease, transform 0.2s ease, background-color 0.2s ease;
 }
 
 .navbar-link-mobile:hover {
   color: #39FF14;
-  text-shadow: 
-    0 0 10px rgba(57, 255, 20, 0.8),
-    0 0 20px rgba(57, 255, 20, 0.6),
-    0 0 30px rgba(57, 255, 20, 0.4);
+  text-shadow: 0 0 10px rgba(57, 255, 20, 0.8);
   transform: translateX(5px) scale(1.05);
   background-color: rgba(57, 255, 20, 0.1);
 }

@@ -75,7 +75,7 @@ export default function Contact() {
               rel={info.link.startsWith('http') ? 'noopener noreferrer' : undefined}
               whileHover={{ scale: 1.05, y: -5 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-darkCard border border-neonGreen/20 rounded-lg p-6 text-center hover:border-neonGreen/50 transition-all cursor-pointer group"
+              className="bg-darkCard border border-neonGreen/20 rounded-lg p-6 text-center hover:border-neonGreen/50 transition-colors duration-150 cursor-pointer group"
             >
               <div className={`w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br ${info.color} p-0.5`}>
                 <div className="w-full h-full rounded-full bg-darkCard flex items-center justify-center">
@@ -118,7 +118,7 @@ export default function Contact() {
             <div className="inline-block">
               <a 
                 href="mailto:christoperjohnaranda@gmail.com" 
-                className={`inline-flex items-center gap-2 bg-neonGreen text-darkBg font-bold py-3 px-8 rounded-lg hover:bg-neonGreen/90 transition-all ${orbitron.className}`}
+                className={`inline-flex items-center gap-2 bg-neonGreen text-darkBg font-bold py-3 px-8 rounded-lg hover:bg-neonGreen/90 transition-colors duration-150 ${orbitron.className}`}
               >
                 <Mail className="w-5 h-5" />
                 {t('emailButton')}

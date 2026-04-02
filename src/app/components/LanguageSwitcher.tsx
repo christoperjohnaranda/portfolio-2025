@@ -64,7 +64,7 @@ export default function LanguageSwitcher() {
           bg-darkCard/80 backdrop-blur-sm 
           border border-neonGreen/30 rounded-lg
           text-neonGreen hover:text-white
-          transition-all duration-300
+          transition-[border-color,box-shadow,color] duration-200
           ${orbitron.className}
         `}
         whileHover={{ 
@@ -103,7 +103,7 @@ export default function LanguageSwitcher() {
                   onClick={() => switchLocale(lang.code)}
                   className={`
                     w-full px-3 py-2 flex items-center gap-2
-                    text-left transition-all duration-200
+                    text-left transition-colors duration-150
                     ${lang.code === locale 
                       ? 'bg-neonGreen/20 text-neonGreen' 
                       : 'text-lightGreen hover:bg-neonGreen/10 hover:text-neonGreen'

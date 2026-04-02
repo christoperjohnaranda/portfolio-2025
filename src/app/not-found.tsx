@@ -148,7 +148,7 @@ export default function NotFound() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className={`flex items-center gap-2 px-5 md:px-6 py-2.5 md:py-3 bg-darkCard border-2 border-neonGreen text-neonGreen rounded-lg hover:bg-neonGreen hover:text-darkBg transition-all text-sm md:text-base ${orbitron.className}`}
+              className={`flex items-center gap-2 px-5 md:px-6 py-2.5 md:py-3 bg-darkCard border-2 border-neonGreen text-neonGreen rounded-lg hover:bg-neonGreen hover:text-darkBg transition-colors duration-150 text-sm md:text-base ${orbitron.className}`}
               style={{
                 boxShadow: '0 0 20px rgba(57, 255, 20, 0.3)',
               }}
@@ -166,7 +166,7 @@ export default function NotFound() {
                 window.history.back()
               }
             }}
-            className={`flex items-center gap-2 px-5 md:px-6 py-2.5 md:py-3 bg-darkCard border-2 border-neonGreen/50 text-lightGreen rounded-lg hover:border-neonGreen hover:text-neonGreen transition-all text-sm md:text-base ${orbitron.className}`}
+            className={`flex items-center gap-2 px-5 md:px-6 py-2.5 md:py-3 bg-darkCard border-2 border-neonGreen/50 text-lightGreen rounded-lg hover:border-neonGreen hover:text-neonGreen transition-colors duration-150 text-sm md:text-base ${orbitron.className}`}
           >
             <ArrowLeft size={18} className="md:w-5 md:h-5" />
             Go Back

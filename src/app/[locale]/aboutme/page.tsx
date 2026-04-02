@@ -63,7 +63,7 @@ export default function AboutMe() {
         >
           <motion.div
             whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.15 }}
             className="inline-block"
           >
             <Image
@@ -71,7 +71,7 @@ export default function AboutMe() {
               alt="Christoper John Aranda"
               width={150}
               height={150}
-              className="rounded-full mx-auto mb-4 border-4 border-neonGreen neon-border grayscale hover:grayscale-0 transition-all duration-500 object-cover cursor-pointer"
+              className="rounded-full mx-auto mb-4 border-4 border-neonGreen neon-border grayscale hover:grayscale-0 transition-[filter] duration-200 object-cover cursor-pointer"
               style={{ width: '150px', height: '150px' }}
               priority
               quality={85}
@@ -100,7 +100,7 @@ export default function AboutMe() {
               <motion.button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`px-4 md:px-6 py-2 md:py-3 rounded-lg font-semibold transition-all ${
+                className={`px-4 md:px-6 py-2 md:py-3 rounded-lg font-semibold transition-colors duration-150 ${
                   activeTab === tab
                     ? `bg-neonGreen text-darkBg ${orbitron.className}`
                     : `bg-darkCard text-lightGreen hover:bg-darkAccent ${orbitron.className}`
@@ -130,7 +130,7 @@ export default function AboutMe() {
                     transition={{ duration: 0.3, delay: index * 0.05 }}
                     className="flex flex-col items-center group"
                   >
-                    <div className="w-20 h-20 bg-darkAccent rounded-xl shadow-lg flex items-center justify-center mb-3 transform transition-all duration-300 hover:shadow-[0_0_20px_rgba(57,255,20,0.5)] hover:rotate-6 border border-neonGreen/20 hover:border-neonGreen">
+                    <div className="w-20 h-20 bg-darkAccent rounded-xl shadow-lg flex items-center justify-center mb-3 transform transition-[box-shadow,border-color,transform] duration-200 hover:shadow-[0_0_20px_rgba(57,255,20,0.5)] hover:rotate-6 border border-neonGreen/20 hover:border-neonGreen">
                       <Image
                         src={skill.logo}
                         alt={`${skill.name} logo`}

@@ -81,7 +81,7 @@ export default function Home() {
           <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className={`rounded-md border-double border-4 border-neonGreen neon-border py-2 md:py-3 px-5 md:px-6 text-sm md:text-base text-center text-neonGreen hover:bg-neonGreen hover:text-darkBg hover:border-white transition-all ${orbitron.className}`}
+            className={`rounded-md border-double border-4 border-neonGreen neon-border py-2 md:py-3 px-5 md:px-6 text-sm md:text-base text-center text-neonGreen hover:bg-neonGreen hover:text-darkBg hover:border-white transition-colors duration-150 ${orbitron.className}`}
           >
             {t('cta')}
           </motion.button>

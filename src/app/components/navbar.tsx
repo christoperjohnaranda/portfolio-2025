@@ -48,11 +48,11 @@ export default function Navbar(){
                     <div className="flex items-center justify-center gap-4">
                         <div className="flex justify-center items-center hidden sm:ml-6 sm:block">
                             <div className="flex justify-center items-center">
-                                <a href={`/${locale}`} className={`navbar-link rounded-md px-3 py-2 text-sm font-medium text-lightGreen transition-all duration-300 ${orbitron.className}`}>{t('dashboard')}</a>
-                                <a href={`/${locale}/aboutme`} className={`navbar-link rounded-md px-3 py-2 text-sm font-medium text-lightGreen transition-all duration-300 ${orbitron.className}`}>{t('aboutMe')}</a>
-                                <a href={`/${locale}/workexperience`} className={`navbar-link rounded-md px-3 py-2 text-sm font-medium text-lightGreen transition-all duration-300 ${orbitron.className}`}>{t('workExperience')}</a>
-                                <a href={`/${locale}/project`} className={`navbar-link rounded-md px-3 py-2 text-sm font-medium text-lightGreen transition-all duration-300 ${orbitron.className}`}>{t('projects')}</a>
-                                <a href={`/${locale}/contact`} className={`navbar-link rounded-md px-3 py-2 text-sm font-medium text-lightGreen transition-all duration-300 ${orbitron.className}`}>{t('contact')}</a>
+                                <a href={`/${locale}`} className={`navbar-link rounded-md px-3 py-2 text-sm font-medium text-lightGreen ${orbitron.className}`}>{t('dashboard')}</a>
+                                <a href={`/${locale}/aboutme`} className={`navbar-link rounded-md px-3 py-2 text-sm font-medium text-lightGreen ${orbitron.className}`}>{t('aboutMe')}</a>
+                                <a href={`/${locale}/workexperience`} className={`navbar-link rounded-md px-3 py-2 text-sm font-medium text-lightGreen ${orbitron.className}`}>{t('workExperience')}</a>
+                                <a href={`/${locale}/project`} className={`navbar-link rounded-md px-3 py-2 text-sm font-medium text-lightGreen ${orbitron.className}`}>{t('projects')}</a>
+                                <a href={`/${locale}/contact`} className={`navbar-link rounded-md px-3 py-2 text-sm font-medium text-lightGreen ${orbitron.className}`}>{t('contact')}</a>
                             </div>
                         </div>
                         <div className="hidden sm:block">
@@ -68,35 +68,35 @@ export default function Navbar(){
                         <a 
                             href={`/${locale}`}
                             onClick={toggleMenu}
-                            className={`navbar-link-mobile block rounded-md px-3 py-2 text-base font-medium text-lightGreen transition-all duration-300 ${orbitron.className}`}
+                            className={`navbar-link-mobile block rounded-md px-3 py-2 text-base font-medium text-lightGreen ${orbitron.className}`}
                         >
                             {t('dashboard')}
                         </a>
                         <a 
                             href={`/${locale}/aboutme`}
                             onClick={toggleMenu}
-                            className={`navbar-link-mobile block rounded-md px-3 py-2 text-base font-medium text-lightGreen transition-all duration-300 ${orbitron.className}`}
+                            className={`navbar-link-mobile block rounded-md px-3 py-2 text-base font-medium text-lightGreen ${orbitron.className}`}
                         >
                             {t('aboutMe')}
                         </a>
                         <a 
                             href={`/${locale}/workexperience`}
                             onClick={toggleMenu}
-                            className={`navbar-link-mobile block rounded-md px-3 py-2 text-base font-medium text-lightGreen transition-all duration-300 ${orbitron.className}`}
+                            className={`navbar-link-mobile block rounded-md px-3 py-2 text-base font-medium text-lightGreen ${orbitron.className}`}
                         >
                             {t('workExperience')}
                         </a>
                         <a 
                             href={`/${locale}/project`}
                             onClick={toggleMenu}
-                            className={`navbar-link-mobile block rounded-md px-3 py-2 text-base font-medium text-lightGreen transition-all duration-300 ${orbitron.className}`}
+                            className={`navbar-link-mobile block rounded-md px-3 py-2 text-base font-medium text-lightGreen ${orbitron.className}`}
                         >
                             {t('projects')}
                         </a>
                         <a 
                             href={`/${locale}/contact`}
                             onClick={toggleMenu}
-                            className={`navbar-link-mobile block rounded-md px-3 py-2 text-base font-medium text-lightGreen transition-all duration-300 ${orbitron.className}`}
+                            className={`navbar-link-mobile block rounded-md px-3 py-2 text-base font-medium text-lightGreen ${orbitron.className}`}
                         >
                             {t('contact')}
                         </a>

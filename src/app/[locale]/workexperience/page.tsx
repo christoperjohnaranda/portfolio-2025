@@ -146,7 +146,7 @@ export default function EnhancedWorkExperienceJourney() {
                 <motion.div
                   whileHover={{ scale: 1.02, y: -5 }}
                   whileTap={{ scale: 0.98 }}
-                  className={`relative overflow-hidden bg-darkCard border rounded-xl shadow-lg cursor-pointer transition-all duration-300 group ${
+                  className={`relative overflow-hidden bg-darkCard border rounded-xl shadow-lg cursor-pointer transition-[border-color,box-shadow] duration-200 group ${
                     activeExperience === experience.id 
                       ? 'ring-2 md:ring-4 ring-neonGreen border-neonGreen shadow-[0_0_30px_rgba(57,255,20,0.5)]' 
                       : 'border-neonGreen/20 hover:border-neonGreen/40'
@@ -177,7 +177,7 @@ export default function EnhancedWorkExperienceJourney() {
                       {experience.duration}
                     </div>
                     
-                    <h3 className={`text-lg md:text-2xl font-bold text-neonGreen mb-1 md:mb-2 group-hover:text-shadow-glow transition-all ${orbitron.className}`}>
+                    <h3 className={`text-lg md:text-2xl font-bold text-neonGreen mb-1 md:mb-2 ${orbitron.className}`}>
                       {experience.company}
                     </h3>
                     
@@ -288,7 +288,7 @@ export default function EnhancedWorkExperienceJourney() {
                           animate={{ opacity: 1, scale: 1 }}
                           whileHover={{ scale: 1.1, y: -2 }}
                           transition={{ duration: 0.2 }}
-                          className={`relative px-3 py-1.5 md:px-4 md:py-2 bg-gradient-to-r ${workExperiences.find(exp => exp.id === activeExperience)?.gradient} text-white rounded-lg text-xs md:text-sm font-bold shadow-lg hover:shadow-xl transition-all ${spaceGrotesk.className}`}
+                          className={`relative px-3 py-1.5 md:px-4 md:py-2 bg-gradient-to-r ${workExperiences.find(exp => exp.id === activeExperience)?.gradient} text-white rounded-lg text-xs md:text-sm font-bold shadow-lg hover:shadow-xl transition-shadow duration-150 ${spaceGrotesk.className}`}
                         >
                           {skill}
                         </motion.span>

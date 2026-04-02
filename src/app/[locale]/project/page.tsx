@@ -461,7 +461,7 @@ export default function Projects() {
                 >
                   <Link
                     href={selectedProject.githubLink}
-                    className="inline-flex items-center justify-center px-6 py-3 bg-darkAccent hover:bg-neonGreen hover:text-darkBg text-neonGreen border border-neonGreen/30 rounded-lg transition-all"
+                    className="inline-flex items-center justify-center px-6 py-3 bg-darkAccent hover:bg-neonGreen hover:text-darkBg text-neonGreen border border-neonGreen/30 rounded-lg transition-colors duration-150"
                   >
                     <Github className="mr-2" size={20} />
                     {t('viewOnGithub')}
@@ -470,7 +470,7 @@ export default function Projects() {
                 <div className="absolute top-1/2 left-4 transform -translate-y-1/2">
                   <button
                     onClick={handlePrevProject}
-                    className="p-2 bg-darkAccent border border-neonGreen/30 rounded-full text-neonGreen hover:bg-neonGreen hover:text-darkBg transition-all"
+                    className="p-2 bg-darkAccent border border-neonGreen/30 rounded-full text-neonGreen hover:bg-neonGreen hover:text-darkBg transition-colors duration-150"
                   >
                     <ChevronLeft size={24} />
                   </button>
@@ -478,7 +478,7 @@ export default function Projects() {
                 <div className="absolute top-1/2 right-4 transform -translate-y-1/2">
                   <button
                     onClick={handleNextProject}
-                    className="p-2 bg-darkAccent border border-neonGreen/30 rounded-full text-neonGreen hover:bg-neonGreen hover:text-darkBg transition-all"
+                    className="p-2 bg-darkAccent border border-neonGreen/30 rounded-full text-neonGreen hover:bg-neonGreen hover:text-darkBg transition-colors duration-150"
                   >
                     <ChevronRight size={24} />
                   </button>
