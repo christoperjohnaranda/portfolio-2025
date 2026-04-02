@@ -29,9 +29,9 @@ export default function LanguageSwitcher() {
     // Strip any existing locale prefix (/id or /en) from the current path
     const basePath = pathname.replace(/^\/(id|en)/, '') || '/'
 
-    // EN needs /en prefix; ID is the default locale so no prefix needed
-    const newPath = newLocale === 'en'
-      ? `/en${basePath === '/' ? '' : basePath}` || '/en'
+    // ID needs /id prefix; EN is now the default locale so no prefix needed
+    const newPath = newLocale === 'id'
+      ? `/id${basePath === '/' ? '' : basePath}` || '/id'
       : basePath
 
     // Use hard navigation to ensure middleware runs fresh and

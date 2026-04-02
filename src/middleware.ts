@@ -6,7 +6,7 @@ export default createMiddleware({
   locales: locales,
 
   // Used when no locale matches
-  defaultLocale: 'id',
+  defaultLocale: 'en',
 
   // Disable auto-detection so users control language via the switcher
   localeDetection: false,
