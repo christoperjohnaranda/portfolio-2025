@@ -1,7 +1,7 @@
 'use client'
 
 import { useLocale } from 'next-intl'
-import { usePathname, useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Orbitron } from 'next/font/google'
 import { useState, useRef, useEffect } from 'react'
@@ -19,7 +19,6 @@ const languages = [
 
 export default function LanguageSwitcher() {
   const locale = useLocale()
-  const router = useRouter()
   const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
@@ -27,20 +26,17 @@ export default function LanguageSwitcher() {
   const switchLocale = (newLocale: string) => {
     if (newLocale === locale) return
 
-    // Handle path based on current and new locale
-    let newPath = pathname
-    
-    if (locale === 'en') {
-      // From EN to ID: remove /en prefix
-      newPath = pathname.replace(/^\/en/, '') || '/'
-    } else {
-      // From ID to EN: add /en prefix
-      newPath = `/en${pathname}`
-    }
-    
-    // Navigate to new locale
-    router.push(newPath)
-    router.refresh()
+    // Strip any existing locale prefix (/id or /en) from the current path
+    const basePath = pathname.replace(/^\/(id|en)/, '') || '/'
+
+    // EN needs /en prefix; ID is the default locale so no prefix needed
+    const newPath = newLocale === 'en'
+      ? `/en${basePath === '/' ? '' : basePath}` || '/en'
+      : basePath
+
+    // Use hard navigation to ensure middleware runs fresh and
+    // next-intl locale context is fully reloaded
+    window.location.href = newPath
     setIsOpen(false)
   }
 

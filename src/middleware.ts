@@ -8,8 +8,8 @@ export default createMiddleware({
   // Used when no locale matches
   defaultLocale: 'id',
 
-  // Automatically detect locale from browser/headers
-  localeDetection: true,
+  // Disable auto-detection so users control language via the switcher
+  localeDetection: false,
 
   // Only use prefix for non-default locales
   // Indonesian (default): / or /project
