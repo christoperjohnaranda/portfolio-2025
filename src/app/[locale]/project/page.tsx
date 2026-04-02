@@ -47,7 +47,7 @@ const ProjectCard = ({ project, onClick, isHovered, onHover }: ProjectCardProps)
   const isInView = useInView(ref, { once: true })
   const [rotateX, setRotateX] = useState(0)
   const [rotateY, setRotateY] = useState(0)
-  const { rgb, hex } = project.accent
+  const { rgb } = project.accent
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!ref.current) return
