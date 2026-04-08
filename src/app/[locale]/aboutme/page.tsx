@@ -15,27 +15,56 @@ const orbitron = Orbitron({
   weight: ['400', '500', '700', '900']
 })
 
-const skills = [
-  { name: 'HTML', logo: '/assets/html.png' },
-  { name: 'CSS', logo: '/assets/css.png' },
-  { name: 'JavaScript', logo: '/assets/javascript.png' },
-  { name: 'React', logo: '/assets/react.png' },
-  { name: 'Node.js', logo: '/assets/node.png' },
-  { name: 'Tailwind CSS', logo: '/assets/tailwind.png' },
-  { name: 'PHP', logo: '/assets/php.png' },
-  { name: 'Next.js', logo: '/assets/next.png' },
-  { name: 'MySQL', logo: '/assets/mysql.png' },
-  { name: 'Expo', logo: '/assets/expo.png' },
-  { name: 'PostgreSQL', logo: '/assets/pgsql.png' },
-  { name: 'Vite.js', logo: '/assets/vite.png' },
-  { name: 'TypeScript', logo: '/assets/typescript.png' },
-  { name: 'Bootstrap', logo: '/assets/bootstrap.png' },
-  { name: 'Framer Motion', logo: '/assets/framermotion.png' },
-  { name: 'Python', logo: '/assets/python.png' },
-  { name: 'C', logo: '/assets/c.png' },
-  { name: 'Java', logo: '/assets/java.png' },
-  { name: 'Prisma', logo: '/assets/prisma.png' },
-  { name: 'Laravel', logo: '/assets/laravel.png' },
+const skillGroups = [
+  {
+    category: 'Languages',
+    labelId: 'Bahasa Pemrograman',
+    color: 'from-blue-500 to-cyan-500',
+    skills: [
+      { name: 'JavaScript', logo: '/assets/javascript.png' },
+      { name: 'TypeScript',  logo: '/assets/typescript.png' },
+      { name: 'PHP',         logo: '/assets/php.png' },
+      { name: 'Python',      logo: '/assets/python.png' },
+      { name: 'Java',        logo: '/assets/java.png' },
+      { name: 'C',           logo: '/assets/c.png' },
+    ],
+  },
+  {
+    category: 'Frontend',
+    labelId: 'Frontend',
+    color: 'from-neonGreen to-emerald-500',
+    skills: [
+      { name: 'HTML',          logo: '/assets/html.png' },
+      { name: 'CSS',           logo: '/assets/css.png' },
+      { name: 'React',         logo: '/assets/react.png' },
+      { name: 'Next.js',       logo: '/assets/next.png' },
+      { name: 'Vite.js',       logo: '/assets/vite.png' },
+      { name: 'Tailwind CSS',  logo: '/assets/tailwind.png' },
+      { name: 'Bootstrap',     logo: '/assets/bootstrap.png' },
+      { name: 'Framer Motion', logo: '/assets/framermotion.png' },
+    ],
+  },
+  {
+    category: 'Backend & Mobile',
+    labelId: 'Backend & Mobile',
+    color: 'from-purple-500 to-violet-500',
+    skills: [
+      { name: 'Node.js', logo: '/assets/node.png' },
+      { name: 'Laravel', logo: '/assets/laravel.png' },
+      { name: 'Prisma',  logo: '/assets/prisma.png' },
+      { name: 'Expo',    logo: '/assets/expo.png' },
+    ],
+  },
+  {
+    category: 'Database',
+    labelId: 'Database',
+    color: 'from-orange-500 to-amber-500',
+    skills: [
+      { name: 'MySQL',      logo: '/assets/mysql.png' },
+      { name: 'PostgreSQL', logo: '/assets/pgsql.png' },
+      { name: 'MongoDB', logo: '/assets/mongoDB.png' },
+    ],
+  },
 ]
 
 export default function AboutMe() {
@@ -121,29 +150,54 @@ export default function AboutMe() {
             variants={contentVariants}
           >
             {activeTab === 'skills' && (
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-                {skills.map((skill, index) => (
+              <div className="flex flex-col gap-6">
+                {skillGroups.map((group, groupIndex) => (
                   <motion.div
-                    key={index}
+                    key={group.category}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3, delay: index * 0.05 }}
-                    className="flex flex-col items-center group"
+                    transition={{ duration: 0.3, delay: groupIndex * 0.1 }}
+                    className="bg-darkCard border border-neonGreen/10 rounded-xl p-5"
                   >
-                    <div className="w-20 h-20 bg-darkAccent rounded-xl shadow-lg flex items-center justify-center mb-3 transform transition-[box-shadow,border-color,transform] duration-200 hover:shadow-[0_0_20px_rgba(57,255,20,0.5)] hover:rotate-6 border border-neonGreen/20 hover:border-neonGreen">
-                      <Image
-                        src={skill.logo}
-                        alt={`${skill.name} logo`}
-                        width={40}
-                        height={40}
-                        className="w-10 h-10 object-contain transition-transform duration-300 group-hover:scale-110"
-                        loading="lazy"
-                        quality={75}
-                      />
+                    {/* Category Header */}
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className={`h-1 w-8 rounded-full bg-gradient-to-r ${group.color}`} />
+                      <span className={`text-xs font-bold tracking-widest uppercase text-neonGreen/80 ${orbitron.className}`}>
+                        {group.category}
+                      </span>
+                      <div className="flex-1 h-px bg-neonGreen/10" />
+                      <span className={`text-xs text-lightGreen/40 ${spaceGrotesk.className}`}>
+                        {group.skills.length} skills
+                      </span>
                     </div>
-                    <span className={`text-sm font-medium text-lightGreen tracking-wide ${spaceGrotesk.className} group-hover:text-neonGreen transition-colors duration-300`}>
-                      {skill.name}
-                    </span>
+
+                    {/* Skill Cards */}
+                    <div className="flex flex-wrap gap-4">
+                      {group.skills.map((skill, index) => (
+                        <motion.div
+                          key={skill.name}
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ duration: 0.25, delay: groupIndex * 0.1 + index * 0.04 }}
+                          className="flex flex-col items-center group"
+                        >
+                          <div className="w-16 h-16 bg-darkAccent rounded-xl shadow-lg flex items-center justify-center mb-2 transition-[box-shadow,border-color,transform] duration-200 hover:shadow-[0_0_16px_rgba(57,255,20,0.4)] hover:rotate-6 border border-neonGreen/20 hover:border-neonGreen">
+                            <Image
+                              src={skill.logo}
+                              alt={`${skill.name} logo`}
+                              width={36}
+                              height={36}
+                              className="w-9 h-9 object-contain transition-transform duration-200 group-hover:scale-110"
+                              loading="lazy"
+                              quality={75}
+                            />
+                          </div>
+                          <span className={`text-xs font-medium text-lightGreen text-center tracking-wide ${spaceGrotesk.className} group-hover:text-neonGreen transition-colors duration-200`}>
+                            {skill.name}
+                          </span>
+                        </motion.div>
+                      ))}
+                    </div>
                   </motion.div>
                 ))}
               </div>
