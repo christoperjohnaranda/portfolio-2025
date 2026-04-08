@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://christoperjohnaranda.vercel.app/sitemap.xml

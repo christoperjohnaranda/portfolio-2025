@@ -1,0 +1,16 @@
+{
+  "name": "Christoper John Aranda",
+  "short_name": "CJ Portfolio",
+  "description": "Full Stack Developer Portfolio",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0E0D",
+  "theme_color": "#39FF14",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ]
+}

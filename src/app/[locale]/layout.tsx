@@ -24,19 +24,28 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Christoper John Aranda | Full Stack Developer Portfolio",
-  description: "Passionate Full Stack Developer specializing in React, Next.js, TypeScript, Laravel, Node.js, and mobile development. Experienced in building enterprise web applications for KPK and various organizations across Indonesia.",
-  keywords: ['Full Stack Developer', 'React Developer', 'Next.js', 'TypeScript', 'Laravel', 'Web Development', 'Mobile Development', 'Christoper John Aranda', 'Indonesia Developer', 'KPK Developer'],
+  title: "Christoper John Aranda | Full Stack Developer",
+  description: "Full Stack Developer specializing in React, Next.js, TypeScript, Laravel, and mobile development. Building end-to-end digital solutions for organizations across Indonesia, including KPK.",
+  keywords: ['Full Stack Developer', 'React Developer', 'Next.js', 'TypeScript', 'Laravel', 'Web Development', 'Mobile Development', 'Christoper John Aranda', 'Indonesia Developer', 'KPK Developer', 'Portfolio'],
   authors: [{ name: 'Christoper John Aranda', url: 'https://christoperjohnaranda.vercel.app' }],
   creator: 'Christoper John Aranda',
   publisher: 'Christoper John Aranda',
+  metadataBase: new URL('https://christoperjohnaranda.vercel.app'),
+  alternates: {
+    canonical: '/',
+    languages: {
+      'en': '/',
+      'id': '/id',
+    },
+  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
+    alternateLocale: 'id_ID',
     url: 'https://christoperjohnaranda.vercel.app',
     title: 'Christoper John Aranda | Full Stack Developer',
-    description: 'Passionate Full Stack Developer specializing in React, Next.js, TypeScript, Laravel, and mobile development.',
-    siteName: 'Christoper John Portfolio',
+    description: 'Full Stack Developer building end-to-end digital solutions with React, Next.js, TypeScript, and Laravel.',
+    siteName: 'Christoper John Aranda — Portfolio',
     images: [
       {
         url: 'https://christoperjohnaranda.vercel.app/og-image.jpg',
@@ -49,9 +58,12 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Christoper John Aranda | Full Stack Developer',
-    description: 'Passionate Full Stack Developer specializing in React, Next.js, TypeScript, and Laravel.',
+    description: 'Full Stack Developer building end-to-end digital solutions with React, Next.js, TypeScript, and Laravel.',
     images: ['https://christoperjohnaranda.vercel.app/og-image.jpg'],
     creator: '@christoperjohn',
+  },
+  verification: {
+    google: 'vBsO8kMNagSAzyFSZD5iX4JgSuZZ4uSGkOTXPBnQ6-w',
   },
   robots: {
     index: true,
