@@ -115,9 +115,9 @@ export default function Home() {
       {/* ══════════════ HERO ══════════════ */}
       <section
         className="relative min-h-[calc(100vh-72px)] flex flex-col justify-center
-                   px-6 sm:px-10 md:px-16 lg:px-24 pt-20 pb-12"
+                   px-6 sm:px-10 md:px-16 lg:px-24 pt-28 pb-8"
       >
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] xl:grid-cols-[1fr_360px] gap-10 lg:gap-16 items-center w-full max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-[55%_45%] gap-10 lg:gap-8 items-center w-full max-w-6xl mx-auto">
 
           {/* ── LEFT: Text ── */}
           <motion.div
@@ -145,7 +145,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.28, duration: 0.55 }}
-              className={`text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-black leading-[1.1]
+              className={`text-3xl sm:text-4xl md:text-5xl lg:text-[2.4rem] xl:text-[2.8rem] 2xl:text-5xl font-black leading-[1.1]
                           text-neonGreen neon-glow tracking-wide ${orbitron.className}`}
             >
               {t('name')}
@@ -299,7 +299,7 @@ export default function Home() {
       {/* ══════════════ STATS ══════════════ */}
       <section className="px-6 sm:px-10 md:px-16 lg:px-24 py-10">
         <motion.div
-          className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl mx-auto lg:ml-0"
+          className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-3xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -319,7 +319,7 @@ export default function Home() {
               <span className={`text-2xl md:text-3xl font-black text-neonGreen ${orbitron.className}`}>
                 <Counter target={s.value} suffix={s.suffix} />
               </span>
-              <span className="text-[11px] text-lightGreen/50 mt-1 uppercase tracking-wider">
+              <span className={`text-[10px] text-lightGreen/70 mt-1 uppercase tracking-wider ${orbitron.className}`}>
                 {s.label}
               </span>
             </motion.div>
@@ -330,7 +330,7 @@ export default function Home() {
       {/* ══════════════ TRUSTED BY ══════════════ */}
       <section className="px-6 sm:px-10 md:px-16 lg:px-24 pb-14">
         {/* Divider label */}
-        <div className="flex items-center gap-4 mb-8 max-w-3xl mx-auto lg:ml-0">
+        <div className="flex items-center gap-4 mb-8 max-w-4xl mx-auto">
           <div className="h-px flex-1 bg-gradient-to-r from-neonGreen/25 to-transparent" />
           <span className={`text-[11px] tracking-[0.22em] uppercase text-lightGreen/40 ${orbitron.className}`}>
             {t('workedWith')}
@@ -339,7 +339,7 @@ export default function Home() {
         </div>
 
         {/* Logos */}
-        <div className="flex flex-wrap justify-center lg:justify-start items-center gap-6 md:gap-8">
+        <div className="flex flex-wrap justify-center items-center gap-6 md:gap-10 max-w-5xl mx-auto">
           {logos.map((logo, i) => (
             <motion.div
               key={i}
