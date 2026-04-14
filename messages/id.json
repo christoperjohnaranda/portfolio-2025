@@ -62,13 +62,28 @@
       "title": "Junior Programmer",
       "company": "Komisi Pemberantasan Korupsi",
       "duration": "Nov 2025 - Sekarang",
-      "durationShort": "1 bulan",
+      "durationShort": "5 bulan",
       "description": "Membangun dan memelihara aplikasi web skala nasional menggunakan React dan Laravel untuk kepentingan penegakan hukum di Indonesia.",
       "achievement1": "Membangun aplikasi perekaman persidangan korupsi yang kini digunakan di seluruh wilayah Indonesia",
       "achievement2": "Mengembangkan aplikasi full-stack dengan React, Vite, TypeScript, dan Tailwind CSS untuk sisi frontend",
       "achievement3": "Merancang sistem backend yang andal dengan Laravel dan PostgreSQL untuk mengelola data hukum yang kritis",
       "achievement4": "Berkolaborasi langsung dengan tim legal KPK untuk memastikan aplikasi memenuhi standar peradilan dan regulasi yang berlaku",
-      "skills": ["React", "Vite.js", "TypeScript", "Tailwind CSS", "Laravel", "PostgreSQL", "HTML", "CSS", "JavaScript"]
+      "skills": [
+        "React",
+        "Vite.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Laravel",
+        "PostgreSQL",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "PHP",
+        "Git",
+        "REST APIs",
+        "MongoDB",
+        "Quasar Framework"
+      ]
     },
     "maro": {
       "title": "Full Stack Developer",
@@ -79,7 +94,23 @@
       "achievement1": "Meningkatkan performa aplikasi web hingga 40% lebih cepat dengan menerapkan best practices React dan Next.js",
       "achievement2": "Membangun RESTful API menggunakan Express dan MySQL yang menangani lebih dari 1.000 request per hari secara stabil",
       "achievement3": "Menghadirkan UI/UX responsif dengan Tailwind CSS dan TypeScript, berkontribusi pada peningkatan engagement pengguna sebesar 35%",
-      "skills": ["React", "Next.js", "PHP", "HTML", "CSS", "Tailwind CSS", "JavaScript", "TypeScript", "Node.js", "Express", "MySQL"]
+      "skills": [
+        "React",
+        "Next.js",
+        "PHP",
+        "HTML",
+        "CSS",
+        "Tailwind CSS",
+        "JavaScript",
+        "TypeScript",
+        "Node.js",
+        "Express",
+        "MySQL",
+        "Expo",
+        "Prisma",
+        "Git",
+        "REST APIs"
+      ]
     },
     "sub": {
       "title": "Website Developer",
@@ -90,7 +121,15 @@
       "achievement1": "Menerapkan desain responsif dan mengoptimalkan struktur kode, berhasil memangkas waktu loading hingga 40%",
       "achievement2": "Mengembangkan dan mengintegrasikan fitur-fitur baru dengan React.js, mendorong peningkatan engagement pengguna sebesar 15%",
       "achievement3": "Aktif berkontribusi dalam knowledge sharing dan dokumentasi tim, sehingga efisiensi alur kerja pengembangan meningkat signifikan",
-      "skills": ["React", "JavaScript", "TypeScript", "HTML", "CSS", "Bootstrap", "Git", "REST APIs", "Expo"]
+      "skills": [
+        "React",
+        "JavaScript",
+        "TypeScript",
+        "HTML",
+        "CSS",
+        "Bootstrap",
+        "Git"
+      ]
     }
   },
   "projects": {
@@ -101,37 +140,78 @@
       "1": {
         "title": "Sistem Tagihan Penggunaan Air",
         "description": "Platform full-stack untuk menghitung dan mengelola tagihan penggunaan air pelanggan, dilengkapi integrasi pembayaran yang aman dan laporan otomatis.",
-        "technologies": ["PHP", "MySQL", "JavaScript", "HTML", "CSS", "Bootstrap"],
+        "technologies": [
+          "PHP",
+          "MySQL",
+          "JavaScript",
+          "HTML",
+          "CSS",
+          "Bootstrap"
+        ],
         "gradient": "from-blue-500 via-cyan-500 to-teal-500"
       },
       "2": {
         "title": "Landing Page Restoran",
         "description": "Landing page modern untuk restoran dengan tampilan menu yang menarik, fitur pemesanan online, dan animasi yang memanjakan mata.",
-        "technologies": ["Next.js", "Tailwind CSS", "TypeScript", "Framer Motion"],
+        "technologies": [
+          "Next.js",
+          "Tailwind CSS",
+          "TypeScript",
+          "Framer Motion"
+        ],
         "gradient": "from-orange-500 via-red-500 to-pink-500"
       },
       "3": {
         "title": "Website Company Profile",
         "description": "Website profesional untuk memperkenalkan perusahaan, memamerkan layanan unggulan, dan membangun kepercayaan calon klien.",
-        "technologies": ["Next.js", "TypeScript", "Bootstrap", "CSS", "HTML"],
+        "technologies": [
+          "Next.js",
+          "TypeScript",
+          "Bootstrap",
+          "CSS",
+          "HTML"
+        ],
         "gradient": "from-purple-500 via-violet-500 to-indigo-500"
       },
       "4": {
         "title": "Sistem POS Franchise",
         "description": "Aplikasi mobile Point of Sale (POS) lengkap untuk kasir franchise — mencakup manajemen inventori, pelacakan penjualan real-time, dan laporan bisnis yang komprehensif.",
-        "technologies": ["React Native", "Expo", "TypeScript", "Kotlin", "Node.js", "Express", "Prisma", "MySQL"],
+        "technologies": [
+          "React Native",
+          "Expo",
+          "TypeScript",
+          "Kotlin",
+          "Node.js",
+          "Express",
+          "Prisma",
+          "MySQL"
+        ],
         "gradient": "from-yellow-500 via-amber-500 to-orange-500"
       },
       "5": {
         "title": "Aplikasi Perekaman Persidangan Korupsi",
         "description": "Sistem web skala nasional untuk merekam dan mengelola proses persidangan korupsi di seluruh Indonesia, dikembangkan langsung untuk Komisi Pemberantasan Korupsi (KPK).",
-        "technologies": ["React", "Vite.js", "TypeScript", "Tailwind CSS", "Laravel", "PostgreSQL"],
+        "technologies": [
+          "React",
+          "Vite.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Laravel",
+          "PostgreSQL"
+        ],
         "gradient": "from-emerald-500 via-green-500 to-lime-500"
       },
       "6": {
         "title": "Aplikasi TELUNAS",
         "description": "Platform investigasi digital untuk KPK yang memungkinkan penelusuran mendalam terhadap individu, perusahaan, dan yayasan melalui koneksi ke berbagai API eksternal.",
-        "technologies": ["PHP", "Vue.js", "Laravel", "Quasar Framework", "MongoDB", "PostgreSQL"],
+        "technologies": [
+          "PHP",
+          "Vue.js",
+          "Laravel",
+          "Quasar Framework",
+          "MongoDB",
+          "PostgreSQL"
+        ],
         "gradient": "from-pink-500 via-rose-500 to-fuchsia-500"
       }
     }

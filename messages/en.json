@@ -62,13 +62,28 @@
       "title": "Junior Programmer",
       "company": "Corruption Eradication Commission (KPK)",
       "duration": "Nov 2025 - Present",
-      "durationShort": "1 month",
+      "durationShort": "5 months",
       "description": "Building and maintaining a national-scale web application using React and Laravel to support law enforcement operations across Indonesia.",
       "achievement1": "Built a nationwide corruption trial recording application now deployed across all regions of Indonesia",
       "achievement2": "Developed full-stack application using React, Vite, TypeScript, and Tailwind CSS for the frontend layer",
       "achievement3": "Designed a robust backend system with Laravel and PostgreSQL for handling critical legal data",
       "achievement4": "Worked directly with KPK's legal team to ensure the application meets judicial recording standards and compliance regulations",
-      "skills": ["React", "Vite.js", "TypeScript", "Tailwind CSS", "Laravel", "PostgreSQL", "HTML", "CSS", "JavaScript"]
+      "skills": [
+        "React",
+        "Vite.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Laravel",
+        "PostgreSQL",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "PHP",
+        "Git",
+        "REST APIs",
+        "MongoDB",
+        "Quasar Framework"
+      ]
     },
     "maro": {
       "title": "Full Stack Developer",
@@ -79,7 +94,23 @@
       "achievement1": "Improved web application performance by 40% by implementing React and Next.js best practices",
       "achievement2": "Built RESTful APIs using Express and MySQL reliably serving over 1,000 daily requests",
       "achievement3": "Delivered responsive UI/UX with Tailwind CSS and TypeScript, contributing to a 35% increase in user engagement",
-      "skills": ["React", "Next.js", "PHP", "HTML", "CSS", "Tailwind CSS", "JavaScript", "TypeScript", "Node.js", "Express", "MySQL"]
+      "skills": [
+        "React",
+        "Next.js",
+        "PHP",
+        "HTML",
+        "CSS",
+        "Tailwind CSS",
+        "JavaScript",
+        "TypeScript",
+        "Node.js",
+        "Express",
+        "MySQL",
+        "Expo",
+        "Prisma",
+        "Git",
+        "REST APIs"
+      ]
     },
     "sub": {
       "title": "Website Developer",
@@ -90,7 +121,15 @@
       "achievement1": "Applied responsive design patterns and optimized code structure, cutting load time by 40%",
       "achievement2": "Developed and integrated new features with React.js, driving a 15% increase in user engagement",
       "achievement3": "Actively contributed to team knowledge sharing and documentation, meaningfully improving development workflow efficiency",
-      "skills": ["React", "JavaScript", "TypeScript", "HTML", "CSS", "Bootstrap", "Git", "REST APIs", "Expo"]
+      "skills": [
+        "React",
+        "JavaScript",
+        "TypeScript",
+        "HTML",
+        "CSS",
+        "Bootstrap",
+        "Git"
+      ]
     }
   },
   "projects": {
@@ -101,37 +140,78 @@
       "1": {
         "title": "Water Billing Management System",
         "description": "A full-stack platform for calculating and managing customer water usage bills, complete with secure payment integration and automated reporting.",
-        "technologies": ["PHP", "MySQL", "JavaScript", "HTML", "CSS", "Bootstrap"],
+        "technologies": [
+          "PHP",
+          "MySQL",
+          "JavaScript",
+          "HTML",
+          "CSS",
+          "Bootstrap"
+        ],
         "gradient": "from-blue-500 via-cyan-500 to-teal-500"
       },
       "2": {
         "title": "Restaurant Landing Page",
         "description": "A modern, visually-rich landing page for a restaurant featuring an interactive menu, online ordering system, and smooth animations.",
-        "technologies": ["Next.js", "Tailwind CSS", "TypeScript", "Framer Motion"],
+        "technologies": [
+          "Next.js",
+          "Tailwind CSS",
+          "TypeScript",
+          "Framer Motion"
+        ],
         "gradient": "from-orange-500 via-red-500 to-pink-500"
       },
       "3": {
         "title": "Company Profile Website",
         "description": "A professional website designed to introduce a company, showcase its key services, and build credibility with potential clients.",
-        "technologies": ["Next.js", "TypeScript", "Bootstrap", "CSS", "HTML"],
+        "technologies": [
+          "Next.js",
+          "TypeScript",
+          "Bootstrap",
+          "CSS",
+          "HTML"
+        ],
         "gradient": "from-purple-500 via-violet-500 to-indigo-500"
       },
       "4": {
         "title": "Franchise POS System",
         "description": "A comprehensive Point of Sale mobile app built for franchise cashiers — featuring inventory management, real-time sales tracking, and detailed business reporting.",
-        "technologies": ["React Native", "Expo", "TypeScript", "Kotlin", "Node.js", "Express", "Prisma", "MySQL"],
+        "technologies": [
+          "React Native",
+          "Expo",
+          "TypeScript",
+          "Kotlin",
+          "Node.js",
+          "Express",
+          "Prisma",
+          "MySQL"
+        ],
         "gradient": "from-yellow-500 via-amber-500 to-orange-500"
       },
       "5": {
         "title": "Corruption Trial Recording App",
         "description": "A national-scale web system for recording and managing corruption trial proceedings across Indonesia, built directly for the Corruption Eradication Commission (KPK).",
-        "technologies": ["React", "Vite.js", "TypeScript", "Tailwind CSS", "Laravel", "PostgreSQL"],
+        "technologies": [
+          "React",
+          "Vite.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Laravel",
+          "PostgreSQL"
+        ],
         "gradient": "from-emerald-500 via-green-500 to-lime-500"
       },
       "6": {
         "title": "TELUNAS Application",
         "description": "A digital investigation platform for KPK that enables in-depth tracing of individuals, companies, and foundations through integration with multiple external APIs.",
-        "technologies": ["PHP", "Vue.js", "Laravel", "Quasar Framework", "MongoDB", "PostgreSQL"],
+        "technologies": [
+          "PHP",
+          "Vue.js",
+          "Laravel",
+          "Quasar Framework",
+          "MongoDB",
+          "PostgreSQL"
+        ],
         "gradient": "from-pink-500 via-rose-500 to-fuchsia-500"
       }
     }
